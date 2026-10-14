@@ -22,7 +22,7 @@ Potrzeba i warunki
 
 Liczba aut | 12 dla handlowców oraz 2 dla zarządu.
 
-Użytkowanie | Handlowcy pokonują około 45 tys. km rocznie.
+Użytkowanie | Wstępny szacunek to około 45 tys. km rocznie; nie podano, czy dotyczy każdego auta, czy całej floty.
 
 Nadwozie i napęd | Wskazano kombi lub SUV klasy C oraz napęd hybrydowy lub benzynowy. Przed wyceną potwierdź, co jest wymogiem, a co preferencją.
 

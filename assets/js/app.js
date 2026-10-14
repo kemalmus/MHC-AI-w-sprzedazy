@@ -108,7 +108,7 @@ function renderNextButton(module) {
 
 function renderDownloads(module) {
   return `<div class="content-block"><div class="block-label">Materiały do ćwiczenia</div><div class="download-grid">${module.downloads.map(file => {
-    const preview = file.href.toLowerCase().endsWith(".docx")
+    const preview = /\.(docx|txt|md)$/i.test(file.href)
       ? `<button class="button secondary small" type="button" data-action="preview-document" data-href="${esc(file.href)}" data-title="${esc(file.label)}" aria-expanded="false">Pokaż tekst</button>`
       : "";
     return `<div class="download-card ${file.trainerOnly ? "trainer-only" : ""}"><strong>${esc(file.label)}</strong><div class="module-tools">${preview}<a class="button secondary small" href="${esc(file.href)}" download>Pobierz</a><a class="button secondary small" href="${esc(file.href)}" target="_blank" rel="noopener">Otwórz</a></div></div>`;
@@ -166,8 +166,10 @@ async function showDocument(button) {
   const drawer = document.getElementById("document-drawer");
   const title = document.getElementById("drawer-title");
   const text = document.getElementById("drawer-text");
-  const filename = new URL(button.dataset.href, document.baseURI).pathname.split("/").pop().replace(/\.docx$/i, ".txt");
-  const textUrl = new URL(`materials/text/${filename}`, document.baseURI);
+  const sourceUrl = new URL(button.dataset.href, document.baseURI);
+  const pathname = sourceUrl.pathname;
+  const filename = pathname.split("/").pop().replace(/\.docx$/i, ".txt");
+  const textUrl = /\.docx$/i.test(pathname) ? new URL(`materials/text/${filename}`, document.baseURI) : sourceUrl;
   title.textContent = button.dataset.title;
   text.textContent = "Wczytuję tekst dokumentu…";
   drawer.hidden = false;
