@@ -26,7 +26,8 @@
     {"time":"16:05–16:25","label":"10. Bezpieczne użycie AI","target":"module-10"},
     {"time":"16:25–16:55","label":"11. Transfer do pracy","target":"module-11"},
     {"time":"16:55–17:55","label":"12. Przetarg pod presją: jak wygrać z Arval na faktach","target":"module-12"},
-    {"time":"17:55–18:00","label":"Zamknięcie","target":"module-12"}
+    {"time":"17:55–18:00","label":"Zamknięcie programu głównego","target":"module-12"},
+    {"time":"18:00–18:30","label":"13. Przegląd narzędzi AI (opcjonalnie)","target":"module-13"}
   ],
   "modules": [
     {
@@ -184,7 +185,7 @@
       "objective":"Zaplanować jeden lub dwa małe testy, z jasną miarą wyniku i kontrolą człowieka.",
       "problem":"Pomysł na użycie AI staje się wdrożeniem dopiero wtedy, gdy wiadomo, co przetestować i po czym poznać wynik.",
       "steps":[{"title":"Uzupełnij dwa workflowy","body":"Opisz zadanie, tarcie, rolę AI, potrzebny kontekst, kontrolę człowieka, pierwszy test i miarę powodzenia. Zapis zapisuje się lokalnie w tej przeglądarce."}],
-      "takeaway":"Przed modułem dodatkowym dokończ zdanie: „Jako pierwsze wdrażam ___, a przed użyciem sprawdzę ___.”",
+      "takeaway":"Na koniec modułu dokończ zdanie: „Jako pierwsze wdrażam ___, a przed użyciem sprawdzę ___.”",
       "trainer":{"guide":"Zachęć do małego, odwracalnego testu. Poproś uczestników o jeden konkretny pierwszy krok i sposób oceny.","golden":"Dobry workflow ma określone zadanie, zakres danych, kontrolę człowieka, test i mierzalny sygnał powodzenia.","pitfalls":["Plan jest ogólny i nie ma właściciela testu","Brak reguły weryfikacji","Użycie prawdziwych danych bez sprawdzenia zasad"],"questions":["Jaki będzie pierwszy test w ciągu tygodnia?","Po czym poznasz, że workflow pomaga?"]}
     },
     {
@@ -201,6 +202,21 @@
       "takeaway":"Dobra karta konkurencyjna pomaga prowadzić lepszą rozmowę: pokazuje źródła, braki i pytania, zamiast obiecywać przewagę bez dowodów.",
       "downloads":[{"label":"Fikcyjny profil klienta BudMax","href":"materials/budmax_client_profile.docx"},{"label":"Roboczy szkic propozycji dla BudMax","href":"materials/proposal_working_draft.docx"},{"label":"Fikcyjny katalog pakietów","href":"materials/fictional_service_catalog.docx"}],
       "trainer":{"guide":"Zespoły mogą korzystać z wyszukiwania w sieci, dołączania PDF-ów i innych plików, opcjonalnej analizy arkusza z porównywalnymi danymi oraz symulacji rozmowy. Jeśli wyszukiwanie nie jest dostępne, przygotujcie wcześniej publiczne materiały Arval i dołączcie je jako pliki. Podczas szkolenia korzystajcie wyłącznie z fikcyjnych materiałów.","golden":"Dobry wynik wskazuje źródło każdej informacji o konkurencie, ujawnia nieporównywalne założenia, nie utożsamia braku danych z brakiem usługi i kończy się pytaniami, które handlowiec może zadać klientowi.","pitfalls":["Model dopisuje ceny, zakres usług lub przewagi bez potwierdzenia","Zespół porównuje same raty mimo innego przebiegu, okresu lub zakresu","Publiczna deklaracja marketingowa jest traktowana jako niezależnie potwierdzony wynik","Uczestnicy traktują hipotetyczne wyliczenie jako rzeczywistą ofertę"],"questions":["Które porównanie da się obronić źródłem?","Jakiej informacji brakuje, by porównać oferty uczciwie?","Jakie pytanie do klienta jest cenniejsze niż kolejny claim o konkurencie?"],"fast":"Skróć symulację do 3 pytań i kartę do 5 punktów; zachowaj źródła, kontrolę jednego obliczenia i rozdzielenie faktów od hipotez."}
+    },
+    {
+      "id":13,"title":"Przegląd narzędzi AI: Gemini Notebook (NotebookLM), Gemini i Google AI Studio","time":"30 min · opcjonalny dodatek","duration":30,"optional":true,
+      "objective":"Dobrać narzędzie do zadania i ocenić, jak źródła, funkcje oraz zasady organizacji wpływają na użyteczność wyniku.",
+      "problem":"Podobne polecenie można wykonać w różnych narzędziach, ale dostępne źródła, funkcje i sposób pracy różnią się.",
+      "content":["Gemini Notebook (NotebookLM): praca na wskazanych materiałach, pytania do źródeł i sprawdzanie cytowań.","Gemini: asystent do zadań tekstowych i pracy z plikami lub innymi typami treści, zależnie od dostępnych funkcji i konta.","Google AI Studio: eksperymentowanie z promptami i ustawieniami modeli Gemini; można też pokazać prototypowanie, jeśli jest dostępne.","Do porównania można dodać zatwierdzone u was ChatGPT, Copilot, Claude lub narzędzie do wyszukiwania. Dobierajcie narzędzie do zadania, źródeł i polityki danych, nie do rankingu marek.","Dostęp, funkcje i zasady użycia mogą zależeć od konta oraz organizacji. Ćwiczymy wyłącznie na materiałach fikcyjnych i w zatwierdzonych środowiskach."],
+      "steps":[
+        {"title":"Dopasuj narzędzie do zadania · 5 min","body":"Prowadzący krótko pokazuje mapę: praca z wybranym zestawem źródeł — Gemini Notebook (NotebookLM); ogólne zadania asystenckie — Gemini lub inne zatwierdzone narzędzie; testowanie promptów i modeli — Google AI Studio; praca w Microsoft 365 — Copilot. Uczestnicy wybierają zadanie, które chcą porównać."},
+        {"title":"Gemini Notebook (NotebookLM): odpowiedź oparta na źródłach · 8 min","body":"Na fikcyjnym profilu BudMax, roboczym szkicu propozycji i katalogu usług poproście Gemini Notebook (NotebookLM) o krótkie podsumowanie potrzeb klienta. Wskażcie przy każdym punkcie źródło, a następnie otwórzcie cytat i sprawdźcie, czy rzeczywiście go potwierdza. Braki pozostawcie jako pytania.","prompt":"Na podstawie wyłącznie załączonych fikcyjnych materiałów BudMax przygotuj krótkie podsumowanie: potwierdzone potrzeby klienta, informacje do potwierdzenia i możliwe pytania na spotkanie. Przy każdym punkcie wskaż cytat lub źródło. Nie łącz faktów z hipotezami i nie dopisuj cen ani warunków."},
+        {"title":"Porównaj z Gemini lub innym zatwierdzonym asystentem · 8 min","body":"Użyjcie tego samego polecenia i tych samych fikcyjnych materiałów. Porównajcie, czy narzędzia wskazały te same fakty, braki i źródła. Zweryfikujcie jeden ważny punkt ręcznie w pliku; sama różnica odpowiedzi nie wskazuje, która jest poprawna."},
+        {"title":"Google AI Studio: zmień jeden element · 5 min","body":"Jeśli dostęp jest zatwierdzony, pokażcie ten sam prompt w Google AI Studio i zmieńcie jedną instrukcję lub ustawienie dostępne w interfejsie. Zobaczcie, co się zmieniło w odpowiedzi. Część o prototypowaniu można pominąć, jeśli wymaga dostępu lub konfiguracji, których nie przygotowano na szkoleniu."},
+        {"title":"Wybierz narzędzie i warunki użycia · 4 min","body":"Każdy zespół kończy krótką rekomendacją: zadanie, wybrane narzędzie, źródła potrzebne do pracy, informacja do ręcznej kontroli oraz warunek dostępu lub polityki danych. Jeśli usługi Google nie są zatwierdzone albo dostępne, omówcie ich rolę na przykładzie, a ćwiczenie wykonajcie w zatwierdzonym narzędziu."}
+      ],
+      "takeaway":"Wybieraj narzędzie do zadania i dostępnych źródeł. Sprawdzaj wynik w materiale źródłowym, a przed użyciem potwierdź dostęp i zasady pracy z danymi.",
+      "trainer":{"guide":"Przed szkoleniem sprawdź dostęp do pokazywanych usług i zasady organizacji. Użyj tylko fikcyjnych materiałów BudMax. Jeśli nie ma zatwierdzonego dostępu do narzędzi Google, pokaż ich rolę na przykładzie lub omów funkcje, a praktyczne porównanie przeprowadź w narzędziu zatwierdzonym.","golden":"Uczestnik potrafi wskazać narzędzie do konkretnego zadania, nazwać potrzebne źródła, ręcznie sprawdzić fakt oraz uwzględnić dostęp i zasady organizacji.","pitfalls":["Traktowanie krótkiego demo jako rankingu jakości narzędzi","Uznanie cytowania za gwarancję poprawności bez otwarcia źródła","Wklejanie rzeczywistych danych do narzędzia bez zatwierdzenia","Zakładanie dostępności funkcji bez sprawdzenia konta i organizacji"],"questions":["Które narzędzie ułatwiło pracę na źródłach i jak to sprawdziliście?","Co trzeba zweryfikować przed użyciem wybranego narzędzia w pracy?","Jaka informacja nadal wymaga kontroli człowieka?"],"fast":"Pokaż mapę narzędzi i porównaj ten sam fikcyjny prompt w dwóch dostępnych, zatwierdzonych narzędziach; ręcznie sprawdź jeden fakt."}
     }
   ]
 }

@@ -53,7 +53,7 @@ function renderHome() {
     [course.case.contact, "kontakt po stronie klienta"]
   ];
   return `<section class="home" id="start">
-    <div class="hero"><div class="eyebrow">MHC Mobility · warsztat dla zespołu sprzedaży</div><h1>${esc(course.title)}</h1><p>${esc(course.subtitle)}. Jeden fikcyjny case prowadzi przez przygotowanie, rozmowę, decyzję, współpracę i dalsze działanie.</p><div class="hero-actions"><a class="button primary" href="#module-1">Rozpocznij szkolenie <span aria-hidden="true">↗</span></a><span class="micro-note">09:00–18:00 &nbsp;·&nbsp; 12 modułów &nbsp;·&nbsp; case BudMax</span></div></div>
+    <div class="hero"><div class="eyebrow">MHC Mobility · warsztat dla zespołu sprzedaży</div><h1>${esc(course.title)}</h1><p>${esc(course.subtitle)}. Jeden fikcyjny case prowadzi przez przygotowanie, rozmowę, decyzję, współpracę i dalsze działanie.</p><div class="hero-actions"><a class="button primary" href="#module-1">Rozpocznij szkolenie <span aria-hidden="true">↗</span></a><span class="micro-note">09:00–18:00 &nbsp;·&nbsp; 12 modułów + opcjonalny moduł 13 do 18:30 &nbsp;·&nbsp; case BudMax</span></div></div>
     <div class="notice"><span class="notice-icon" aria-hidden="true">i</span><div><strong>Zasada pracy z danymi</strong><p>${esc(course.case.notice)}</p></div></div>
     <h2 class="section-heading">Case BudMax</h2><div class="case-grid">${stats.map(([value,label]) => `<div class="case-stat"><strong>${esc(value)}</strong><span>${esc(label)}</span></div>`).join("")}</div>
     <h2 class="section-heading">Agenda dnia</h2><div class="agenda">${course.agenda.map(item => item.break
@@ -131,10 +131,11 @@ function renderWorkflows() {
 
 function updateProgress() {
   if (!course) return;
-  const completed = course.modules.filter(module => state.done[module.id]).length;
-  document.getElementById("progress-label").textContent = `Postęp ${completed} / ${course.modules.length}`;
+  const requiredModules = course.modules.filter(module => !module.optional);
+  const completed = requiredModules.filter(module => state.done[module.id]).length;
+  document.getElementById("progress-label").textContent = `Postęp ${completed} / ${requiredModules.length}`;
   document.querySelector(".progress-track").setAttribute("aria-valuenow", String(completed));
-  document.getElementById("progress-fill").style.width = `${completed / course.modules.length * 100}%`;
+  document.getElementById("progress-fill").style.width = `${completed / requiredModules.length * 100}%`;
   navRoot.querySelectorAll(".nav-link[href^='#module-']").forEach(link => link.classList.toggle("done", Boolean(state.done[Number(link.hash.split("-")[1])])));
 }
 

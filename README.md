@@ -1,6 +1,6 @@
 # AI w sprzedaży
 
-Interaktywny playbook jednodniowego szkolenia oparty na fikcyjnym case’ie BudMax Instalacje Sp. z o.o. Strona prowadzi przez 12 modułów, w tym dodatkowy moduł o konkurencji na końcu dnia, a materiały ćwiczeniowe są w katalogach `materials/` i `fallback/`.
+Interaktywny playbook jednodniowego szkolenia oparty na fikcyjnym case’ie BudMax Instalacje Sp. z o.o. Program obejmuje 12 modułów do godz. 18:00 oraz opcjonalny 13. moduł o narzędziach AI do godz. 18:30. Materiały ćwiczeniowe są w katalogach `materials/` i `fallback/`.
 
 ## Uruchomienie lokalne
 
