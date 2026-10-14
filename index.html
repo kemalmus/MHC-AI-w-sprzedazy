@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f3">
+  <meta name="description" content="Interaktywny playbook jednodniowego szkolenia AI w sprzedaży na fikcyjnym case’ie BudMax.">
+  <title>AI w sprzedaży · MHC Mobility</title>
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+  <header class="topbar">
+    <a class="brand" href="#start" aria-label="AI w sprzedaży — start"><span class="brand-mark">M</span><span>AI w sprzedaży <small>PLAYBOOK SZKOLENIOWY</small></span></a>
+    <div class="top-actions">
+      <span class="progress-label" id="progress-label">Postęp 0 / 11</span>
+      <label class="mode-switch"><input type="checkbox" id="trainer-toggle"><span class="switch-ui" aria-hidden="true"></span><span>Tryb trenera</span></label>
+    </div>
+  </header>
+  <div class="progress-track" role="progressbar" aria-label="Postęp szkolenia" aria-valuemin="0" aria-valuemax="11" aria-valuenow="0"><span id="progress-fill"></span></div>
+  <div class="layout">
+    <aside class="sidebar" aria-label="Nawigacja szkolenia">
+      <div class="side-heading">PLAN DNIA</div>
+      <nav id="course-nav"></nav>
+      <div class="sidebar-tools">
+        <label class="fast-switch trainer-control"><input id="fast-mode" type="checkbox"><span>Fast mode</span></label>
+        <button class="text-button" id="reset-button" type="button">Resetuj postęp i notatki</button>
+      </div>
+      <p class="side-foot">MATERIAŁ SZKOLENIOWY<br>FIKCYJNE DANE</p>
+    </aside>
+    <main id="main" tabindex="-1">
+      <div id="course-content" aria-live="polite"><div class="loading">Wczytuję materiały szkoleniowe…</div></div>
+    </main>
+  </div>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

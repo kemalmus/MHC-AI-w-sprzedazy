@@ -1,0 +1,174 @@
+{
+  "title": "AI w sprzedaży",
+  "subtitle": "Jednodniowy playbook szkoleniowy dla zespołu sprzedaży",
+  "case": {
+    "name": "BudMax Instalacje Sp. z o.o.",
+    "sector": "Instalacje HVAC",
+    "employees": "około 140",
+    "contact": "Anna Kowalczyk, Office & Fleet Manager",
+    "need": "12 aut dla handlowców i 2 auta dla zarządu",
+    "facts": ["działalność ogólnopolska", "handlowcy pokonują około 45 tys. km rocznie", "flota w leasingu kończy się w lutym", "preferowane nadwozie: kombi lub SUV klasy C", "preferowany napęd: hybryda lub benzyna", "budżet: do 2 400 zł netto/mies. za auto handlowca i do 4 200 zł za auto zarządu", "duży bagażnik jest ważny; hak nie jest potrzebny", "okres najmu: 48 miesięcy"],
+    "notice": "Nie wklejamy danych osobowych, danych klientów ani rzeczywistych warunków handlowych MHC do narzędzi spoza zatwierdzonego środowiska. Podczas szkolenia pracujemy wyłącznie na danych fikcyjnych. W realnej pracy dane należy anonimizować zgodnie z zasadami organizacji."
+  },
+  "agenda": [
+    {"time":"09:00–09:45","label":"1. Jak działa generatywna AI i LLM","target":"module-1"},
+    {"time":"09:45–10:25","label":"2. Lead → briefing przed spotkaniem","target":"module-2"},
+    {"time":"10:25–10:40","label":"Przerwa","break":true},
+    {"time":"10:40–11:15","label":"3. Negocjacje i obiekcje","target":"module-3"},
+    {"time":"11:15–11:50","label":"4. Porównanie dealerów i kontrola liczb","target":"module-4"},
+    {"time":"11:50–12:15","label":"5. Po spotkaniu i współpraca","target":"module-5"},
+    {"time":"12:15–13:00","label":"Lunch","break":true},
+    {"time":"13:00–13:35","label":"6. M365 jako jeden workflow sprzedażowy","target":"module-6"},
+    {"time":"13:35–14:20","label":"7. AI buduje mikroaplikację HTML","target":"module-7"},
+    {"time":"14:20–14:40","label":"8. Reklamacja i zapisy umowne","target":"module-8"},
+    {"time":"14:40–14:55","label":"Przerwa","break":true},
+    {"time":"14:55–16:05","label":"9. AI Sales Lab","target":"module-9"},
+    {"time":"16:05–16:25","label":"10. Bezpieczne użycie AI","target":"module-10"},
+    {"time":"16:25–16:55","label":"11. Transfer do pracy","target":"module-11"},
+    {"time":"16:55–17:00","label":"Zamknięcie","target":"module-11"}
+  ],
+  "modules": [
+    {
+      "id":1,"title":"Jak działa generatywna AI i LLM","time":"45 min","duration":45,
+      "objective":"Zrozumieć, dlaczego kontekst wpływa na wynik i dlaczego pewnie brzmiąca odpowiedź może być błędna.",
+      "problem":"Model może tworzyć trafne podsumowania i jednocześnie dopowiadać szczegóły, których nie ma w źródle.",
+      "content":["LLM przewiduje kolejne tokeny; token może być fragmentem słowa.","Model nie sprawdza prawdy jak baza danych. Okno kontekstowe to informacje dostępne przy generowaniu odpowiedzi.","Więcej kontekstu nie zawsze pomaga: liczą się jego jakość, trafność i porządek.","Halucynacja to wiarygodnie brzmiąca odpowiedź bez oparcia w dostępnych danych.","AI dobrze tworzy hipotezy, porządkuje informacje i wariantuje; człowiek porównuje wynik ze źródłami i celem."],
+      "steps":[
+        {"title":"Demo A: wpływ kontekstu","body":"Wariant 1. Najpierw zadaj to samo zadanie bez dodatkowego kontekstu.","prompt":"Przygotuj mnie do rozmowy z klientem flotowym."},
+        {"title":"Dodaj krótki kontekst","body":"Wariant 2. Dodaj pięć zdań o firmie i ponów to samo zadanie. Zaznacz, które różnice w odpowiedzi wynikają z nowych danych.","prompt":"Przygotuj mnie do rozmowy z BudMax Instalacje Sp. z o.o., firmą HVAC działającą w Polsce i zatrudniającą około 140 osób. Firma szuka 12 aut dla handlowców i 2 aut dla zarządu. Handlowcy robią około 45 tys. km rocznie. Wskaż pytania przed rozmową i oddziel fakty od hipotez."},
+        {"title":"Dodaj pełny materiał","body":"Wariant 3. Dołącz cały mail leadowy z Modułu 2 i ponów to samo zadanie. Porównaj odpowiedź z wariantami 1 i 2.","prompt":"Przygotuj mnie do rozmowy z klientem flotowym. Wypisz najważniejsze pytania, oddziel fakty od hipotez i nie zgaduj brakujących danych.\n\nMateriał źródłowy:\nTemat: Zapytanie o najem aut dla handlowców\n\nDzień dobry, jesteśmy firmą BudMax Instalacje Sp. z o.o. (ok. 140 pracowników, instalacje HVAC, działamy w całej Polsce). Szukamy 12 samochodów dla przedstawicieli handlowych, którzy robią ok. 45 tys. km rocznie, oraz 2 aut dla zarządu. Polityka flotowa: kombi lub SUV klasy C, hybryda lub benzyna, budżet do 2 400 zł netto/mies. za auto handlowca, dla zarządu do 4 200 zł. Ważny jest duży bagażnik (wozimy próbki i katalogi), hak nie jest potrzebny. Okres 48 miesięcy. Obecnie mamy auta w leasingu, który kończy się w lutym. Prosimy o propozycję do końca miesiąca.\n\nPozdrawiam,\nAnna Kowalczyk\nOffice & Fleet Manager"},
+        {"title":"Demo B: pewność bez danych","body":"Sprawdź, czy model powstrzyma się od zgadywania dokładnego miesiąca założenia firmy i nazwiska CFO.","prompt":"Na podstawie informacji, które posiadasz, podaj dokładny miesiąc, w którym BudMax założył działalność, oraz nazwisko CFO. Jeśli nie masz tych informacji, wyraźnie napisz, że ich nie znasz i nie zgaduj."}
+      ],
+      "takeaway":"Dobre użycie AI zaczyna się od zarządzania kontekstem i weryfikacji. Prompt jest tylko interfejsem do tego procesu.",
+      "trainer":{"guide":"Zacznij od odpowiedzi bez kontekstu. Poproś grupę o wskazanie, co model dopowiedział i co zmieniło się po dodaniu źródeł.","golden":"Poprawna odpowiedź na pytanie o miesiąc założenia firmy i nazwisko CFO brzmi: nie wiadomo na podstawie dostępnych materiałów.","pitfalls":["Traktowanie płynnego języka jako dowodu prawdziwości","Przekazywanie wielu nieistotnych informacji zamiast źródeł potrzebnych do zadania"],"questions":["Które zdanie odpowiedzi da się sprawdzić w źródle?","Jak poprosić model, by ujawnił brak danych?"]}
+    },
+    {
+      "id":2,"title":"Lead → briefing przed spotkaniem","time":"40 min","duration":40,
+      "objective":"Z maila klienta przygotować briefing, pytania i bezpieczny pierwszy follow-up.",
+      "problem":"Handlowiec ma niewiele czasu przed rozmową i musi odróżnić wymagania od preferencji i niewiadomych.",
+      "sourceTitle":"Mail od klienta",
+      "source":"Temat: Zapytanie o najem aut dla handlowców\n\nDzień dobry, jesteśmy firmą BudMax Instalacje Sp. z o.o. (ok. 140 pracowników, instalacje HVAC, działamy w całej Polsce). Szukamy 12 samochodów dla przedstawicieli handlowych, którzy robią ok. 45 tys. km rocznie, oraz 2 aut dla zarządu. Polityka flotowa: kombi lub SUV klasy C, hybryda lub benzyna, budżet do 2 400 zł netto/mies. za auto handlowca, dla zarządu do 4 200 zł. Ważny jest duży bagażnik (wozimy próbki i katalogi), hak nie jest potrzebny. Okres 48 miesięcy. Obecnie mamy auta w leasingu, który kończy się w lutym. Prosimy o propozycję do końca miesiąca.\n\nPozdrawiam,\nAnna Kowalczyk\nOffice & Fleet Manager",
+      "steps":[
+        {"title":"Pierwsza próba bez gotowego promptu","body":"Masz 30 minut do pierwszej rozmowy z klientem. Zapisz, co chcesz wiedzieć i jak poprosisz AI o wsparcie. Pracuj 5–7 minut, nie używaj jeszcze wzorcowego promptu."},
+        {"title":"Ułóż kontekst","body":"Użyj struktury jako heurystyki, nie jako jedynego poprawnego szablonu: CEL → KONTEKST → MATERIAŁ → OGRANICZENIA → FORMAT."},
+        {"title":"Przygotuj briefing","body":"Poproś o twarde, miękkie i niejasne wymagania, pytania, możliwe kierunki i założenia do potwierdzenia.","prompt":"Jesteś doradcą ds. najmu długoterminowego. Na podstawie maila klienta:\n1. wypisz wymagania jako twarde / miękkie / niejasne,\n2. oddziel fakty od hipotez,\n3. wskaż 5 pytań, które trzeba zadać przed wyceną,\n4. zaproponuj 3 potencjalne kierunki rozwiązania, ale nie udawaj, że znasz aktualne ceny lub dostępność, jeśli ich nie otrzymałeś,\n5. wskaż 3 rzeczy, których handlowiec nie powinien założyć bez potwierdzenia.\n\nMail klienta:\n[WKLEJ MAIL]"},
+        {"title":"Napisz pierwszy follow-up","body":"Odpowiedź ma potwierdzić zrozumienie, poprosić o doprecyzowanie i wskazać konkretny następny krok.","prompt":"Napisz pierwszą wersję odpowiedzi do Anny Kowalczyk. Ton profesjonalny, maksymalnie 180 słów. Potwierdź zrozumienie potrzeby, wskaż informacje wymagające doprecyzowania i zaproponuj jeden konkretny następny krok. Nie obiecuj dostępności ani ceny bez danych.\n\nOpcjonalnie przygotuj wersję angielską dla częściowo zagranicznego zarządu."}
+      ],
+      "takeaway":"Budżet to kryterium do sprawdzenia, a nie potwierdzona cena. Preferencja nadwozia nie musi być bezwzględnym wymogiem.",
+      "downloads":[{"label":"Profil klienta BudMax","href":"materials/budmax_client_profile.docx"},{"label":"Mail leadowy BudMax","href":"materials/budmax_lead_email.docx"}],
+      "trainer":{"guide":"Nie pokazuj promptu na starcie. Najpierw zbierz pierwsze wersje briefu, potem odsłoń strukturę i prompt.","golden":"Pytania kontrolne: czy budżet został przedstawiony jako cena gwarantowana? Czy AI wymyśliło dostępność? Czy preferencję zamieniło w wymóg? Czy pytania pomagają przygotować wycenę?","pitfalls":["Obiecanie ceny lub dostępności bez danych","Uznanie preferencji za twarde wymaganie","Pominięcie terminu końca leasingu i czasu na dostawę"],"questions":["Które dane są faktem z maila, a które hipotezą?","Jakiego jednego pytania nie można pominąć przed wyceną?"]}
+    },
+    {
+      "id":3,"title":"Negocjacje i obiekcje","time":"35 min","duration":35,
+      "objective":"Wykorzystać AI do treningu zachowania w rozmowie, a nie tylko pisania odpowiedzi.",
+      "problem":"Klient porównuje miesięczną ratę, choć zakres i warunki ofert się różnią.",
+      "sourceTitle":"Sytuacja negocjacyjna",
+      "source":"Klient mówi, że konkurencja FleetPro dała stawkę o 160 zł/mies. niższą na Octavię, ale bez opon zimowych i z limitem 40 tys. km. Pyta, czy zejdziemy z ceny. Decyzję podejmuje CFO, który „patrzy tylko na ratę”.",
+      "steps":[
+        {"title":"Role-play: 5 rund","body":"Jedna osoba odpowiada jako handlowiec. AI gra sceptycznego CFO, zadaje po jednym pytaniu i czeka na odpowiedź. Przez pięć rund trener nie przerywa.","prompt":"Zagraj CFO firmy BudMax, który chce obniżyć miesięczną ratę. Jesteś sceptyczny i porównujesz ofertę głównie przez cenę. Zadawaj mi po jednym trudnym pytaniu i po każdej mojej odpowiedzi czekaj na kolejną. Nie pomagaj mi w trakcie rozmowy. Po 5 wymianach oceń, gdzie konkurowałem ceną zamiast wartością; wskaż niewykorzystane argumenty; odnieś się do TCO, limitu km, opon, dostępności i auta zastępczego; zaproponuj lepszą wersję dwóch najsłabszych odpowiedzi."},
+        {"title":"Wariant szybki: odpowiedzi na obiekcje","body":"Porównaj krótką odpowiedź z odpowiedzią, która najpierw diagnozuje potrzebę i dopiero potem mówi o ekonomice.","prompt":"Przygotuj 6 typowych obiekcji klienta dotyczących najmu długoterminowego. Dla każdej przygotuj dwie odpowiedzi: krótką oraz opartą na liczbach / ekonomice rozwiązania. Nie wymyślaj danych liczbowych, których nie podano."}
+      ],
+      "takeaway":"Dobra odpowiedź nie zaczyna automatycznie od rabatu. Sprawdza, czy porównywane oferty obejmują ten sam przebieg i zakres usług.",
+      "downloads":[{"label":"Notatki ze spotkania BudMax","href":"materials/budmax_meeting_notes.docx"},{"label":"Fikcyjny katalog usług","href":"materials/fictional_service_catalog.docx"}],
+      "trainer":{"guide":"Nie przerywaj pierwszych pięciu rund. Po roli poproś uczestnika o samoocenę, dopiero potem pokaż analizę AI.","golden":"Wróć do różnicy 45 tys. vs 40 tys. km, opon, auta zastępczego, dostępności i całkowitego kosztu. Nie obiecuj rabatu ani nie dopisuj wartości liczbowych.","pitfalls":["Natychmiastowy rabat","Obrona firmy zamiast rozmowy o wartości","Brak pytań diagnostycznych","Fałszywe dane liczbowe"],"questions":["Czy AI pomagało pisać, czy trenowało zachowanie?","Jakie pytanie zmieniło rozmowę z ceny na zakres?"],"fast":"Skróć role-play z 5 do 3 rund; zostaw krótką samoocenę po rozmowie."}
+    },
+    {
+      "id":4,"title":"Porównanie dealerów i kontrola liczb","time":"35 min","duration":35,
+      "objective":"Porównać oferty z jawnymi obliczeniami, założeniami i ryzykami dostawy.",
+      "problem":"Rabat, pakiety i transport utrudniają szybkie porównanie trzech ofert.",
+      "table":{"headers":["Kryterium","Dealer A (Warszawa)","Dealer B (Łódź)","Dealer C (Poznań)"],"rows":[["Model","Skoda Octavia Combi 1.5 TSI mHEV 150 KM DSG Selection","Skoda Octavia Combi 1.5 TSI mHEV 150 KM DSG Selection","Skoda Octavia Combi 1.5 TSI mHEV 150 KM DSG Selection"],["Cena katalogowa netto","132 500 zł","132 500 zł","131 900 zł (inny rocznik cennika)"],["Rabat flotowy","14%","16%","12% + pakiet gratis"],["Pakiety w cenie","Pakiet zimowy","brak","Pakiet zimowy + Pakiet Business (nawigacja, kamera)"],["Wartość pakietów wg cennika","3 100 zł","0 zł","7 400 zł"],["Termin dostawy","8 tygodni","14 tygodni","6 tygodni; tylko 4 auta są od ręki"],["Uwagi","Wydanie w salonie","Transport do klienta +900 zł/szt.","Oferta ważna 7 dni"]]},
+      "steps":[
+        {"title":"Porównaj trzy oferty","body":"Policz cenę netto po rabacie, wartość pakietów i transport dla 12 aut. Opisz terminy, ważność oferty oraz ograniczenie dostępności C.","prompt":"Porównaj trzy oferty dla zamówienia 12 sztuk. Policz cenę netto po rabacie, realną wartość uwzględniając pakiety i transport oraz wskaż ryzyka dotyczące terminu, ważności i dostępności. Pokaż obliczenia krok po kroku. Na końcu przygotuj rekomendację w 3 zdaniach dla przełożonego. Jawnie podaj założenia; nie sprowadzaj rekomendacji tylko do najniższej ceny."},
+        {"title":"Ręczna kontrola","body":"STOP. Wybierz jedno obliczenie wykonane przez AI i policz je ręcznie lub w Excelu. Zaznacz, czy zgadza się wzór i wynik."}
+      ],
+      "takeaway":"Cena po rabacie = cena katalogowa × (1 − rabat). Do B dolicz transport 900 zł × 12 aut = 10 800 zł. W C tylko 4 auta są od ręki; 6 tygodni dotyczy pozostałych.",
+      "downloads":[{"label":"Arkusz ofert dealerów","href":"materials/dealer_offers.xlsx"},{"label":"Reference Deal Desk (tylko trener po pierwszej próbie)","href":"materials/budmax_deal_desk_reference.html","trainerOnly":true}],
+      "trainer":{"guide":"Daj grupie czas policzyć przed pokazaniem wzoru. Wymagaj od uczestnika jednej jawnej kontroli ręcznej.","golden":"Przykładowe wyliczenia na auto: A: 132 500 × 0,86 = 113 950 zł po rabacie; pakiet zimowy ma katalogową wartość 3 100 zł. B: 132 500 × 0,84 = 111 300 zł; z transportem 900 zł = 112 200 zł, a transport 12 aut to 10 800 zł. C: 131 900 × 0,88 = 116 072 zł po rabacie; pakiety mają katalogową wartość 7 400 zł, ale cena katalogowa pochodzi z innego rocznika. Wartość katalogowa pakietu nie jest tym samym co obniżka ceny. C ma 4 auta od ręki, więc dostępność dla pozostałych 8 wymaga potwierdzenia. To porównanie liczb, nie jedna obowiązująca rekomendacja.","pitfalls":["Pominięcie transportu B","Uznanie 4 aut C za dostępność całych 12","Pominięcie innego rocznika cennika C","Porównanie rabatów bez rozróżnienia ceny katalogowej i wartości pakietów"],"questions":["Jakie założenie najbardziej wpływa na rekomendację?","Czy dostępność spełnia termin startu floty?"],"fast":"Można skrócić dyskusję ofert, ale nie ręczną weryfikację jednego obliczenia."}
+    },
+    {
+      "id":5,"title":"Po spotkaniu i współpraca","time":"25 min","duration":25,
+      "objective":"Zamienić surowe notatki w kilka użytecznych outputów bez tworzenia niepotwierdzonych decyzji.",
+      "problem":"Te same notatki trzeba dopasować do odbiorców z Ryzyka, Likwidacji Szkód i zespołu handlowego.",
+      "sourceTitle":"Surowe notatki po spotkaniu",
+      "source":"klient BudMax - 12+2 aut, chcą start luty, Anna pyta o auta zastępcze w 24h bo handlowcy w trasie, CFO naciska na ratę, dealer C ma 4 szt od ręki reszta 6 tyg, trzeba sprawdzić z ryzykiem limit kredytowy klienta bo firma 3 lata na rynku, likwidacja szkód pyta czy klient chce własnego brokera",
+      "steps":[
+        {"title":"Wybierz potrzebne outputy","body":"Zanim użyjesz AI, zapisz własnymi słowami, jakie materiały pomogą Ci wykonać kolejny krok."},
+        {"title":"Rozdziel odbiorców i działania","body":"Poproś o podsumowanie, oddzielne wiadomości do działów, listę działań oraz informacje niepotwierdzone.","prompt":"Z tych notatek przygotuj: (1) podsumowanie sprawy klienta w 5 punktach, (2) osobne krótkie zapytanie do Działu Ryzyka, (3) osobne krótkie zapytanie do Działu Likwidacji Szkód, (4) listę działań z sugerowanym właścicielem i terminem, (5) listę informacji, których nie wolno uznać za potwierdzone na podstawie tych notatek. Nie dopisuj terminów ani właścicieli jako faktów; oznacz sugestie."}
+      ],
+      "takeaway":"Porządkowanie informacji nie oznacza podejmowania decyzji. Właściciele i terminy zaproponowane przez AI trzeba potwierdzić.",
+      "downloads":[{"label":"Notatki koordynacyjne","href":"materials/internal_coordination_notes.docx"}],
+      "trainer":{"guide":"Zapytaj grupę, które elementy notatek są faktami, które pytaniami, a które jedynie propozycją kolejnego działania.","golden":"Sprawdzenie limitu kredytowego i wybór brokera nie są rozstrzygnięte. Start w lutym i pytanie o auto zastępcze w 24h są zapisane, lecz zakres usługi wymaga potwierdzenia.","pitfalls":["AI przypisuje właścicieli i terminy bez podstaw","Pytanie o brokera zostaje przedstawione jako podjęta decyzja","Sugerowana usługa auta zastępczego staje się obietnicą"],"questions":["Który element jest decyzją, a który pytaniem?","Jak oznaczyć propozycję AI tak, by nie wyglądała na uzgodnienie?"]}
+    },
+    {
+      "id":6,"title":"M365 jako jeden workflow sprzedażowy","time":"35 min","duration":35,
+      "objective":"Połączyć materiały z rana w jeden przepływ od informacji do komunikacji i decyzji.",
+      "problem":"Wartość powstaje z przepływu informacji między zadaniami, a nie z osobnego poznawania aplikacji.",
+      "steps":[
+        {"title":"Przejdź przez workflow","body":"1. Copilot Chat / Teams / Outlook: zbierz kontekst sprawy. 2. Outlook: przygotuj follow-up. 3. Word: utwórz roboczy szkic oferty. 4. Excel: użyj arkusza ofert. 5. PowerPoint: przygotuj krótką prezentację. 6. Copilot Chat: przygotuj brief statusu, ryzyk, decyzji i kolejnych kroków."},
+        {"title":"Wykonaj jeden fragment","body":"Wybierz jeden krok, pobierz odpowiedni plik i wykonaj go w dostępnej aplikacji. Jeśli integracja M365 nie jest dostępna, użyj plików w dostępnym zatwierdzonym narzędziu AI.","prompt":"Na podstawie załączonych materiałów BudMax przygotuj [wybrany output]. Oddziel fakty od założeń, nie wymyślaj cen, dostępności ani zobowiązań i oznacz miejsca wymagające potwierdzenia."}
+      ],
+      "takeaway":"Celem jest działający workflow sprzedażowy; konkretna integracja zależy od dostępnych aplikacji i uprawnień.",
+      "downloads":[{"label":"Szkic propozycji","href":"materials/proposal_working_draft.docx"},{"label":"Szablon prezentacji","href":"materials/proposal_deck_template.pptx"},{"label":"Arkusz ofert dealerów","href":"materials/dealer_offers.xlsx"}],
+      "trainer":{"guide":"Zademonstruj przepływ, a nie katalog funkcji. Jeśli M365 nie jest dostępne, użyj pobranych plików i zachowaj tę samą logikę ćwiczenia.","golden":"Dobry status dla managera ma oddzielne sekcje: fakty, ryzyka, otwarte decyzje i next steps.","pitfalls":["Kopiowanie danych bez sprawdzenia uprawnień i środowiska","Traktowanie draftu oferty jako zatwierdzonej propozycji"],"questions":["Gdzie uczestnik musiał przejść między narzędziami?","Który krok można powtarzać bez utraty kontroli człowieka?"],"fast":"Gdy brakuje czasu, zastąp samodzielne ćwiczenie M365 krótkim demo całego przepływu."}
+    },
+    {
+      "id":7,"title":"AI buduje mikroaplikację HTML","time":"45 min","duration":45,
+      "objective":"Przejść od problemu biznesowego do działającego prototypu narzędzia przez iterację z AI.",
+      "problem":"Handlowiec potrzebuje widoku łączącego klienta, oferty dealerów, scenariusze i argumenty rozmowy.",
+      "steps":[
+        {"title":"Pierwsza próba bez wzorca","body":"Zbuduj małą interaktywną stronę HTML, która porównuje oferty dealerów i pomaga przygotować rekomendację. Obserwuj, co jest funkcją, a co tylko dekoracją.","prompt":"Na podstawie materiałów BudMax zbuduj prostą, interaktywną stronę HTML, która pomoże handlowcowi porównać oferty dealerów i przygotować rekomendację dla klienta. Zadbaj, żeby użytkownik mógł zmieniać najważniejsze założenia i od razu widzieć wpływ na rekomendację."},
+        {"title":"Iteracja 2: doprecyzuj narzędzie","body":"Sprawdź, czy aplikacja ma Client Snapshot, Dealer Comparison, Scenario Controls i Negotiation Cockpit oraz pokazuje sprawdzalne obliczenia.","prompt":"Ulepsz aplikację. Dodaj osobne sekcje Client Snapshot, Dealer Comparison, Scenario Controls i Negotiation Cockpit. Wszystkie obliczenia pokaż w sposób możliwy do sprawdzenia. Nie wymyślaj brakujących danych. Jeśli informacja nie występuje w materiałach, oznacz ją jako „do potwierdzenia”. Zadbaj o czytelny interfejs do użycia podczas rozmowy handlowej."},
+        {"title":"Iteracja 3: zmiana językiem naturalnym","body":"Wybierz jedną zmianę: suwak ważności terminu, ostrzeżenie o limicie przebiegu, Executive Summary, wykres ofert lub uproszczenie widoku klienta."},
+        {"title":"Fallback bez SharePoint HTML Pages","body":"Użyj dostępnego modelu generującego kod, skopiuj ten sam brief, zapisz pojedynczy plik HTML i otwórz go lokalnie. Jeśli nie ma generowania kodu, obejrzyj reference jako materiał trenera po własnej próbie.","prompt":"Przygotuj jeden samodzielny plik HTML z inline CSS i JavaScript. Bez zewnętrznych API, fetch, CDN, sekretów i localStorage. Ma działać lokalnie. Nie wymyślaj danych; nieznane informacje oznacz „do potwierdzenia”."}
+      ],
+      "takeaway":"AI może tworzyć treści, workflowy i narzędzia. Prototyp HTML nie jest rozwiązaniem produkcyjnym i wymaga przeglądu bezpieczeństwa, danych oraz wdrożenia.",
+      "downloads":[{"label":"Karta promptów SharePoint HTML","href":"materials/sharepoint_html_microapp_prompt.md"},{"label":"Deal Desk reference (tylko trener po ćwiczeniu)","href":"materials/budmax_deal_desk_reference.html","trainerOnly":true}],
+      "trainer":{"guide":"Nie pokazuj reference przed pierwszą próbą. Omów trzy poziomy: AI tworzy treść → workflow → narzędzie.","golden":"Reference ma cztery sekcje: snapshot, porównanie dealerów, kontrolki scenariusza i cockpit negocjacyjny. Zmiana parametrów daje deterministyczny wynik, a brakujące informacje pozostają oznaczone.","pitfalls":["Kontrolki są dekoracyjne i nie zmieniają rekomendacji","Obliczenia nie dają się sprawdzić","Prototyp jest mylony z aplikacją produkcyjną","Dodanie zewnętrznych zależności lub sekretów"],"questions":["Która funkcja realnie wspiera decyzję?","Jakie przeglądy byłyby potrzebne przed wdrożeniem?"],"fast":"Można skrócić demo iteracji do jednej zmiany i pominąć samodzielną wersję M365, lecz zachować ocenę ograniczeń prototypu."}
+    },
+    {
+      "id":8,"title":"Reklamacja i zapisy umowne","time":"20 min","duration":20,
+      "objective":"Oddzielić ustalenia wynikające z tekstu od brakujących dowodów i przygotować bezpieczny draft odpowiedzi.",
+      "problem":"Klient kwestionuje opłatę, ale opis nie zawiera zdjęć ani wymiarów uszkodzeń.",
+      "sourceTitle":"Reklamacja i fikcyjny §12 ust. 3",
+      "source":"Reklamacja: „Przy zwrocie auta po 48 miesiącach obciążyliście nas kwotą 3 850 zł za «nadmierne zużycie»: rysy na zderzaku, przetarcie fotela kierowcy, odprysk na szybie. To normalne użytkowanie po 180 tys. km. Nie zgadzamy się z obciążeniem i rozważamy rezygnację z dalszej współpracy.”\n\nFikcyjny §12 ust. 3: „Najemca odpowiada za uszkodzenia wykraczające poza normalne zużycie eksploatacyjne, określone w Załączniku nr 4 (Przewodnik zwrotu pojazdu). Za normalne zużycie uznaje się m.in. rysy lakieru do 25 mm niesięgające podkładu, odpryski szyby poza polem widzenia kierowcy o średnicy do 5 mm oraz przetarcia tapicerki bez rozdarć.”",
+      "steps":[{"title":"Oceń wyłącznie dostępny tekst","body":"Wypisz, co można ocenić, co pozostaje nierozstrzygnięte, jakich dowodów brakuje i przygotuj rzeczowy draft odpowiedzi. Oznacz założenia. Nie przedstawiaj opinii prawnej jako faktu.","prompt":"Na podstawie wyłącznie podanego zapisu umownego: (1) wskaż, które kwestie można ocenić, (2) które pozostają nierozstrzygnięte, (3) wypisz informacje i dowody potrzebne do dalszej oceny, (4) przygotuj szkic odpowiedzi do klienta: empatyczny, rzeczowy, bez przyznawania błędu, z propozycją ponownej weryfikacji spornych pozycji. Wyraźnie oznacz każde założenie i nie przedstawiaj opinii prawnej jako faktu."}],
+      "takeaway":"Do dalszej oceny potrzebne są m.in. wymiar rys i stan podkładu, lokalizacja i średnica odprysku oraz informacja, czy tapicerka jest rozdarta.",
+      "downloads":[{"label":"Reklamacja i zapis umowny","href":"materials/complaint_and_contract.docx"}],
+      "trainer":{"guide":"Poproś uczestników o rozdzielenie: tekst mówi / nie wiadomo / potrzebny dowód. Nie rozstrzygaj odpowiedzialności bez brakujących danych.","golden":"Nie można orzec na podstawie opisu. Poproś o wymiar rys i informację o podkładzie, lokalizację względem pola widzenia i średnicę odprysku, informację o rozdarciu tapicerki oraz dokumentację i właściwy załącznik.","pitfalls":["Uznanie opłaty za zasadną albo bezzasadną bez dowodów","Pomijanie Załącznika nr 4","Brzmienie draftu jak rozstrzygnięcie prawne"],"questions":["Jakie twierdzenie wymaga zdjęcia lub pomiaru?","Które zdanie w draftcie może brzmieć jak przyznanie błędu?"]}
+    },
+    {
+      "id":9,"title":"AI Sales Lab: od insightu do kampanii","time":"70 min","duration":70,
+      "objective":"Stworzyć i ocenić komunikację dla jednego segmentu, nie produkować dużej liczby wariantów bez insightu.",
+      "problem":"Szybkie generowanie nie zastąpi trafnego insightu ani oceny klienta.",
+      "segments":[{"name":"A · Firma usługowa z handlowcami w terenie","profile":"50–200 pracowników; 8–25 aut; dużo kilometrów; problem z przewidywalnością kosztów.","objection":"„Najważniejsza jest rata”."},{"name":"B · Właściciel szybko rosnącej firmy","profile":"20–80 pracowników; pierwszy większy fleet renewal; niewielki zespół administracyjny; chce ograniczyć czas na flotę.","objection":"Utrata elastyczności."},{"name":"C · CFO firmy średniej wielkości","profile":"Patrzy na TCO i cash flow; wymaga jasnego business case; sceptyczny wobec miękkich korzyści.","objection":"Ukryte koszty i warunki."},{"name":"D · Office/Fleet Manager","profile":"Odpowiada za codzienną obsługę floty; liczą się serwis, auto zastępcze i dostępność informacji.","objection":"Rozwiązanie może obiecywać więcej, niż dostarcza operacyjnie."}],
+      "steps":[
+        {"title":"Customer insight","body":"Zbuduj mapę: SYTUACJA → PROBLEM → KONSEKWENCJA → EMOCJA/NAPIĘCIE → DESIRED OUTCOME → OBIEKCJA. Wybierz jeden insight.","prompt":"Dla segmentu [X] wygeneruj 8 hipotez problemów i desired outcomes związanych z użytkowaniem floty i najmem długoterminowym. Oddziel rzeczy wynikające z podanego opisu od hipotez wymagających walidacji. Nie twórz statystyk ani danych rynkowych bez źródeł."},
+        {"title":"Communication angles","body":"Wygeneruj różne hipotezy komunikacji, wybierz dwie do dalszej pracy.","prompt":"Na podstawie wybranego insightu stwórz 10 wyraźnie różnych kierunków komunikacji. Każdy ma być inną hipotezą, np. problem, desired outcome, koszt bezczynności, obiekcja, moment rozpoznania problemu, before/after. Maksymalnie 2 zdania na angle. Unikaj generycznych sloganów."},
+        {"title":"Script","body":"Napisz naturalny skrypt 20–30 sekund, bez niepotwierdzonych claimów liczbowych.","prompt":"Dla wybranego angle przygotuj 20–30-sekundowy skrypt w strukturze HOOK → PROBLEM → MOMENT → ROZWIĄZANIE → CTA. Ma brzmieć jak naturalna wypowiedź człowieka, nie jak reklama korporacyjna. Nie wymyślaj claimów liczbowych."},
+        {"title":"Visual language","body":"Opisz referencję przez framing, kamerę, światło, tło, wardrobe, naturalność i tempo. Nie kopiuj tożsamości, twarzy, cech ani głosu realnego twórcy.","prompt":"Stwórz nową, fikcyjną osobę występującą w naturalnym krótkim materiale UGC. Zachowaj wyłącznie język wizualny opisany poniżej: [opis framingu, światła, tła, kamery]. Nie kopiuj tożsamości, twarzy ani charakterystycznego wyglądu żadnej realnej osoby."},
+        {"title":"Warianty i video","body":"Zmień hook, segment, scenerię, CTA, długość lub formalność. Na szkoleniu wystarczą 2–3 warianty. Jeśli video niedostępne: użyj storyboardu 6 kadrów."},
+        {"title":"AI critique","body":"Najpierw skrytykuj materiał jako sceptyczny klient. Następnie zespół poprawia jedną rzecz.","prompt":"Wciel się w sceptycznego potencjalnego klienta z segmentu [X]. Obejrzyj lub przeczytaj tę kreację i odpowiedz: czego nie rozumiem, czemu nie wierzę, co przyciąga uwagę, co brzmi sztucznie, jakiej informacji brakuje mi przed kolejnym krokiem. Nie poprawiaj materiału, najpierw tylko go skrytykuj."}
+      ],
+      "takeaway":"Finał zespołu w 3 minuty: segment → insight → angle → skrypt/kreacja → czego nauczył ich proces.",
+      "downloads":[{"label":"Segmenty Sales Lab","href":"materials/sales_lab_segments.docx"},{"label":"Przykładowe skrypty","href":"materials/sales_lab_script_examples.docx"},{"label":"Storyboard fallback","href":"fallback/sample_storyboard.pdf"}],
+      "trainer":{"guide":"Nie przedstawiaj jako kursu performance marketingu. Prowadź ćwiczenie od jednego segmentu do jednego insightu. Na critique najpierw tylko zbieraj krytykę, nie proś o poprawki.","golden":"Dobry output oddziela fakty segmentu od hipotez do walidacji, nie używa statystyk bez źródeł i nie kopiuje realnego twórcy. Każdy zespół poprawia jedną rzecz po critique.","pitfalls":["Zespół wybiera dziesięć insightów i nie podejmuje decyzji","AI dopisuje wyniki rynkowe lub claimy liczbowe","Kopiowanie twarzy, tożsamości lub głosu realnej osoby"],"questions":["Która część jest faktem, a która hipotezą?","Co zmieniła krytyka klienta?"],"fast":"Można skrócić angles z 10 do 5 i warianty do 1; etapu critique nie skracaj ani nie pomijaj."}
+    },
+    {
+      "id":10,"title":"Bezpieczne użycie AI","time":"20 min","duration":20,
+      "objective":"Rozpoznać, które materiały można użyć, które trzeba ograniczyć, a które wymagają zgody lub weryfikacji.",
+      "problem":"Ryzyko zależy od danych, narzędzia, praw i skutków biznesowych, nie od samego faktu użycia AI.",
+      "cards":[{"text":"Fikcyjny mail BudMax","choice":"OK do użycia w zatwierdzonym narzędziu"},{"text":"Rzeczywista lista nazwisk i numerów telefonów klientów","choice":"Najpierw anonimizuj / ogranicz dane"},{"text":"Publiczny cennik producenta","choice":"OK do użycia w zatwierdzonym narzędziu"},{"text":"Nieopublikowana oferta handlowa dla klienta","choice":"Najpierw anonimizuj / ogranicz dane"},{"text":"Zdjęcie realnego twórcy internetowego jako inspiracja wizualna","choice":"Nie używaj bez zgody / weryfikacji"},{"text":"Nagranie głosu realnej osoby do klonowania voice","choice":"Nie używaj bez zgody / weryfikacji"}],
+      "steps":[{"title":"Omów sześć kart","body":"Wybierz dla każdej kartę: OK w zatwierdzonym narzędziu; najpierw anonimizuj/ogranicz; nie używaj bez zgody/weryfikacji. Uzasadnij wybór w kontekście organizacji."}],
+      "takeaway":"Wiedz, gdzie trafiają dane. Minimalizuj dane wejściowe. Oddzielaj fakt od interpretacji. Weryfikuj liczby i komunikację wychodzącą. Odpowiedzialność biznesowa pozostaje po stronie człowieka.",
+      "trainer":{"guide":"Nie rób wykładu compliance. Wracaj do materiałów i decyzji z wcześniejszych modułów. Klasyfikację dostosuj do zatwierdzonych narzędzi i zasad organizacji.","golden":"Klasyfikacja jest ćwiczeniem, nie uniwersalną zgodą na użycie danych. Uczestnik powinien sprawdzić środowisko i zasady organizacji.","pitfalls":["Założenie, że publiczny materiał oznacza brak wszelkich ograniczeń","Wklejanie danych klientów do niezatwierdzonego środowiska","Klonowanie głosu lub kopiowanie wizerunku bez zgody i praw"],"questions":["Jakiego minimum danych potrzebuje zadanie?","Kto zatwierdza wynik przed wysłaniem do klienta?"]}
+    },
+    {
+      "id":11,"title":"Transfer do pracy","time":"30 min","duration":30,
+      "objective":"Zaplanować jeden lub dwa małe testy, z jasną miarą wyniku i kontrolą człowieka.",
+      "problem":"Pomysł na użycie AI staje się wdrożeniem dopiero wtedy, gdy wiadomo, co przetestować i po czym poznać wynik.",
+      "steps":[{"title":"Uzupełnij dwa workflowy","body":"Opisz zadanie, tarcie, rolę AI, potrzebny kontekst, kontrolę człowieka, pierwszy test i miarę powodzenia. Zapis zapisuje się lokalnie w tej przeglądarce."}],
+      "takeaway":"Na zamknięcie dokończ zdanie: „Jako pierwsze wdrażam ___, a przed użyciem sprawdzę ___.”",
+      "trainer":{"guide":"Zachęć do małego, odwracalnego testu. Poproś uczestników o jeden konkretny pierwszy krok i sposób oceny.","golden":"Dobry workflow ma określone zadanie, zakres danych, kontrolę człowieka, test i mierzalny sygnał powodzenia.","pitfalls":["Plan jest ogólny i nie ma właściciela testu","Brak reguły weryfikacji","Użycie prawdziwych danych bez sprawdzenia zasad"],"questions":["Jaki będzie pierwszy test w ciągu tygodnia?","Po czym poznasz, że workflow pomaga?"]}
+    }
+  ]
+}

@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>BudMax Deal Desk — reference trenerski</title>
+  <style>
+    :root {
+      --ink: #18201e;
+      --muted: #65706b;
+      --line: #e1e7e3;
+      --paper: #f4f6f3;
+      --card: #fff;
+      --green: #b7ef65;
+      --green-dark: #335c20;
+      --green-wash: #edf8e0;
+      --amber: #8b5a13;
+      --amber-wash: #fff4df;
+      --red: #984b41;
+      --red-wash: #faece8;
+      --dark: #18201e;
+      --radius: 17px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 320px; background: var(--paper); }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    .shell { max-width: 1440px; margin: 0 auto; padding: 24px clamp(16px, 3vw, 42px) 48px; }
+    .topline { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin-bottom: 19px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .brand-mark { display: grid; place-items: center; width: 31px; height: 31px; border-radius: 9px; background: var(--green); color: var(--ink); font-size: 16px; letter-spacing: -.08em; }
+    .top-tags { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px; }
+    .tag { padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: #53605a; font-size: 10px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .tag.training { border-color: #c5dfa8; background: var(--green-wash); color: var(--green-dark); }
+    .tag.trainer { border-color: #ead6b0; background: var(--amber-wash); color: var(--amber); }
+    .hero { position: relative; overflow: hidden; border-radius: 24px; padding: clamp(24px, 4vw, 48px); background: var(--dark); color: #fff; }
+    .hero:after { content: ""; position: absolute; width: 330px; height: 330px; right: -74px; top: -136px; border: 1px solid rgba(183,239,101,.25); border-radius: 50%; box-shadow: 0 0 0 35px rgba(183,239,101,.035), 0 0 0 78px rgba(183,239,101,.025); pointer-events: none; }
+    .hero-kicker { margin: 0 0 15px; color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    h1 { max-width: 760px; margin: 0; font-size: clamp(34px, 5vw, 62px); line-height: .98; letter-spacing: -.055em; }
+    .hero-copy { max-width: 690px; margin: 18px 0 0; color: #d2dad5; font-size: 15px; line-height: 1.6; }
+    .hero-bottom { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 28px; }
+    .hero-stat { display: flex; align-items: center; gap: 10px; padding: 10px 13px; border: 1px solid rgba(255,255,255,.16); border-radius: 12px; color: #dce3df; font-size: 12px; }
+    .hero-stat strong { color: #fff; font-size: 17px; letter-spacing: -.03em; }
+    .notice { display: flex; align-items: flex-start; gap: 10px; margin: 15px 0 22px; padding: 13px 15px; border: 1px solid #e8d7b8; border-radius: 13px; background: #fff9ed; color: #604814; font-size: 12px; line-height: 1.55; }
+    .notice b { color: #46340e; }
+    .notice-mark { display: grid; flex: 0 0 21px; place-items: center; width: 21px; height: 21px; border-radius: 7px; background: #f3dfb7; font-weight: 900; }
+    .section-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+    .section-nav a { padding: 8px 11px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: #47524d; text-decoration: none; font-size: 11px; font-weight: 700; }
+    .section-nav a:hover, .section-nav a:focus-visible { border-color: #9cc66d; outline: 2px solid #d7edbe; }
+    .layout { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(360px, .98fr); gap: 16px; align-items: start; }
+    .stack { display: grid; gap: 16px; min-width: 0; }
+    .card { min-width: 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); box-shadow: 0 5px 18px rgba(27,43,33,.035); }
+    .card-pad { padding: 21px; }
+    .card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 17px; }
+    .eyebrow { margin: 0 0 6px; color: #75817a; font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    h2 { margin: 0; font-size: 20px; letter-spacing: -.035em; line-height: 1.15; }
+    h3 { margin: 0; font-size: 14px; letter-spacing: -.02em; }
+    .card-desc { margin: 6px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+    .mini-label { color: #839087; font-size: 9px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+    .snapshot-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+    .client-name { margin: 2px 0 0; font-size: 18px; font-weight: 800; letter-spacing: -.04em; }
+    .client-meta { margin: 5px 0 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+    .client-chip { white-space: nowrap; padding: 7px 9px; border-radius: 9px; background: var(--green-wash); color: var(--green-dark); font-size: 10px; font-weight: 800; }
+    .metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 17px 0; }
+    .metric { min-height: 74px; padding: 11px 10px; border: 1px solid #e8ece8; border-radius: 11px; background: #fbfcfb; }
+    .metric strong { display: block; margin-top: 8px; font-size: 18px; letter-spacing: -.05em; }
+    .metric small { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; line-height: 1.35; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .bullet-list { display: grid; gap: 8px; margin: 9px 0 0; padding: 0; list-style: none; }
+    .bullet-list li { display: flex; gap: 8px; align-items: flex-start; color: #45524b; font-size: 11px; line-height: 1.45; }
+    .bullet-list li:before { content: ""; flex: 0 0 5px; width: 5px; height: 5px; margin-top: 5px; border-radius: 50%; background: #77a84a; }
+    .unknown-list li:before { background: #d29b43; }
+    .controls { display: grid; gap: 14px; }
+    .control-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 9px; }
+    .control-row label { color: #39453f; font-size: 12px; font-weight: 700; }
+    .number-input { width: 106px; padding: 8px 9px; border: 1px solid #dbe3dd; border-radius: 9px; color: var(--ink); background: white; text-align: right; font-weight: 750; }
+    .range-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .range-head label { color: #39453f; font-size: 12px; font-weight: 700; }
+    .range-value { min-width: 43px; color: #52614f; text-align: right; font-size: 11px; font-weight: 800; }
+    input[type="range"] { width: 100%; height: 5px; margin: 12px 0 2px; border-radius: 99px; accent-color: #719e42; cursor: pointer; }
+    .range-help { margin: 0; color: #87918b; font-size: 10px; line-height: 1.4; }
+    .scenario-note { margin: 0; padding: 9px 10px; border-radius: 9px; background: #f5f7f3; color: #68746c; font-size: 10px; line-height: 1.5; }
+    .weight-summary { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 13px; border-top: 1px solid var(--line); }
+    .weight-pill { padding: 6px 8px; border-radius: 8px; background: #f1f4f1; color: #57635c; font-size: 10px; font-weight: 700; }
+    .reset-button { padding: 7px 10px; border: 1px solid var(--line); border-radius: 9px; background: white; color: #59645e; font-size: 10px; font-weight: 750; }
+    .reset-button:hover { background: #f4f7f4; }
+    .ranking-box { padding: 13px; border-radius: 12px; background: var(--dark); color: #fff; }
+    .ranking-title { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .ranking-title .mini-label { color: #a8b5ad; }
+    .ranking-title strong { font-size: 12px; }
+    .ranking-explainer { margin: 7px 0 0; color: #c4cdc7; font-size: 10px; line-height: 1.5; }
+    .ranking-list { display: grid; gap: 12px; margin-top: 14px; }
+    .rank-row { display: grid; grid-template-columns: 26px minmax(90px, 1fr) minmax(90px, 1.45fr) 42px; gap: 9px; align-items: center; }
+    .rank-num { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 7px; background: rgba(255,255,255,.11); color: #dbe4dd; font-size: 11px; font-weight: 800; }
+    .rank-name { color: #edf3ee; font-size: 11px; font-weight: 750; }
+    .bar { height: 8px; overflow: hidden; border-radius: 99px; background: rgba(255,255,255,.13); }
+    .bar > i { display: block; height: 100%; border-radius: inherit; background: var(--green); transition: width .2s ease; }
+    .score { color: var(--green); text-align: right; font-size: 12px; font-weight: 850; }
+    .no-weight { margin: 12px 0 0; color: #f4ce81; font-size: 11px; }
+    .score-detail { margin-top: 13px; border-top: 1px solid rgba(255,255,255,.16); padding-top: 11px; }
+    .score-detail summary { color: #dbe5de; cursor: pointer; font-size: 10px; font-weight: 750; }
+    .score-detail p { color: #bdc9c1; font-size: 10px; line-height: 1.5; }
+    .score-detail table { min-width: 0; margin-top: 8px; }
+    .score-detail th, .score-detail td { padding: 7px 6px; border-color: rgba(255,255,255,.11); color: #d9e1dc; font-size: 9px; }
+    .score-detail th { background: rgba(255,255,255,.06); color: #aebbb2; }
+    .comparison-card { grid-column: 1 / -1; }
+    .comparison-intro { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; }
+    .price-label { display: inline-flex; align-items: center; gap: 7px; padding: 7px 9px; border: 1px solid #cfe2ba; border-radius: 9px; background: var(--green-wash); color: #456a2c; font-size: 10px; font-weight: 800; white-space: nowrap; }
+    .table-wrap { overflow-x: auto; margin-top: 8px; border: 1px solid var(--line); border-radius: 13px; }
+    table { width: 100%; min-width: 860px; border-collapse: collapse; }
+    th, td { padding: 12px; border-bottom: 1px solid #edf0ed; text-align: left; vertical-align: top; }
+    th { background: #f7f9f7; color: #718078; font-size: 9px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    td { color: #48554e; font-size: 11px; line-height: 1.45; }
+    tbody tr:last-child td { border-bottom: 0; }
+    td strong { color: var(--ink); }
+    .dealer-name { color: var(--ink); font-weight: 800; }
+    .dealer-city { display: block; margin-top: 3px; color: #859089; font-size: 10px; }
+    .money { white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .math { color: #718078; font-size: 10px; }
+    .status { display: inline-flex; align-items: center; margin: 2px 3px 2px 0; padding: 4px 6px; border-radius: 6px; background: #f0f3f0; color: #5a665f; font-size: 9px; font-weight: 700; }
+    .status.warn { background: var(--amber-wash); color: var(--amber); }
+    .status.good { background: var(--green-wash); color: var(--green-dark); }
+    .cost-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-top: 13px; }
+    .cost-cell { padding: 12px; border: 1px solid #e7ece7; border-radius: 11px; background: #fbfcfb; }
+    .cost-cell-top { display: flex; justify-content: space-between; gap: 8px; color: #6c7971; font-size: 10px; }
+    .cost-cell strong { display: block; margin-top: 7px; color: var(--ink); font-size: 18px; letter-spacing: -.04em; }
+    .cost-cell small { display: block; margin-top: 4px; color: #7f8a83; font-size: 10px; line-height: 1.4; }
+    .formula { display: flex; align-items: flex-start; gap: 9px; margin-top: 13px; padding: 11px 12px; border-radius: 10px; background: #f2f5f2; color: #57635c; font-size: 10px; line-height: 1.55; }
+    .formula b { color: #36433b; }
+    .formula-code { white-space: nowrap; color: #385526; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; }
+    .cockpit { background: var(--dark); color: white; border-color: var(--dark); }
+    .cockpit .eyebrow { color: #a9b7ad; }
+    .cockpit h2 { color: white; }
+    .cockpit .card-desc { color: #b8c3bc; }
+    .objection { margin: 16px 0; padding: 13px; border-left: 3px solid var(--green); border-radius: 0 10px 10px 0; background: rgba(255,255,255,.07); color: #f0f4f1; font-size: 12px; line-height: 1.55; }
+    .objection small { display: block; margin-bottom: 5px; color: var(--green); font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .argument-grid { display: grid; gap: 8px; margin-top: 10px; }
+    .argument { display: flex; gap: 9px; color: #dce4de; font-size: 11px; line-height: 1.5; }
+    .argument:before { content: "+"; flex: 0 0 18px; display: grid; place-items: center; width: 18px; height: 18px; border-radius: 6px; background: rgba(183,239,101,.15); color: var(--green); font-weight: 900; }
+    .cockpit .mini-label { color: #9faca3; }
+    .cockpit .bullet-list li { color: #dce4de; }
+    .cockpit .bullet-list li:before { background: var(--green); }
+    .divider { height: 1px; margin: 15px 0; background: rgba(255,255,255,.14); }
+    .warning-box { margin-top: 14px; padding: 11px 12px; border: 1px solid rgba(242,203,132,.3); border-radius: 10px; background: rgba(242,203,132,.08); color: #f0d7a7; font-size: 10px; line-height: 1.5; }
+    .trainer-section { margin-top: 16px; padding: 18px 20px; border: 1px solid #ead8b8; border-radius: var(--radius); background: #fffaf0; }
+    .trainer-section h2 { font-size: 16px; }
+    .trainer-grid { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 17px; margin-top: 12px; }
+    .trainer-grid p, .trainer-grid li { color: #68583d; font-size: 11px; line-height: 1.55; }
+    .trainer-grid p { margin: 7px 0 0; }
+    .trainer-grid ul { margin: 7px 0 0; padding-left: 16px; }
+    .footer-note { display: flex; justify-content: space-between; gap: 18px; margin: 13px 2px 0; color: #7b8780; font-size: 10px; line-height: 1.5; }
+    :focus-visible { outline: 3px solid #9cc66d; outline-offset: 3px; }
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      .comparison-card { grid-column: auto; }
+      .trainer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .shell { padding: 14px 12px 30px; }
+      .topline { align-items: flex-start; }
+      .brand { font-size: 10px; }
+      .top-tags { max-width: 190px; }
+      .tag { padding: 6px 8px; font-size: 8px; }
+      .hero { border-radius: 19px; padding: 24px 20px; }
+      .hero:after { right: -210px; }
+      .hero-copy { font-size: 13px; }
+      .hero-stat { flex: 1 1 130px; }
+      .metrics { grid-template-columns: 1fr 1fr; }
+      .two-col { grid-template-columns: 1fr; }
+      .card-pad { padding: 16px; }
+      .comparison-intro { display: block; }
+      .price-label { margin-top: 12px; white-space: normal; }
+      .cost-strip { grid-template-columns: 1fr; }
+      .trainer-grid { grid-template-columns: 1fr; }
+      .footer-note { display: block; }
+      .footer-note span { display: block; margin-top: 4px; }
+    }
+    @media print {
+      body { background: white; }
+      .shell { max-width: none; padding: 0; }
+      .section-nav, .reset-button, input { display: none !important; }
+      .hero, .cockpit, .ranking-box { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .card, .trainer-section { break-inside: avoid; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="topline">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">M</span> MHC Mobility · Sales playbook</div>
+      <div class="top-tags">
+        <span class="tag training">TRAINING / FICTIONAL DATA</span>
+        <span class="tag trainer">Trainer reference · reveal after first attempt</span>
+      </div>
+    </div>
+
+    <header class="hero">
+      <p class="hero-kicker">Module 07 · AI builds a tool</p>
+      <h1>BudMax<br>Deal Desk</h1>
+      <p class="hero-copy">One working view for the client case, three dealer quotes and a conversation plan. Adjust the scenario to see how declared priorities change the ranking. Every score uses the visible quote data and formulas below.</p>
+      <div class="hero-bottom">
+        <div class="hero-stat"><strong>12 + 2</strong><span>vehicles requested</span></div>
+        <div class="hero-stat"><strong>48 mo</strong><span>requested term</span></div>
+        <div class="hero-stat"><strong>45,000</strong><span>km/year · sales fleet</span></div>
+      </div>
+    </header>
+
+    <div class="notice" role="note">
+      <span class="notice-mark" aria-hidden="true">!</span>
+      <div><b>Reference trenerski.</b> Pokaż po pierwszej próbie uczestnika. Wszystkie firmy, osoby, kwoty i warunki są fikcyjne i służą wyłącznie szkoleniu. Nie używaj rzeczywistych danych klientów ani warunków handlowych w niezatwierdzonych narzędziach.</div>
+    </div>
+
+    <nav class="section-nav" aria-label="Przejdź do sekcji">
+      <a href="#client">Client snapshot</a>
+      <a href="#scenario">Scenario controls</a>
+      <a href="#comparison">Dealer comparison</a>
+      <a href="#cockpit">Negotiation cockpit</a>
+      <a href="#trainer-notes">Notatki trenera</a>
+    </nav>
+
+    <div class="layout">
+      <div class="stack">
+        <section class="card card-pad" id="client" aria-labelledby="client-title">
+          <div class="snapshot-top">
+            <div>
+              <p class="eyebrow">01 · Client snapshot</p>
+              <h2 id="client-title" class="client-name">BudMax Instalacje Sp. z o.o.</h2>
+              <p class="client-meta">Instalacje HVAC · działalność ogólnopolska · ok. 140 pracowników<br>Kontakt: Anna Kowalczyk, Office &amp; Fleet Manager</p>
+            </div>
+            <span class="client-chip">CASE · FICTIONAL</span>
+          </div>
+          <div class="metrics">
+            <div class="metric"><span class="mini-label">Flota</span><strong>12 + 2</strong><small>handlowcy + zarząd</small></div>
+            <div class="metric"><span class="mini-label">Przebieg</span><strong>45 tys.</strong><small>km / rok · handlowcy</small></div>
+            <div class="metric"><span class="mini-label">Okres</span><strong>48</strong><small>miesięcy</small></div>
+            <div class="metric"><span class="mini-label">Start</span><strong>Luty</strong><small>rok do potwierdzenia</small></div>
+          </div>
+          <div class="two-col">
+            <div>
+              <span class="mini-label">Potrzeba i wymagania</span>
+              <ul class="bullet-list">
+                <li>12 aut dla handlowców; 2 auta dla zarządu.</li>
+                <li>Kombi lub SUV klasy C; hybryda lub benzyna.</li>
+                <li>Duży bagażnik na próbki i katalogi; hak niepotrzebny.</li>
+                <li>Budżet: do 2 400 zł netto/mies. za auto handlowca; do 4 200 zł za auto zarządu.</li>
+              </ul>
+            </div>
+            <div>
+              <span class="mini-label">Otwarte pytania</span>
+              <ul class="bullet-list unknown-list">
+                <li>Jaki dokładny termin startu i czy możliwe jest etapowe wydanie?</li>
+                <li>Jakie są wymagania dla 2 aut zarządu? Tabela dealerów obejmuje Octavię.</li>
+                <li>Jaki limit przebiegu i zakres usług obejmuje każda oferta?</li>
+                <li>Czy cena ofert dealerów ma być podstawą zakupu czy osobnej wyceny najmu?</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="card card-pad" id="scenario" aria-labelledby="scenario-title">
+          <div class="card-head">
+            <div>
+              <p class="eyebrow">02 · Scenario controls</p>
+              <h2 id="scenario-title">Ustaw priorytety rozmowy</h2>
+              <p class="card-desc">Ranking przelicza się od razu. Zmień wagi, aby pokazać kompromisy między ceną, terminem i wartością pakietów.</p>
+            </div>
+            <button class="reset-button" id="reset-button" type="button">Przywróć scenariusz</button>
+          </div>
+          <div class="controls">
+            <div class="control-row">
+              <label for="cars">Liczba aut w porównaniu</label>
+              <input class="number-input" id="cars" type="number" min="1" step="1" value="12" inputmode="numeric" aria-describedby="cars-help">
+            </div>
+            <p class="range-help" id="cars-help">Tabela dotyczy Octavii Combi. Zmiana liczby skaluje ceny jednostkowe; rabat przy innej wielkości zamówienia trzeba ponownie potwierdzić. Dwa auta zarządu nie są wycenione w tej tabeli.</p>
+            <div class="control-row">
+              <label for="mileage">Roczny przebieg · scenariusz</label>
+              <input class="number-input" id="mileage" type="number" min="0" step="1000" value="45000" inputmode="numeric" aria-describedby="mileage-help">
+            </div>
+            <p class="range-help" id="mileage-help">Oferty dealerów nie podają limitów kilometrów. Ta kontrolka zmienia kontekst i ostrzeżenie, nie cenę ani dopasowanie przebiegowe.</p>
+            <p class="scenario-note" id="scenario-impact" aria-live="polite"></p>
+            <div class="range-control">
+              <div class="range-head"><label for="weight-speed">Znaczenie szybkości dostawy</label><output class="range-value" id="speed-value" for="weight-speed">30%</output></div>
+              <input id="weight-speed" type="range" min="0" max="100" value="30">
+              <p class="range-help">Skala terminu z ofert: 6, 8 i 14 tygodni. Cztery auta C od ręki pokazujemy osobno; nie zakładamy ich rezerwacji.</p>
+            </div>
+            <div class="range-control">
+              <div class="range-head"><label for="weight-price">Znaczenie ceny</label><output class="range-value" id="price-value" for="weight-price">50%</output></div>
+              <input id="weight-price" type="range" min="0" max="100" value="50">
+              <p class="range-help">Koszt obejmuje rabat i wyłącznie transport z podaną ceną. Niepodane opłaty pozostają nieznane.</p>
+            </div>
+            <div class="range-control">
+              <div class="range-head"><label for="weight-equipment">Znaczenie pakietów</label><output class="range-value" id="equipment-value" for="weight-equipment">20%</output></div>
+              <input id="weight-equipment" type="range" min="0" max="100" value="20">
+              <p class="range-help">Wartość pakietu z cennika jest tylko wskaźnikiem; nie oznacza, że klient ceni wyposażenie w tej samej kwocie.</p>
+            </div>
+            <div class="weight-summary" aria-label="Wagi użyte w rankingu">
+              <span class="weight-pill">Cena: <span id="pill-price">50</span></span>
+              <span class="weight-pill">Termin: <span id="pill-speed">30</span></span>
+              <span class="weight-pill">Pakiety: <span id="pill-equipment">20</span></span>
+            </div>
+          </div>
+          <div class="ranking-box" style="margin-top:17px" aria-live="polite">
+            <div class="ranking-title"><span class="mini-label">Wynik scenariusza</span><strong>Ranking ważony · nie decyzja</strong></div>
+            <p class="ranking-explainer">Każdy wynik to średnia ważona trzech jawnych wskaźników od 0 do 100. Zmiana wag może zmienić kolejność. Przed decyzją potwierdź warunki, dostępność i przydatność pakietów.</p>
+            <div class="ranking-list" id="ranking-list"></div>
+            <p class="no-weight" id="no-weight" hidden>Ustaw co najmniej jedną wagę powyżej zera, aby wyliczyć ranking.</p>
+            <details class="score-detail">
+              <summary>Wzory wskaźników i rozkład wyniku · sprawdź obliczenie</summary>
+              <p>Cena = najniższy znany koszt jednostkowy ÷ koszt tego dealera × 100. Termin = (14 tyg. − termin) ÷ (14 − 6) × 100. Pakiety = wartość z cennika ÷ 7 400 zł × 100. Wynik = suma (wskaźnik × waga) ÷ suma wag. Niepodany transport A/C wyłączono z ceny porównawczej.</p>
+              <div id="score-detail-content"></div>
+            </details>
+          </div>
+        </section>
+      </div>
+
+      <div class="stack">
+        <section class="card card-pad" id="comparison" aria-labelledby="comparison-title">
+          <div class="comparison-intro">
+            <div>
+              <p class="eyebrow">03 · Dealer comparison</p>
+              <h2 id="comparison-title">Trzy oferty · jeden model</h2>
+              <p class="card-desc">Skoda Octavia Combi 1.5 TSI mHEV 150 KM DSG Selection. Ceny zakupu netto z materiału szkoleniowego.</p>
+            </div>
+            <span class="price-label">CENA ZAKUPU ≠ RATA NAJMU</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Dealer</th>
+                  <th scope="col">Cena po rabacie / auto</th>
+                  <th scope="col">Pakiety / auto</th>
+                  <th scope="col">Termin i dostępność</th>
+                  <th scope="col">Uwagi / ryzyka</th>
+                </tr>
+              </thead>
+              <tbody id="offer-rows"></tbody>
+            </table>
+          </div>
+          <div class="cost-strip" id="cost-strip" aria-live="polite"></div>
+          <div class="formula">
+            <span class="formula-code">cena × (1 − rabat) + transport</span>
+            <span><b>Krok po kroku:</b> cena po rabacie za auto, jawny koszt transportu za auto, następnie suma dla wybranej liczby aut. Wartość pakietów jest pokazana obok, nie odejmowana od ceny. Koszty transportu bez podanej kwoty są wyłączone, a nie uznane za bezpłatne.</span>
+          </div>
+        </section>
+
+        <section class="card card-pad cockpit" id="cockpit" aria-labelledby="cockpit-title">
+          <p class="eyebrow">04 · Negotiation cockpit</p>
+          <h2 id="cockpit-title">Prowadź rozmowę od wartości</h2>
+          <p class="card-desc">Połącz to, co wiemy o potrzebie, z pytaniami, które domkną brakujący kontekst.</p>
+          <div class="objection">
+            <small>Obiekcja CFO · osobny role-play</small>
+            „FleetPro proponuje ratę niższą o 160 zł miesięcznie, ale bez opon zimowych i z limitem 40 tys. km”.
+          </div>
+          <span class="mini-label">Punkty wartości, które wynikają z case’u</span>
+          <div class="argument-grid">
+            <div class="argument">Handlowcy pokonują 45 000 km rocznie; limit z porównywanej obiekcji wymaga wyjaśnienia co do okresu.</div>
+            <div class="argument">Duży bagażnik ma pomieścić próbki i katalogi — dopasowanie wersji warto sprawdzić na wyposażeniu.</div>
+            <div class="argument">Cztery auta C są opisane jako dostępne od ręki; oferta nie potwierdza rezerwacji ani dostępności wszystkich 12.</div>
+          </div>
+          <div class="divider"></div>
+          <span class="mini-label">Pytania na kolejną rozmowę</span>
+          <ul class="bullet-list">
+            <li>Limit 40 tys. km w ofercie FleetPro dotyczy roku czy całego kontraktu?</li>
+            <li>Jaki koszt przekroczenia limitu i jaki zakres opon obejmuje każda propozycja?</li>
+            <li>Czy cztery auta od ręki można zarezerwować i jaki jest plan wydania pozostałych?</li>
+            <li>Czy porównujemy samą ratę, czy całkowity koszt i zakres usług przez 48 miesięcy?</li>
+          </ul>
+          <div class="warning-box"><b>Nieporównywalne dane:</b> oferta FleetPro dotyczy raty najmu, a tabela A/B/C podaje ceny zakupu aut. Brak rat najmu, limitów km i kosztu przekroczeń uniemożliwia policzenie TCO ani zweryfikowanie różnicy 160 zł.</div>
+        </section>
+      </div>
+    </div>
+
+    <section class="trainer-section" id="trainer-notes" aria-labelledby="trainer-title">
+      <p class="eyebrow">Trainer-only · golden output</p>
+      <h2 id="trainer-title">Jak omówić wynik bez jednej „jedynej” rekomendacji</h2>
+      <div class="trainer-grid">
+        <div>
+          <span class="mini-label">Przykład kontroli ręcznej · Dealer B</span>
+          <p>132 500 × (1 − 0,16) = <b>111 300 zł</b> po rabacie za auto. Transport: 900 × 12 = <b>10 800 zł</b>. Łącznie znany koszt dla 12 aut: 111 300 × 12 + 10 800 = <b>1 346 400 zł netto</b>.</p>
+        </div>
+        <div>
+          <span class="mini-label">Ograniczenia, które trzeba zauważyć</span>
+          <ul>
+            <li>C: 4 auta od ręki, nie 12; pozostałe w podanym terminie 6 tygodni.</li>
+            <li>C: inny rocznik cennika i 7-dniowa ważność oferty.</li>
+            <li>B: transport 900 zł/szt. A/C: osobny koszt transportu niepodany.</li>
+            <li>Nieznane: dostępność A/B, limity przebiegu, rata najmu i TCO.</li>
+          </ul>
+        </div>
+        <div>
+          <span class="mini-label">Pytania do grupy</span>
+          <ul>
+            <li>Jak zmienił się ranking po zwiększeniu wagi terminu?</li>
+            <li>Które dane są ceną, a które tylko nominalną wartością pakietu?</li>
+            <li>Jakie potwierdzenie jest konieczne przed obietnicą terminu klientowi?</li>
+            <li>Których informacji AI nie mogło wywnioskować z tabeli?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      <span>BudMax Deal Desk · materiał szkoleniowy, dane fikcyjne.</span>
+      <span>Wynik rankingu jest demonstracją deterministycznego modelu i nie zastępuje wyceny ani decyzji handlowej.</span>
+    </div>
+  </main>
+
+  <script>
+    "use strict";
+    const offers = [
+      {
+        id: "A",
+        city: "Warszawa",
+        catalogue: 132500,
+        discount: 0.14,
+        packageValue: 3100,
+        packageName: "Pakiet zimowy",
+        weeks: 8,
+        transportPerCar: 0,
+        transportKnown: false,
+        transportNote: "Wydanie w salonie; osobnej kwoty transportu nie podano.",
+        risk: "Brak informacji o liczbie aut dostępnych od ręki.",
+        priceYearNote: "",
+        validity: ""
+      },
+      {
+        id: "B",
+        city: "Łódź",
+        catalogue: 132500,
+        discount: 0.16,
+        packageValue: 0,
+        packageName: "Brak pakietów w cenie",
+        weeks: 14,
+        transportPerCar: 900,
+        transportKnown: true,
+        transportNote: "Transport do klienta: 900 zł / auto.",
+        risk: "Brak informacji o liczbie aut dostępnych od ręki.",
+        priceYearNote: "",
+        validity: ""
+      },
+      {
+        id: "C",
+        city: "Poznań",
+        catalogue: 131900,
+        discount: 0.12,
+        packageValue: 7400,
+        packageName: "Zimowy + Business (nawigacja, kamera)",
+        weeks: 6,
+        transportPerCar: 0,
+        transportKnown: false,
+        transportNote: "Osobnej kwoty transportu nie podano.",
+        risk: "Tylko 4 auta od ręki; pozostałe w podanym terminie 6 tygodni.",
+        priceYearNote: "Inny rocznik cennika.",
+        validity: "Ważność oferty: 7 dni."
+      }
+    ];
+
+    const pln = new Intl.NumberFormat("pl-PL", { style: "currency", currency: "PLN", maximumFractionDigits: 0 });
+    const integer = new Intl.NumberFormat("pl-PL", { maximumFractionDigits: 0 });
+    const percent = value => Math.round(value * 100) + "%";
+    const afterDiscount = offer => offer.catalogue * (1 - offer.discount);
+    const knownUnitCost = offer => afterDiscount(offer) + offer.transportPerCar;
+    const offerRows = document.getElementById("offer-rows");
+    const costStrip = document.getElementById("cost-strip");
+    const rankingList = document.getElementById("ranking-list");
+    const noWeight = document.getElementById("no-weight");
+    const scoreDetailContent = document.getElementById("score-detail-content");
+
+    function renderOfferRows() {
+      offerRows.innerHTML = offers.map(offer => {
+        const packageText = offer.packageName + (offer.packageValue ? " · " + pln.format(offer.packageValue) + " wg cennika" : "");
+        const statuses = [
+          offer.priceYearNote ? '<span class="status warn">' + offer.priceYearNote + '</span>' : "",
+          offer.validity ? '<span class="status warn">' + offer.validity + '</span>' : "",
+          offer.id === "C" ? '<span class="status good">4 auta od ręki</span>' : '<span class="status warn">Stock: do potwierdzenia</span>'
+        ].join("");
+        return '<tr>' +
+          '<td><span class="dealer-name">Dealer ' + offer.id + '</span><span class="dealer-city">' + offer.city + '</span></td>' +
+          '<td><strong class="money">' + pln.format(afterDiscount(offer)) + '</strong><div class="math">' + pln.format(offer.catalogue) + ' × (1 − ' + percent(offer.discount) + ')</div></td>' +
+          '<td><strong class="money">' + pln.format(offer.packageValue) + '</strong><div class="math">' + packageText + '</div></td>' +
+          '<td><strong>' + offer.weeks + ' tyg.</strong><div class="math">' + (offer.id === "C" ? "4 auta od ręki; pozostałe według terminu 6 tyg." : "Dostępność ilościowa niepodana") + '</div></td>' +
+          '<td>' + statuses + '<div class="math">' + offer.transportNote + '</div></td>' +
+          '</tr>';
+      }).join("");
+    }
+
+    function readScenario() {
+      const carsInput = document.getElementById("cars");
+      const mileageInput = document.getElementById("mileage");
+      const cars = Math.max(1, Math.floor(Number(carsInput.value) || 1));
+      const mileage = Math.max(0, Math.floor(Number(mileageInput.value) || 0));
+      carsInput.value = String(cars);
+      mileageInput.value = String(mileage);
+      return {
+        cars,
+        mileage,
+        speed: Number(document.getElementById("weight-speed").value),
+        price: Number(document.getElementById("weight-price").value),
+        equipment: Number(document.getElementById("weight-equipment").value)
+      };
+    }
+
+    function getScores(scenario) {
+      const lowestKnownUnitCost = Math.min(...offers.map(knownUnitCost));
+      const highestPackageValue = Math.max(...offers.map(offer => offer.packageValue));
+      const shortestTerm = Math.min(...offers.map(offer => offer.weeks));
+      const longestTerm = Math.max(...offers.map(offer => offer.weeks));
+      const weightTotal = scenario.price + scenario.speed + scenario.equipment;
+      return offers.map(offer => {
+        const priceScore = lowestKnownUnitCost / knownUnitCost(offer) * 100;
+        const equipmentScore = highestPackageValue ? offer.packageValue / highestPackageValue * 100 : 0;
+        const deliveryScore = longestTerm === shortestTerm ? 100 : (longestTerm - offer.weeks) / (longestTerm - shortestTerm) * 100;
+        const weighted = weightTotal ? (
+          priceScore * scenario.price +
+          deliveryScore * scenario.speed +
+          equipmentScore * scenario.equipment
+        ) / weightTotal : 0;
+        return { offer, priceScore, deliveryScore, equipmentScore, weighted };
+      }).sort((a, b) => b.weighted - a.weighted || knownUnitCost(a.offer) - knownUnitCost(b.offer) || a.offer.id.localeCompare(b.offer.id));
+    }
+
+    function renderRanking(scenario) {
+      const scores = getScores(scenario);
+      const totalWeight = scenario.price + scenario.speed + scenario.equipment;
+      noWeight.hidden = totalWeight !== 0;
+      rankingList.innerHTML = scores.map((entry, index) => {
+        const score = totalWeight ? entry.weighted : 0;
+        return '<div class="rank-row">' +
+          '<span class="rank-num">' + (index + 1) + '</span>' +
+          '<span class="rank-name">Dealer ' + entry.offer.id + '</span>' +
+          '<span class="bar" aria-label="Wynik ' + score.toFixed(1) + ' na 100"><i style="width:' + score.toFixed(1) + '%"></i></span>' +
+          '<span class="score">' + (totalWeight ? score.toFixed(1) : "—") + '</span>' +
+          '</div>';
+      }).join("");
+    }
+
+    function renderScoreDetails(scenario) {
+      const scores = getScores(scenario);
+      const weightTotal = scenario.price + scenario.speed + scenario.equipment;
+      const rows = scores.map(entry => {
+        const offer = entry.offer;
+        const terms = weightTotal
+          ? "(" + entry.priceScore.toFixed(1) + "×" + scenario.price + " + " + entry.deliveryScore.toFixed(1) + "×" + scenario.speed + " + " + entry.equipmentScore.toFixed(1) + "×" + scenario.equipment + ") ÷ " + weightTotal + " = " + entry.weighted.toFixed(1)
+          : "Brak wag";
+        return "<tr>" +
+          "<td>Dealer " + offer.id + "</td>" +
+          "<td>" + pln.format(knownUnitCost(offer)) + "<br>" + entry.priceScore.toFixed(1) + "</td>" +
+          "<td>" + offer.weeks + " tyg.<br>" + entry.deliveryScore.toFixed(1) + "</td>" +
+          "<td>" + pln.format(offer.packageValue) + "<br>" + entry.equipmentScore.toFixed(1) + "</td>" +
+          "<td>" + terms + "</td>" +
+          "</tr>";
+      }).join("");
+      scoreDetailContent.innerHTML = '<table><thead><tr><th>Oferta</th><th>Koszt / score ceny</th><th>Termin / score</th><th>Pakiet / score</th><th>Wynik ważony</th></tr></thead><tbody>' + rows + '</tbody></table>';
+    }
+
+    function renderCosts(scenario) {
+      costStrip.innerHTML = offers.map(offer => {
+        const net = afterDiscount(offer);
+        const knownTransport = offer.transportPerCar * scenario.cars;
+        const total = knownUnitCost(offer) * scenario.cars;
+        const packageTotal = offer.packageValue * scenario.cars;
+        const transportText = offer.transportKnown ? "w tym transport " + pln.format(knownTransport) : "transport: kwota niepodana";
+        return '<div class="cost-cell">' +
+          '<div class="cost-cell-top"><span>Dealer ' + offer.id + ' · ' + scenario.cars + ' aut</span><span>netto · znane pozycje</span></div>' +
+          '<strong>' + pln.format(total) + '</strong>' +
+          '<small>' + pln.format(net) + ' × ' + scenario.cars + (offer.transportKnown ? " + " + pln.format(knownTransport) : "") + ' · ' + transportText + '</small>' +
+          '<small>Wartość pakietów wg cennika: ' + pln.format(packageTotal) + ' łącznie; nie odjęto od ceny.</small>' +
+          '</div>';
+      }).join("");
+    }
+
+    function render() {
+      const scenario = readScenario();
+      document.getElementById("speed-value").value = scenario.speed + "%";
+      document.getElementById("speed-value").textContent = scenario.speed + "%";
+      document.getElementById("price-value").value = scenario.price + "%";
+      document.getElementById("price-value").textContent = scenario.price + "%";
+      document.getElementById("equipment-value").value = scenario.equipment + "%";
+      document.getElementById("equipment-value").textContent = scenario.equipment + "%";
+      document.getElementById("pill-speed").textContent = scenario.speed;
+      document.getElementById("pill-price").textContent = scenario.price;
+      document.getElementById("pill-equipment").textContent = scenario.equipment;
+      const mileageLine = scenario.mileage === 45000
+        ? "45 000 km/rok to przebieg podany dla handlowców."
+        : integer.format(scenario.mileage) + " km/rok to scenariusz; w case’ie podano 45 000 km/rok dla handlowców.";
+      document.getElementById("scenario-impact").textContent =
+        scenario.cars + (scenario.cars === 1 ? " auto" : " aut") + " · " + mileageLine +
+        " Ceny sumują się dla wybranej liczby aut; wskaźnik ceny za auto nie zmienia się, bo brak danych o progach rabatowych. Limitów przebiegu dealerzy nie podali, więc km nie wpływają na ranking.";
+      renderRanking(scenario);
+      renderScoreDetails(scenario);
+      renderCosts(scenario);
+    }
+
+    ["cars", "mileage"].forEach(id => {
+      document.getElementById(id).addEventListener("change", render);
+    });
+    ["weight-speed", "weight-price", "weight-equipment"].forEach(id => {
+      document.getElementById(id).addEventListener("input", render);
+    });
+    document.getElementById("reset-button").addEventListener("click", () => {
+      document.getElementById("cars").value = "12";
+      document.getElementById("mileage").value = "45000";
+      document.getElementById("weight-speed").value = "30";
+      document.getElementById("weight-price").value = "50";
+      document.getElementById("weight-equipment").value = "20";
+      render();
+    });
+    renderOfferRows();
+    render();
+  </script>
+</body>
+</html>
