@@ -35,6 +35,7 @@ Użyj przełącznika **Tryb trenera** w górnym pasku. Bezpośredni link dla pro
 - Pliki do ćwiczeń: `materials/`.
 - Przykładowe wyniki i warianty awaryjne: `fallback/`.
 - Osobny plik `materials/budmax_deal_desk_reference.html` jest referencyjną mikroaplikacją do pokazania po pierwszej próbie uczestników. To nie jest główna strona szkoleniowa.
+- Moduł 8 zawiera dwa odrębne ćwiczenia: główne wyszukiwanie klauzuli w dłuższej fikcyjnej umowie oraz opcjonalne, krótkie ćwiczenie reklamacyjne z osobnym plikiem.
 
 Zmiany w `main` uruchamiają GitHub Actions: workflow sprawdza składnię edytowalnych plików i publikuje stronę w GitHub Pages.
 
