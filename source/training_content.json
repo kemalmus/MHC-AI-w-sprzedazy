@@ -25,7 +25,7 @@
     {"time":"14:55–16:05","label":"9. AI Sales Lab","target":"module-9"},
     {"time":"16:05–16:25","label":"10. Bezpieczne użycie AI","target":"module-10"},
     {"time":"16:25–16:55","label":"11. Transfer do pracy","target":"module-11"},
-    {"time":"16:55–17:55","label":"12. Przetarg pod presją: jak wygrać z Arval na faktach","target":"module-12"},
+    {"time":"16:55–17:55","label":"12. Przetarg pod presją: jak wygrać z Arval na faktach (opcjonalnie)","target":"module-12"},
     {"time":"17:55–18:00","label":"Zamknięcie programu głównego","target":"module-12"},
     {"time":"18:00–18:30","label":"13. Przegląd narzędzi AI (opcjonalnie)","target":"module-13"}
   ],
@@ -189,7 +189,7 @@
       "trainer":{"guide":"Zachęć do małego, odwracalnego testu. Poproś uczestników o jeden konkretny pierwszy krok i sposób oceny.","golden":"Dobry workflow ma określone zadanie, zakres danych, kontrolę człowieka, test i mierzalny sygnał powodzenia.","pitfalls":["Plan jest ogólny i nie ma właściciela testu","Brak reguły weryfikacji","Użycie prawdziwych danych bez sprawdzenia zasad"],"questions":["Jaki będzie pierwszy test w ciągu tygodnia?","Po czym poznasz, że workflow pomaga?"]}
     },
     {
-      "id":12,"title":"Przetarg pod presją: jak wygrać z Arval na faktach","time":"60 min","duration":60,
+      "id":12,"title":"Przetarg pod presją: jak wygrać z Arval na faktach","time":"60 min · opcjonalny dodatek","duration":60,"optional":true,
       "objective":"Zbudować użyteczną kartę konkurencyjną, łącząc wyszukiwanie publicznych źródeł Arval, analizę plików ofertowych, opcjonalne zestawienie danych w arkuszu i symulację rozmowy.",
       "problem":"Porównanie samych deklaracji lub rat może prowadzić do nieuczciwych wniosków, jeśli brakuje źródeł, porównywalnego zakresu albo danych o potrzebach klienta.",
       "steps":[
