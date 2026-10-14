@@ -1,0 +1,119 @@
+MATERIAŁ SZKOLENIOWY – DANE FIKCYJNE  |  STRONA 1 / 4 · SYTUACJA I POTRZEBY
+
+Roboczy szkic propozycji dla BudMax
+
+Fikcyjny materiał szkoleniowy wersja do uzupełnienia
+
+1 Sytuacja klienta
+
+BudMax Instalacje Sp. z o.o. prowadzi ogólnopolską działalność w branży instalacji HVAC i zatrudnia około 140 osób. Kontakt w sprawie floty: Anna Kowalczyk, Office & Fleet Manager. Firma rozważa najem długoterminowy dla 12 samochodów handlowców i 2 samochodów zarządu.
+
+Obecna flota jest w leasingu, który kończy się w lutym; planowany start nowego rozwiązania przypada na luty.
+
+Handlowcy pokonują około 45 tys. km rocznie. Preferowane są nadwozia kombi lub SUV klasy C oraz napęd hybrydowy lub benzynowy.
+
+Termin wydania i uruchomienia: [DO UZUPEŁNIENIA: potwierdzić oczekiwaną datę wydania i pierwszy dzień użytkowania]
+
+Użytkowanie dwóch aut zarządu: [DO UZUPEŁNIENIA: ustalić przebieg i wymagania dla tej grupy]
+
+2 Kluczowe potrzeby
+
+Dopasować 12 aut handlowców do długich tras, dużego bagażnika i deklarowanego przebiegu.
+
+Uwzględnić 2 samochody dla zarządu, bez zakładania, że ich profil użytkowania jest taki sam jak aut handlowców.
+
+Punktem odniesienia jest budżet do 2 400 zł netto miesięcznie za auto handlowca i do 4 200 zł za auto zarządu.
+
+Kolejność kryteriów: [DO UZUPEŁNIENIA: ustalić priorytet między ratą, dostępnością, serwisem i przebiegiem]
+
+Oczekiwanie dotyczące auta zastępczego: Anna pyta o auto zastępcze w 24h; zakres usługi i jej dostępność wymagają potwierdzenia.
+
+MATERIAŁ SZKOLENIOWY – DANE FIKCYJNE  |  STRONA 2 / 4 · PROPONOWANE ROZWIĄZANIE
+
+3 Proponowane rozwiązanie
+
+Do rozmowy można przygotować wariant oparty na fikcyjnym pakiecie BUSINESS MOBILITY dla aut handlowców. Jego limit 45 tys. km/rok odpowiada deklarowanemu przebiegowi około 45 tys. km rocznie; pakiet obejmuje opony sezonowe, auto zastępcze do 24h i raport miesięczny floty. Dopasowanie trzeba sprawdzić dla przebiegu każdego auta, szczegółowego zakresu usługi oraz warunków kontraktowych.
+
+Ten wariant jest kandydatem do porównania, a nie zatwierdzoną ofertą. Nie znamy w materiale jego ceny ani dostępności.
+
+Wstępna konfiguracja do pracy
+
+12 aut handlowców: sprawdzić BUSINESS MOBILITY jako wariant porównawczy względem FLEX STANDARD i MOBILITY PLUS.
+
+2 auta zarządu: dobrać model, przebieg i pakiet po zebraniu odrębnego profilu użytkowania.
+
+W zestawieniu dealerów znajduje się Skoda Octavia Combi 1.5 TSI mHEV 150 KM DSG Selection. Można ocenić ją jako kandydata dla potrzeb wskazanych w case’ie; jej dopasowanie do obu grup pozostaje do potwierdzenia.
+
+Miesięczna opłata dla 12 aut handlowców: [DO UZUPEŁNIENIA: kwota i zakres porównania]
+
+Miesięczna opłata dla 2 aut zarządu: [DO UZUPEŁNIENIA: kwota i zakres porównania]
+
+Model i konfiguracja aut zarządu: [DO UZUPEŁNIENIA: potwierdzić z klientem]
+
+Dane do kalkulacji
+
+Okres najmu w case’ie wynosi 48 miesięcy. Hak nie jest potrzebny. Duży bagażnik jest ważny. Wartość miesięcznej opłaty, opłaty dodatkowe, zasady przekroczenia limitu oraz dostępność pojazdów trzeba dopiero ustalić.
+
+MATERIAŁ SZKOLENIOWY – DANE FIKCYJNE  |  STRONA 3 / 4 · WARTOŚĆ I ZAŁOŻENIA
+
+4 Wartość i kompromisy
+
+Porównanie powinno łączyć ratę z limitem kilometrów, obsługą opon, autem zastępczym, serwisem i raportowaniem. Wybór zależy od rzeczywistego przebiegu, priorytetów operacyjnych oraz potwierdzonych warunków.
+
+FLEX STANDARD ma niższy koszt miesięczny, limit 40 tys. km/rok, opcjonalną sezonową obsługę opon i auto zastępcze do 72h. Przy przebiegu około 45 tys. km rocznie trzeba szczególnie sprawdzić ryzyko dopłat.
+
+BUSINESS MOBILITY ma średni poziom ceny, limit 45 tys. km/rok, opony sezonowe w pakiecie, auto zastępcze do 24h i raport miesięczny floty. Trzeba potwierdzić, jak limit odnosi się do przebiegu poszczególnych aut.
+
+MOBILITY PLUS ma najwyższy koszt miesięczny, limit 50 tys. km/rok, opony i rozszerzony serwis, auto zastępcze do 12h, priorytetową obsługę oraz raport kosztów / TCO.
+
+Wartość dla klienta wyrażona w liczbach: [DO UZUPEŁNIENIA: policzyć po otrzymaniu warunków i kosztów]
+
+Wariant preferowany i uzasadnienie: [DO UZUPEŁNIENIA: potwierdzić po rozmowie o kryteriach]
+
+5 Założenia wymagające potwierdzenia
+
+Czy około 45 tys. km rocznie dotyczy każdego z 12 aut handlowców, czy jest średnią dla całej grupy?
+
+Jaki jest przebieg, nadwozie i poziom wyposażenia oczekiwany dla 2 samochodów zarządu?
+
+Jakie dokładnie zasady obejmują auto zastępcze do 24h, w tym dostępność, zakres i warunki uruchomienia?
+
+Czy oferta dealera C, gdzie 4 auta są od ręki, a pozostałe mają termin 6 tygodni, może spełnić harmonogram? Oferta jest ważna 7 dni, a rocznik cennika jest inny.
+
+Czy limit kredytowy klienta został sprawdzony przez Dział Ryzyka? Materiał mówi, że trzeba to sprawdzić; decyzja nie jest potwierdzona.
+
+Otwarte warunki handlowe lub umowne: [DO UZUPEŁNIENIA: wpisać wyłącznie potwierdzone warunki]
+
+MATERIAŁ SZKOLENIOWY – DANE FIKCYJNE  |  STRONA 4 / 4 · KOLEJNE KROKI
+
+6 Kolejne kroki
+
+Przed przygotowaniem propozycji do klienta należy zebrać brakujące dane, porównać pakiety na tych samych założeniach i potwierdzić wykonalność terminu dla 14 pojazdów. Propozycja pozostaje szkicem do pracy.
+
+1. Potwierdzić profil floty. liczbę aut w każdej grupie, przebieg, termin oraz wymagania użytkowników.
+
+Właściciel: [DO UZUPEŁNIENIA]    Termin: [DO UZUPEŁNIENIA]
+
+2. Zweryfikować zakres pakietów. limity, opony, serwis, auto zastępcze, raportowanie i zasady ewentualnych dopłat.
+
+Właściciel: [DO UZUPEŁNIENIA]    Termin: [DO UZUPEŁNIENIA]
+
+3. Przygotować porównanie kosztów. zestawić kwoty i założenia dla 48 miesięcy; sprawdzić je ręcznie lub w Excelu.
+
+Właściciel: [DO UZUPEŁNIENIA]    Termin: [DO UZUPEŁNIENIA]
+
+4. Sprawdzić ryzyko i dostępność. uzyskać potwierdzenie Działu Ryzyka i zweryfikować terminy dostaw dla 12+2 aut.
+
+Właściciel: [DO UZUPEŁNIENIA]    Termin: [DO UZUPEŁNIENIA]
+
+5. Omówić warianty z klientem. pokazać różnice między ratą, przebiegiem i zakresem obsługi, a następnie zapisać decyzje.
+
+Właściciel: [DO UZUPEŁNIENIA]    Termin: [DO UZUPEŁNIENIA]
+
+Uzgodniony następny kontakt
+
+Termin i kanał: [DO UZUPEŁNIENIA: ustalić z klientem]
+
+Temat do potwierdzenia przed spotkaniem: [DO UZUPEŁNIENIA: zapisać uzgodnione pytania]
+
+Każdy termin, właściciel, cena i zobowiązanie wymaga potwierdzenia przez odpowiednią osobę przed wysłaniem materiału klientowi.

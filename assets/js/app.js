@@ -33,9 +33,7 @@ function render() {
   renderNav();
   courseRoot.innerHTML = `${renderHome()}${course.modules.map(renderModule).join("")}<footer class="site-footer">AI w sprzedaży · Playbook szkoleniowy · Materiał szkoleniowy — dane fikcyjne</footer>`;
   updateProgress();
-  updateActiveNav();
-  const anchor = decodeURIComponent(location.hash.slice(1));
-  if (anchor && anchor !== "start") setTimeout(() => document.getElementById(anchor)?.scrollIntoView({ block: "start" }), 80);
+  updateRoute();
 }
 
 function renderNav() {
@@ -83,6 +81,7 @@ function renderModule(module) {
   html += `<div class="module-tools trainer-only"><button class="button secondary small" type="button" data-action="timer" data-module="${module.id}">▶ Start timer</button><span class="timer" id="timer-${module.id}" hidden><output>--:--</output><button class="text-button" type="button" data-action="stop-timer" data-module="${module.id}">Stop</button></span><span class="fast-note" ${state.fast ? "" : "hidden"}>Fast mode aktywny. Zostaw ręczną kontrolę obliczenia, rozróżnienie faktów od hipotez oraz critique w Sales Lab.</span></div>`;
   html += module.id === 11 ? renderWorkflows() : "";
   html += `<div class="reflection"><label for="notes-${module.id}">Moje notatki</label><textarea id="notes-${module.id}" data-notes="${module.id}" placeholder="Zapisz pytanie, obserwację albo następny krok…">${esc(state.notes[module.id] || "")}</textarea><label class="module-complete"><input type="checkbox" data-done="${module.id}" ${state.done[module.id] ? "checked" : ""}><span>Oznacz moduł jako ukończony</span></label><div class="step-counter" id="step-count-${module.id}"></div></div>
+    <nav class="module-pager" aria-label="Nawigacja między modułami">${module.id === 1 ? `<a class="button secondary" href="#start">← Agenda</a>` : `<a class="button secondary" href="#module-${module.id - 1}">← Poprzedni moduł</a>`}<span>Moduł ${module.id} z ${course.modules.length}</span>${module.id === course.modules.length ? `<a class="button primary" href="#start">Wróć do agendy <span aria-hidden="true">↗</span></a>` : `<a class="button primary" href="#module-${module.id + 1}">Następny moduł <span aria-hidden="true">→</span></a>`}</nav>
   </section>`;
   return html;
 }
@@ -108,7 +107,12 @@ function renderNextButton(module) {
 }
 
 function renderDownloads(module) {
-  return `<div class="content-block"><div class="block-label">Materiały do ćwiczenia</div><div class="download-grid">${module.downloads.map(file => `<div class="download-card ${file.trainerOnly ? "trainer-only" : ""}"><strong>${esc(file.label)}</strong><div class="module-tools"><a class="button secondary small" href="${esc(file.href)}" download>Pobierz</a><a class="button secondary small" href="${esc(file.href)}" target="_blank" rel="noopener">Otwórz</a></div></div>`).join("")}</div></div>`;
+  return `<div class="content-block"><div class="block-label">Materiały do ćwiczenia</div><div class="download-grid">${module.downloads.map(file => {
+    const preview = file.href.toLowerCase().endsWith(".docx")
+      ? `<button class="button secondary small" type="button" data-action="preview-document" data-href="${esc(file.href)}" data-title="${esc(file.label)}" aria-expanded="false">Pokaż tekst</button>`
+      : "";
+    return `<div class="download-card ${file.trainerOnly ? "trainer-only" : ""}"><strong>${esc(file.label)}</strong><div class="module-tools">${preview}<a class="button secondary small" href="${esc(file.href)}" download>Pobierz</a><a class="button secondary small" href="${esc(file.href)}" target="_blank" rel="noopener">Otwórz</a></div></div>`;
+  }).join("")}</div></div>`;
 }
 
 const workflowFields = [
@@ -140,6 +144,48 @@ function updateActiveNav() {
     if (link.getAttribute("href") === current) link.setAttribute("aria-current", "page");
     else link.removeAttribute("aria-current");
   });
+}
+
+function updateRoute() {
+  closeDocument();
+  const requested = decodeURIComponent(location.hash.slice(1));
+  const active = requested === "start" || course.modules.some(module => `module-${module.id}` === requested) ? requested : "start";
+  courseRoot.querySelector(".home").hidden = active !== "start";
+  courseRoot.querySelector(".site-footer").hidden = active !== "start";
+  course.modules.forEach(module => {
+    document.getElementById(`module-${module.id}`).hidden = active !== `module-${module.id}`;
+  });
+  if (active !== requested) history.replaceState(null, "", "#start");
+  const module = course.modules.find(item => `module-${item.id}` === active);
+  document.title = module ? `${module.title} · AI w sprzedaży` : "AI w sprzedaży · MHC Mobility";
+  updateActiveNav();
+  window.scrollTo(0, 0);
+}
+
+async function showDocument(button) {
+  const drawer = document.getElementById("document-drawer");
+  const title = document.getElementById("drawer-title");
+  const text = document.getElementById("drawer-text");
+  const filename = new URL(button.dataset.href, document.baseURI).pathname.split("/").pop().replace(/\.docx$/i, ".txt");
+  const textUrl = new URL(`materials/text/${filename}`, document.baseURI);
+  title.textContent = button.dataset.title;
+  text.textContent = "Wczytuję tekst dokumentu…";
+  drawer.hidden = false;
+  document.querySelector(".layout").classList.add("preview-open");
+  document.querySelectorAll('[data-action="preview-document"]').forEach(item => item.setAttribute("aria-expanded", String(item === button)));
+  try {
+    const response = await fetch(textUrl);
+    if (!response.ok) throw new Error("Nie udało się wczytać tekstu tego dokumentu.");
+    text.textContent = await response.text();
+  } catch (error) {
+    text.textContent = error.message;
+  }
+}
+
+function closeDocument() {
+  document.getElementById("document-drawer").hidden = true;
+  document.querySelector(".layout").classList.remove("preview-open");
+  document.querySelectorAll('[data-action="preview-document"]').forEach(item => item.setAttribute("aria-expanded", "false"));
 }
 
 function copyText(text, button) {
@@ -188,6 +234,10 @@ document.addEventListener("click", event => {
       const open = box.hidden; box.hidden = !open; actionButton.setAttribute("aria-expanded", String(open)); actionButton.innerHTML = open ? "− Ukryj prompt" : "＋ Pokaż prompt";
     } else if (action === "copy-prompt") {
       copyText(actionButton.closest(".prompt-box").querySelector("pre").textContent, actionButton);
+    } else if (action === "preview-document") {
+      showDocument(actionButton);
+    } else if (action === "close-document") {
+      closeDocument();
     } else if (action === "next-step") {
       const section = document.getElementById(`module-${moduleId}`); const stepBlock = actionButton.closest(".content-block"); const hidden = section.querySelector(".step-card.locked");
       if (hidden) { hidden.classList.remove("locked"); state.revealed[moduleId] = Number(state.revealed[moduleId] || 1) + 1; saveState(); }
@@ -221,7 +271,8 @@ document.addEventListener("change", event => {
   else if (target.matches("[data-choice]")) { state.choices[target.dataset.choice] = target.value; saveState(); }
 });
 
-window.addEventListener("hashchange", updateActiveNav);
+window.addEventListener("hashchange", updateRoute);
+window.addEventListener("keydown", event => { if (event.key === "Escape") closeDocument(); });
 
 fetch(courseContentUrl).then(response => {
   if (!response.ok) throw new Error("Nie udało się wczytać treści szkolenia.");

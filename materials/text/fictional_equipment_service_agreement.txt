@@ -1,0 +1,235 @@
+Umowa najmu i obsługi wyposażenia multimedialnego
+
+Materiał fikcyjny do ćwiczenia wyszukiwania i weryfikowania postanowień
+
+Umowa nr NSM/25/041  •  zawarta 15 maja 2025 r.  •  rozpoczęcie usług 1 czerwca 2025 r.
+
+Ten dokument, strony, kwoty i warunki są fikcyjne. Materiał nie opisuje rzeczywistych warunków MHC, nie jest wzorem do użycia w obrocie i nie stanowi porady prawnej.
+
+Strony umowy
+
+Nord Serwis Multimedialny sp. z o.o., z siedzibą w Gdańsku, reprezentowana przez Martę Rybak, dalej „Dostawca”, oraz Pracownia Wspólny Adres sp. z o.o., z siedzibą w Poznaniu, reprezentowana przez Jana Wierzbę, dalej „Klient”, łącznie „Strony”, zawierają Umowę o następującej treści.
+
+§ 1 Definicje
+
+1.1 Urządzenia oznaczają wyświetlacze, moduły odbiorcze i kontrolery wymienione w Załączniku nr 1, przekazane Klientowi do używania w lokalizacjach wskazanych w tym Załączniku.
+
+1.2 Usługi oznaczają dostawę, instalację, zdalne monitorowanie stanu Urządzeń, standardowe przeglądy oraz przyjmowanie zgłoszeń zgodnie z Załącznikiem nr 2.
+
+1.3 Wynagrodzenie oznacza miesięczną kwotę należną Dostawcy za zakres Umowy, z zastrzeżeniem zasad rozliczeń i zmian wskazanych w §§ 8–11.
+
+1.4 Dzień Roboczy oznacza dzień od poniedziałku do piątku z wyłączeniem dni ustawowo wolnych od pracy w Polsce.
+
+§ 2 Przedmiot umowy
+
+2.1 Dostawca oddaje Klientowi do używania 16 wyświetlaczy, 16 modułów odbiorczych i 8 kontrolerów, a następnie świadczy Usługi dla tych Urządzeń. Szczegółowy wykaz, oznaczenia ewidencyjne i lokalizacje opisuje Załącznik nr 1.
+
+2.2 Umowa nie obejmuje dostępu do zewnętrznych kanałów lub treści, usług operatora telekomunikacyjnego, zakupu materiałów eksploatacyjnych ani prac instalacyjnych wykraczających poza zakres Załącznika nr 2.
+
+2.3 Klient może używać Urządzeń wyłącznie w lokalizacjach wskazanych w Załączniku nr 1. Zmiana lokalizacji wymaga wcześniejszego zgłoszenia Dostawcy, aby Strony mogły uzgodnić bezpieczny transport i ewentualny koszt dodatkowy zgodnie z § 11.
+
+§ 3 Czas trwania i rozpoczęcie usług
+
+3.1 Umowa zostaje zawarta na 36 miesięcy, od 1 czerwca 2025 r. do 31 maja 2028 r. Usługi rozpoczynają się po podpisaniu protokołu przekazania Urządzeń.
+
+3.2 Dostawca przekaże Urządzenia w terminie do 1 czerwca 2025 r. Jeżeli dostęp do którejkolwiek lokalizacji będzie niemożliwy z przyczyn leżących po stronie Klienta, Strony uzgodnią nowy termin dla tej lokalizacji, bez zmiany daty rozpoczęcia usług w pozostałych lokalizacjach.
+
+3.3 Przedłużenie okresu wymaga pisemnego aneksu podpisanego przez obie Strony. Zasady z §§ 9 i 10 stosuje się w sposób określony w tych paragrafach.
+
+§ 4 Obowiązki dostawcy
+
+4.1 Dostawca dostarczy Urządzenia sprawne, oznaczy je numerami ewidencyjnymi i sporządzi z Klientem protokół przekazania obejmujący stan, kompletność, lokalizację i datę instalacji.
+
+4.2 Dostawca wykona instalację w punktach uzgodnionych z Klientem, przeszkoli wskazaną osobę kontaktową w zakresie podstawowej obsługi i przekaże instrukcje producenta.
+
+4.3 Dostawca będzie monitorował stan połączenia zdalnego, przyjmował zgłoszenia oraz wykonywał przeglądy i naprawy w zakresie określonym w Załączniku nr 2.
+
+4.4 Dostawca poinformuje Klienta o planowanej przerwie serwisowej co najmniej dwa Dni Robocze przed jej rozpoczęciem, o ile przerwa nie wynika z nagłej awarii albo zagrożenia bezpieczeństwa.
+
+§ 5 Przekazanie i protokół
+
+5.1 Przy przekazaniu przedstawiciele Stron podpiszą protokół. Klient może wpisać do protokołu widoczne braki lub uszkodzenia; ich wpisanie nie blokuje odbioru pozostałych Urządzeń.
+
+5.2 Jeżeli Klient nie zgłosi zastrzeżeń w protokole, przyjmuje się wyłącznie, że odebrane Urządzenia były kompletne i nie miały widocznych uszkodzeń. Nie wyłącza to zgłoszenia wady, której nie dało się stwierdzić przy zwykłym odbiorze.
+
+5.3 Protokół może być sporządzony i podpisany elektronicznie przez osoby wskazane w § 19.
+
+§ 6 Obowiązki klienta
+
+6.1 Klient zapewni Dostawcy dostęp do pomieszczeń w uzgodnionym terminie, zasilanie elektryczne oraz działające łącze sieciowe o parametrach podanych w Załączniku nr 2.
+
+6.2 Klient przechowuje Urządzenia w lokalizacjach z Załącznika nr 1, zabezpiecza je przed dostępem osób nieuprawnionych i nie zleca napraw osobom trzecim bez uprzedniej zgody Dostawcy.
+
+6.3 Klient niezwłocznie zgłosi utratę, uszkodzenie, zmianę lokalizacji lub dłuższą przerwę w działaniu Urządzenia. Zgłoszenie powinno wskazywać lokalizację, numer ewidencyjny i opis zdarzenia, o ile dane te są dostępne.
+
+6.4 Klient wskaże jedną osobę do bieżących uzgodnień i zapewni, że personel korzystający z Urządzeń zna podstawowe zasady obsługi.
+
+§ 7 Wynagrodzenie
+
+7.1 Za zakres określony w Umowie Klient płaci Dostawcy miesięczne Wynagrodzenie w wysokości 7 700 zł netto, powiększone o podatek VAT według stawki właściwej na dzień wystawienia faktury.
+
+7.2 Wynagrodzenie obejmuje najem Urządzeń, ich standardową instalację, zdalne monitorowanie, dwa przeglądy w każdym roku kalendarzowym oraz naprawę awarii niezawinionych przez Klienta. Wartości składników przedstawia tabela poniżej.
+
+7.3 Wynagrodzenie nie obejmuje prac dodatkowych zamawianych zgodnie z § 11. Wydatki te nie mogą zostać doliczone do faktury bez uzgodnienia zakresu i ceny przez Strony.
+
+7.4 Wynagrodzenie obowiązuje od dnia rozpoczęcia Usług, z uwzględnieniem mechanizmów wskazanych w §§ 9 i 10.
+
+Składnik | Zakres | Kwota netto / miesiąc
+
+Najem Urządzeń | 16 zestawów | 4 900 zł
+
+Obsługa i serwis | 8 lokalizacji | 2 800 zł
+
+Razem | Zakres Umowy | 7 700 zł
+
+§ 8 Fakturowanie i płatność
+
+8.1 Dostawca wystawia fakturę za dany miesiąc z góry, pierwszego Dnia Roboczego tego miesiąca. Pierwsza faktura może obejmować część miesiąca, jeżeli rozpoczęcie Usług nastąpi po jego pierwszym dniu.
+
+8.2 Termin płatności wynosi 14 dni od dnia doręczenia prawidłowo wystawionej faktury. Płatność jest dokonywana przelewem na rachunek wskazany na fakturze.
+
+8.3 Jeżeli Klient kwestionuje część faktury, w terminie 7 dni roboczych opisze sporną pozycję i uzasadnienie. Klient zapłaci część bezsporną w terminie z ust. 8.2, a Strony wyjaśnią spór w ciągu kolejnych 10 Dni Roboczych.
+
+8.4 Wynagrodzenie oraz inne uzgodnione kwoty są podawane w złotych polskich. Podatek VAT wykazywany jest odrębnie na fakturze.
+
+§ 9 Roczna waloryzacja wynagrodzenia
+
+9.1 W każdą rocznicę rozpoczęcia Usług Dostawca może jednokrotnie podwyższyć miesięczne Wynagrodzenie o roczny wskaźnik cen towarów i usług konsumpcyjnych ogółem za rok poprzedni, ogłoszony przez Główny Urząd Statystyczny, jednak nie więcej niż o 5%.
+
+9.2 Dostawca doręczy Klientowi zawiadomienie o nowej kwocie co najmniej 30 dni przed jej zastosowaniem. Zawiadomienie wskaże poprzednią i nową kwotę, użyty wskaźnik oraz datę rozpoczęcia rozliczania nowej kwoty.
+
+9.3 Waloryzacja obowiązuje od kolejnego okresu rozliczeniowego po upływie terminu zawiadomienia i nie obejmuje okresów wcześniejszych. W tym samym okresie dwunastu miesięcy Dostawca nie zastosuje waloryzacji więcej niż jeden raz.
+
+9.4 Waloryzacja z niniejszego paragrafu jest odrębnym mechanizmem zmiany Wynagrodzenia. Sama w sobie nie stanowi rozliczenia konkretnego podatku, opłaty ani innego obciążenia publicznoprawnego.
+
+§ 10 Zmiana podatków i innych obciążeń publicznoprawnych
+
+10.1 Jeżeli po Dniu Rozpoczęcia Usług zmieni się wysokość podatku, opłaty lub innego obciążenia publicznoprawnego, którego obowiązek poniesienia ciąży na Dostawcy i które pozostaje bezpośrednio związane z Urządzeniami lub Usługami objętymi Umową, Dostawca może skorygować Wynagrodzenie wyłącznie o udokumentowaną różnicę przypadającą na zakres objęty Umową. Korekta nie może zawierać dodatkowej marży.
+
+10.2 Dostawca doręczy Klientowi co najmniej 30 dni przed zastosowaniem korekty zestawienie wskazujące podstawę zmiany, sposób obliczenia, kwotę przypadającą na zakres Umowy i dokument potwierdzający zmianę obciążenia. Korekta obowiązuje od kolejnego okresu rozliczeniowego po upływie terminu zawiadomienia i nie działa wstecz.
+
+10.3 Jeżeli obowiązek poniesienia obciążenia zgodnie z przepisami ciąży na Kliencie albo obciążenie nie jest bezpośrednio związane z Urządzeniami lub Usługami objętymi Umową, niniejszy paragraf nie stanowi podstawy do podwyższenia Wynagrodzenia.
+
+10.4 Podstawą korekty nie jest kwota już ujęta w Wynagrodzeniu ani zmiana kosztu, której Dostawca nie potrafi przypisać do zakresu Umowy. Na żądanie Klienta Dostawca udostępni dokumenty uzasadniające wyliczenie, z wyłączeniem danych osób trzecich niezwiązanych z wyliczeniem.
+
+§ 11 Zmiana zakresu i usługi dodatkowe
+
+11.1 Zmiana liczby Urządzeń, lokalizacji, godzin obsługi lub zakresu Usług wymaga zlecenia określającego zmianę, termin i cenę, zaakceptowanego przez obie Strony w formie dokumentowej.
+
+11.2 Dostawca nie rozpocznie pracy dodatkowej przed akceptacją zlecenia. Brak odpowiedzi Klienta nie oznacza akceptacji kosztu.
+
+11.3 Jeżeli zmiana zakresu wpływa na składniki tabeli w § 7, zlecenie wskaże nową kwotę i dzień, od którego będzie rozliczana.
+
+§ 12 Dostępność i zgłoszenia serwisowe
+
+12.1 Dostawca przyjmuje zgłoszenia od poniedziałku do piątku w godzinach 8:00–17:00, z wyłączeniem dni ustawowo wolnych od pracy. Zgłoszenia można przesłać na adres poczty elektronicznej wskazany w § 19 lub przez uzgodniony portal serwisowy.
+
+12.2 Czas reakcji oznacza czas od potwierdzenia przyjęcia zgłoszenia do rozpoczęcia diagnozy. Czas usunięcia awarii zależy od dostępności części, dostępu do lokalizacji i współpracy Klienta; tabela w Załączniku nr 2 podaje planowane terminy.
+
+12.3 Dostawca może czasowo wyłączyć Urządzenie, gdy jest to konieczne do naprawy lub ochrony danych. O planowanym wyłączeniu poinformuje osobę kontaktową Klienta i poda przewidywany termin przywrócenia działania.
+
+§ 13 Awarie i uszkodzenia
+
+13.1 Dostawca usuwa w ramach Wynagrodzenia awarie wynikające z normalnej eksploatacji i wad Urządzeń. Jeżeli diagnoza wskazuje na uszkodzenie spowodowane działaniem Klienta, Dostawca przedstawi opis ustaleń, dokumentację dostępną z oględzin oraz wycenę naprawy.
+
+13.2 Naprawa odpłatna wymaga akceptacji wyceny przez Klienta przed rozpoczęciem prac. W sytuacji bezpośredniego zagrożenia osób lub mienia Dostawca może wykonać niezbędne czynności zabezpieczające i niezwłocznie powiadomi Klienta.
+
+13.3 Strony sporządzą protokół z wymiany Urządzenia albo części. Protokół odnotuje datę, numer ewidencyjny i przyczynę wymiany, jeżeli została ustalona.
+
+§ 14 Bezpieczeństwo i dostęp do lokalizacji
+
+14.1 Każda Strona stosuje własne procedury bezpieczeństwa w zakresie czynności, za które odpowiada. Dostawca przedstawi Klientowi listę osób planowanych do instalacji i serwisu, jeżeli Klient wymaga wcześniejszego zgłoszenia gości.
+
+14.2 Klient poinformuje Dostawcę o ograniczeniach dostępu, zasadach ewakuacji i wymaganym wyposażeniu ochronnym dla danej lokalizacji.
+
+14.3 Dostawca nie będzie kopiował ani przeglądał plików Klienta zapisanych poza obszarem niezbędnym do uruchomienia i serwisowania Urządzeń.
+
+§ 15 Poufność i dane
+
+15.1 Strony zachowują w poufności informacje techniczne, handlowe i organizacyjne, które otrzymały w związku z Umową i które nie są publicznie dostępne. Obowiązek nie obejmuje informacji, których ujawnienia wymaga prawo albo które Strona musi przekazać swoim doradcom zobowiązanym do poufności.
+
+15.2 Każda Strona odpowiada za zgodne z prawem przetwarzanie danych kontaktowych własnych pracowników i przedstawicieli, przekazanych w celu realizacji Umowy.
+
+15.3 Jeżeli realizacja Usług będzie wymagała powierzenia Dostawcy przetwarzania innych danych osobowych, Strony podpiszą odrębne uzgodnienie przed rozpoczęciem takiego przetwarzania.
+
+§ 16 Prawa do oprogramowania
+
+16.1 Dostawca udziela Klientowi na czas Umowy niewyłącznego prawa do korzystania z oprogramowania niezbędnego do obsługi Urządzeń, w zakresie wynikającym z licencji producenta.
+
+16.2 Klient nie będzie kopiował, modyfikował ani udostępniał oprogramowania osobom trzecim, z wyjątkiem czynności dozwolonych przez licencję albo bezwzględnie obowiązujące przepisy.
+
+16.3 Materiały i treści Klienta wyświetlane na ekranach pozostają własnością Klienta lub podmiotów, którym przysługują prawa. Umowa nie przenosi tych praw na Dostawcę.
+
+§ 17 Odpowiedzialność
+
+17.1 Każda Strona odpowiada za bezpośrednią szkodę spowodowaną niewykonaniem lub nienależytym wykonaniem własnych obowiązków, z zastrzeżeniem ust. 17.2 i bezwzględnie obowiązujących przepisów.
+
+17.2 Łączna odpowiedzialność każdej ze Stron z tytułu Umowy, z wyłączeniem szkód wyrządzonych umyślnie, nie przekroczy równowartości sześciu miesięcznych Wynagrodzeń obowiązujących w dniu zdarzenia.
+
+17.3 Strona, która dowie się o zdarzeniu mogącym spowodować szkodę, niezwłocznie poinformuje drugą Stronę i podejmie rozsądne działania ograniczające jej rozmiar.
+
+§ 18 Rozwiązanie umowy
+
+18.1 Każda Strona może wypowiedzieć Umowę z ważnej przyczyny, jeżeli druga Strona narusza istotny obowiązek i nie usunie naruszenia w terminie 30 dni od doręczenia wezwania opisującego naruszenie.
+
+18.2 Klient może rozwiązać Umowę ze skutkiem natychmiastowym, jeżeli Dostawca zaprzestanie świadczenia Usług przez ponad 20 kolejnych Dni Roboczych z przyczyn leżących po stronie Dostawcy i nie przywróci ich po dodatkowym 10-dniowym wezwaniu.
+
+18.3 Po zakończeniu Umowy Klient udostępni Urządzenia do odbioru w uzgodnionym terminie. Strony podpiszą protokół zwrotu obejmujący numery ewidencyjne, stan i datę odbioru.
+
+18.4 Rozwiązanie Umowy nie zwalnia Stron z rozliczenia należności za okres do dnia zakończenia ani z obowiązków, które z natury trwają po tym dniu.
+
+§ 19 Zawiadomienia
+
+19.1 Bieżące zgłoszenia serwisowe i zawiadomienia przewidziane w §§ 9 i 10 Strony przesyłają na adresy poczty elektronicznej wskazane poniżej. Zawiadomienie uważa się za doręczone w następnym Dniu Roboczym, jeżeli nadawca nie otrzyma komunikatu o niedostarczeniu.
+
+19.2 Dane kontaktowe do bieżących zawiadomień: Dostawca — serwis@nordserwis.example; Klient — administracja@wspolnyadres.example. Adresy z domeną .example mają wyłącznie charakter szkoleniowy.
+
+19.3 Zmianę adresu kontaktowego każda Strona zgłosi drugiej Stronie w formie dokumentowej. Zmiana danych kontaktowych nie wymaga aneksu.
+
+§ 20 Postanowienia końcowe
+
+20.1 Załączniki nr 1 i 2 stanowią integralną część Umowy.
+
+20.2 Zmiany Umowy wymagają aneksu podpisanego przez obie Strony, z wyjątkiem korekt Wynagrodzenia dokonywanych w trybie §§ 9 i 10 oraz zmian zakresu zatwierdzanych w trybie § 11.
+
+20.3 Jeżeli którekolwiek postanowienie okaże się nieważne albo niewykonalne, pozostałe postanowienia pozostają w mocy. Strony zastąpią je postanowieniem możliwie najbliższym celowi gospodarczemu pierwotnego zapisu.
+
+20.4 Umowę sporządzono w dwóch jednobrzmiących egzemplarzach, po jednym dla każdej ze Stron, albo podpisano elektronicznie.
+
+Podpisy
+
+Dostawca | Klient
+
+................................................Marta Rybak | ................................................Jan Wierzba
+
+Załącznik nr 1 Wykaz urządzeń i lokalizacji
+
+Wykaz jest częścią fikcyjnej Umowy. Numery seryjne uzupełnia się w protokole przekazania po instalacji.
+
+Urządzenie | Liczba | Lokalizacja | Ewidencja
+
+Wyświetlacz 24 cale | 16 | 8 lokalizacji, po 2 | numery z protokołu
+
+Moduł odbiorczy | 16 | przy wyświetlaczu | numery z protokołu
+
+Kontroler centralny | 8 | po 1 na lokalizację | numery z protokołu
+
+Załącznik nr 2 Zakres i poziom obsługi
+
+§ 21 Usługi standardowe
+
+21.1 Dostawca zapewnia zdalne sprawdzenie statusu każdego Urządzenia raz dziennie w Dni Robocze, dwa przeglądy techniczne w roku kalendarzowym oraz obsługę zgłoszeń serwisowych.
+
+21.2 Wynagrodzenie obejmuje robociznę i części zużyte przy naprawie awarii niezawinionej przez Klienta. Koszty szkód przypisanych Klientowi rozlicza się wyłącznie po akceptacji wyceny zgodnie z § 13.
+
+21.3 Wizyta poza godzinami 8:00–17:00, przeniesienie Urządzenia między lokalizacjami lub dodatkowe szkolenie wymaga odrębnego uzgodnienia ceny zgodnie z § 11.
+
+Priorytet | Reakcja | Przykład
+
+Krytyczny | 4 godziny robocze | Brak działania w co najmniej 4 lokalizacjach
+
+Wysoki | 1 Dzień Roboczy | Brak działania w jednej lokalizacji
+
+Standardowy | 2 Dni Robocze | Pojedynczy błąd obrazu lub dźwięku
+
+Koniec fikcyjnego dokumentu

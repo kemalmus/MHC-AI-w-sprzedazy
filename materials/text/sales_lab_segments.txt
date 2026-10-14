@@ -1,0 +1,27 @@
+Segmenty Sales Lab
+
+MATERIAŁ SZKOLENIOWY – DANE FIKCYJNE Cztery fikcyjne segmenty do ćwiczenia komunikacji sprzedażowej
+
+Segment A Firma usługowa z handlowcami w terenie
+
+Profil: 50–200 pracowników; 8–25 samochodów; dużo kilometrów; problem z przewidywalnością kosztów.
+
+Obawa lub obiekcja: „najważniejsza jest rata”.
+
+Segment B Właściciel szybko rosnącej firmy
+
+Profil: 20–80 pracowników; pierwszy większy fleet renewal; niewielki zespół administracyjny; chce ograniczyć czas poświęcany na flotę.
+
+Obawa lub obiekcja: Utrata elastyczności.
+
+Segment C CFO firmy średniej wielkości
+
+Profil: Patrzy na TCO i cash flow; wymaga jasnego business case; sceptyczny wobec „miękkich korzyści”.
+
+Obawa lub obiekcja: Ukryte koszty i warunki.
+
+Segment D Office/Fleet Manager
+
+Profil: Odpowiada za codzienną obsługę floty; odczuwa problemy operacyjne bardziej niż zarząd; liczą się szybkość serwisu, auta zastępcze i dostępność informacji.
+
+Obawa lub obiekcja: Rozwiązanie obiecuje więcej niż dostarcza operacyjnie.

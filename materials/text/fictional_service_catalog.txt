@@ -1,0 +1,15 @@
+Fikcyjny katalog pakietów najmu
+
+Materiał porównawczy do ćwiczenia wyboru
+
+MATERIAŁ SZKOLENIOWY – DANE FIKCYJNE · To fikcyjny katalog szkoleniowy. Nie przedstawia rzeczywistej oferty MHC i nie zawiera rzeczywistych cenników MHC.
+
+Porównanie pakietów
+
+FLEX STANDARD / podstawowy najem / limit 40 tys. km/rok / sezonowa obsługa opon opcjonalna / auto zastępcze do 72h / niższy koszt miesięczny / większe ryzyko dopłat przy wysokim przebiegu | BUSINESS MOBILITY / limit 45 tys. km/rok / opony sezonowe w pakiecie / auto zastępcze do 24h / raport miesięczny floty / średni poziom ceny | MOBILITY PLUS / limit 50 tys. km/rok / opony i rozszerzony serwis / auto zastępcze do 12h / priorytetowa obsługa / raport kosztów / TCO / najwyższy koszt miesięczny
+
+Pytanie do zespołu
+
+Który trade-off najlepiej pasuje do opisanego przebiegu, oczekiwań operacyjnych i budżetu klienta? Zaznacz, które informacje są danymi z case’u, a które wymagają potwierdzenia.
+
+Nie dopisuj kwot ani warunków, których nie ma w materiale. Dobór pakietu w ćwiczeniu nie stanowi rekomendacji ani oferty handlowej.
