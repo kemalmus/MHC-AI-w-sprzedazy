@@ -91,8 +91,11 @@ function renderTable(table) {
 }
 
 function renderSafetyCards(module) {
-  const labels = ["OK do użycia w zatwierdzonym narzędziu", "Najpierw anonimizuj / ogranicz dane", "Nie używaj bez zgody / weryfikacji"];
-  return `<div class="content-block"><div class="block-label">Wybierz decyzję dla każdej karty</div><div class="card-grid">${module.cards.map((card,index) => `<article class="safety-card"><h4>Karta ${index + 1}</h4><p>${esc(card.text)}</p><label class="sr-only" for="choice-${index}">Decyzja dla karty ${index + 1}</label><select id="choice-${index}" data-choice="${index}"><option value="">Wybierz…</option>${labels.map(label => `<option ${state.choices[index] === label ? "selected" : ""}>${esc(label)}</option>`).join("")}</select><div class="trainer-only answer-hint">Wskazówka do dyskusji: ${esc(card.choice)}</div></article>`).join("")}</div></div>`;
+  const labels = ["Zatwierdzenie narzędzia i kategorii danych", "Możliwość minimalizacji lub anonimizacji danych", "Prawa, licencje i zgody dotyczące materiału", "Zasady użycia i zatwierdzenia wyniku AI"];
+  return `<div class="content-block"><div class="block-label">Wybierz pierwszą kwestię do sprawdzenia dla każdej karty</div><div class="card-grid">${module.cards.map((card,index) => {
+    const selected = labels.includes(state.choices[index]);
+    return `<article class="safety-card"><h4>Karta ${index + 1}</h4><p>${esc(card.text)}</p><label class="sr-only" for="choice-${index}">Pierwsza kwestia do sprawdzenia dla karty ${index + 1}</label><select id="choice-${index}" data-choice="${index}"><option value="">Wybierz…</option>${labels.map(label => `<option ${state.choices[index] === label ? "selected" : ""}>${esc(label)}</option>`).join("")}</select><div class="answer-hint" aria-live="polite" ${selected ? "" : "hidden"}>To wskazówka do sprawdzenia, nie zgoda na użycie. Zweryfikuj ją z polityką organizacji.</div></article>`;
+  }).join("")}</div></div>`;
 }
 
 function renderSteps(module) {
@@ -285,7 +288,12 @@ document.addEventListener("change", event => {
     if (id === 4 && target.checked && !document.getElementById("source-check-confirm")?.checked) { target.checked = false; alert("Najpierw potwierdź jedną ważną informację w źródle."); return; }
     state.done[id] = target.checked; saveState(); renderNav();
   } else if (target.id === "source-check-confirm") { state.factCheck = target.checked; saveState(); }
-  else if (target.matches("[data-choice]")) { state.choices[target.dataset.choice] = target.value; saveState(); }
+  else if (target.matches("[data-choice]")) {
+    state.choices[target.dataset.choice] = target.value;
+    const feedback = target.closest(".safety-card").querySelector(".answer-hint");
+    feedback.hidden = !target.value;
+    saveState();
+  }
 });
 
 document.getElementById("trainer-password-form").addEventListener("submit", async event => {
