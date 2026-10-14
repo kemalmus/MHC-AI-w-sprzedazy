@@ -1,11 +1,29 @@
 Notatki koordynacyjne po spotkaniu
-
 MATERIAŁ SZKOLENIOWY – DANE FIKCYJNE Moduł 5 materiał źródłowy do ćwiczenia
 
-Surowe notatki po spotkaniu
+Kontekst
+BudMax rozważa wymianę lub uzupełnienie floty. Poniżej połączono wypowiedzi ze spotkania, telefon do dealera, starszy wpis CRM i dopiski handlowca. To fikcyjne dane; zapisy nie zawsze są zgodne.
 
-klient BudMax - 12+2 aut, chcą start luty, Anna pyta o auta zastępcze w 24h bo handlowcy w trasie, CFO naciska na ratę, dealer C ma 4 szt od ręki reszta 6 tyg, trzeba sprawdzić z ryzykiem limit kredytowy klienta bo firma 3 lata na rynku, likwidacja szkód pyta czy klient chce własnego brokera
+Spotkanie
+Uczestnicy: Anna (koordynuje flotę), CFO i handlowiec. Anna mówiła o „12+2 autach” i starcie w lutym. Nikt nie zapisał roku ani konkretnej daty. Nie wyjaśniono, czy „12+2” oznacza 12 aut do wymiany plus 2 dodatkowe, czy inny podział floty. Anna dodała: „Część może być wcześniej, ale całą flotę muszę ułożyć z operacjami”. Nie potwierdziła dostaw w partiach ani liczby aut potrzebnych na początek.
+CFO kilka razy wracał do wysokości raty. W notatce zapisano „około 2300 zł za auto”, ale nie wiadomo, czy kwota jest netto czy brutto, jaki okres i przebieg obejmuje ani czy zawiera serwis lub ubezpieczenie. CFO wspomniał, że „inna oferta jest jakieś 150 zł niżej”. Nie pokazał tej oferty; nie znamy jej zakresu ani warunków. Prosił o porównywalną kalkulację, ale nie powiedział wprost, że chce rabatu.
+Anna pytała, czy auto zastępcze da się zapewnić w ciągu 24 godzin, bo handlowcy dużo jeżdżą. Nie ustalono, czy 24 godziny liczą się od zgłoszenia, czy obowiązują tylko w dni robocze, czy dotyczą awarii i kolizji, jakiej klasy miałoby być auto ani kto pokrywa koszt. To pytanie, nie uzgodniony standard usługi.
+Po stronie Likwidacji Szkód padło pytanie, czy klient ma własnego brokera. Anna odpowiedziała: „Ubezpieczenia zwykle omawiamy z brokerem, ale w sprawach szkód muszę to sprawdzić”. Nie potwierdzono, kto obsługuje szkody ani czy BudMax chce korzystać z własnego brokera.
+
+Telefon do dealera
+Dealer C ma cztery auta „od ręki”, a pozostałe szacuje na około sześć tygodni od zamówienia. Dostępność zależy od konfiguracji i nie została zarezerwowana. Nie potwierdzono, czy cztery auta odpowiadają potrzebom BudMax ani czy termin dotyczy wszystkich pozostałych pojazdów.
+
+Ryzyko
+Firma działa od trzech lat. Dział Ryzyka prosi o aktualne dokumenty finansowe oraz informację o planowanym zobowiązaniu, aby ocenić limit. Klient nie przesłał jeszcze dokumentów. CFO powiedział, że może wrócić do nich po otrzymaniu orientacyjnych liczb. Nie ma decyzji o limicie ani zgody kredytowej.
+
+Starszy wpis CRM z listopada
+„Flota 10 aut; trzy umowy do odnowienia przed końcem I kwartału”. Nie wiadomo, czy wpis jest aktualny, czy dotyczy tych samych pojazdów ani jak ma się do „12+2” ze spotkania.
+
+Robocze dopiski handlowca
+Można zapytać dealera, czy da się zarezerwować cztery dostępne auta, a resztę dostarczyć później. To pomysł, nie ustalenie z klientem.
+Przygotować dwa warianty raty i sprawdzić, jak serwis wpływa na łączny koszt. Zakres i dane do wyceny są niekompletne.
+CFO chciał zobaczyć wstępne liczby przed rozmową z zakupami „w następny piątek”; dokładnej daty nie zapisano. W dopisku handlowca jest „może wysłać pierwsze liczby w 2 dni”. To propozycja, bez potwierdzonego właściciela i terminu.
+Nie wiadomo, kto odpowie za kontakt z Ryzykiem, kto potwierdzi warunki auta zastępczego ani kto przygotuje porównanie oferty.
 
 Szum organizacyjny
-
-Organizacyjnie: po szkoleniu odebrać identyfikatory gości z recepcji.
+Po szkoleniu odebrać identyfikatory gości z recepcji.
