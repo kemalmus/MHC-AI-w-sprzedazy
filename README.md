@@ -23,7 +23,7 @@ Linki do treści i plików są względne, więc działają również wtedy, gdy 
 
 ## Tryb trenera
 
-Użyj przełącznika **Tryb trenera** w górnym pasku. Bezpośredni link dla prowadzącego może kończyć się `?trainer=1`. Tryb trenera pokazuje wskazówki, przykładowe odpowiedzi, pytania do grupy, timer i pliki referencyjne. Nie jest zabezpieczeniem dostępu — materiały trenerskie znajdują się w statycznych plikach strony.
+Użyj przełącznika **Tryb trenera** w górnym pasku i wpisz hasło. Tryb pokazuje wskazówki, przykładowe odpowiedzi, pytania do grupy, timer i pliki referencyjne. Po odświeżeniu strony jest wyłączony. Hasło jest lekką blokadą interfejsu: materiały nadal znajdują się w publicznych plikach strony i nie są chronione dostępem.
 
 **Fast mode** pojawia się w nawigacji po włączeniu trybu trenera. Pozwala skrócić rundy role-play, liczbę kierunków komunikacji, wariantów kreacji i samodzielne ćwiczenie M365 do demo. Zachowaj ręczną kontrolę obliczenia, rozróżnienie faktów i hipotez oraz krytykę w Sales Lab.
 

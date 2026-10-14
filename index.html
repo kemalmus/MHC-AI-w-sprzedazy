@@ -36,6 +36,19 @@
       <pre id="drawer-text" class="drawer-text" tabindex="0"></pre>
     </aside>
   </div>
+  <dialog class="trainer-password-dialog" id="trainer-password-dialog" aria-labelledby="trainer-password-title">
+    <form id="trainer-password-form">
+      <h2 id="trainer-password-title">Tryb trenera</h2>
+      <p>Wpisz hasło, aby wyświetlić materiały dla prowadzącego.</p>
+      <label for="trainer-password">Hasło</label>
+      <input id="trainer-password" type="password" autocomplete="current-password" required>
+      <p class="trainer-password-error" id="trainer-password-error" role="alert" hidden>Nieprawidłowe hasło.</p>
+      <div class="trainer-password-actions">
+        <button class="button secondary" type="button" data-action="cancel-trainer-login">Anuluj</button>
+        <button class="button primary" type="submit">Pokaż materiały</button>
+      </div>
+    </form>
+  </dialog>
   <script src="assets/js/app.js" defer></script>
 </body>
 </html>

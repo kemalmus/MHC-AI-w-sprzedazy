@@ -1,4 +1,5 @@
 const STORAGE_KEY = "mhc-ai-sales-training-v1";
+const TRAINER_PASSWORD_HASH = "0086f1b43fbe5a70d87a4dff48cb0a7ebd7af6ceaf460f5ad9800d44c0dfed20";
 const courseContentUrl = new URL("source/training_content.json", document.baseURI);
 const courseRoot = document.getElementById("course-content");
 const navRoot = document.getElementById("course-nav");
@@ -7,13 +8,12 @@ let state = loadState();
 const timers = new Map();
 
 function loadState() {
-  const forceTrainer = new URLSearchParams(location.search).get("trainer") === "1";
   try {
     const saved = Object.assign({ trainer: false, fast: false, done: {}, notes: {}, revealed: {}, choices: {}, workflows: [{}, {}] }, JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"));
-    if (forceTrainer) saved.trainer = true;
+    saved.trainer = false;
     return saved;
   } catch {
-    return { trainer: forceTrainer, fast: false, done: {}, notes: {}, revealed: {}, choices: {}, workflows: [{}, {}] };
+    return { trainer: false, fast: false, done: {}, notes: {}, revealed: {}, choices: {}, workflows: [{}, {}] };
   }
 }
 
@@ -224,6 +224,12 @@ function exportWorkflows() {
   const url = URL.createObjectURL(blob); const link = document.createElement("a"); link.href = url; link.download = "moje-workflowy-ai-w-sprzedazy.md"; link.click(); URL.revokeObjectURL(url);
 }
 
+async function checkTrainerPassword(password) {
+  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(password));
+  const hash = Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, "0")).join("");
+  return hash === TRAINER_PASSWORD_HASH;
+}
+
 document.addEventListener("click", event => {
   const actionButton = event.target.closest("[data-action]");
   if (actionButton) {
@@ -238,6 +244,8 @@ document.addEventListener("click", event => {
       showDocument(actionButton);
     } else if (action === "close-document") {
       closeDocument();
+    } else if (action === "cancel-trainer-login") {
+      document.getElementById("trainer-password-dialog").close();
     } else if (action === "next-step") {
       const section = document.getElementById(`module-${moduleId}`); const stepBlock = actionButton.closest(".content-block"); const hidden = section.querySelector(".step-card.locked");
       if (hidden) { hidden.classList.remove("locked"); state.revealed[moduleId] = Number(state.revealed[moduleId] || 1) + 1; saveState(); }
@@ -261,7 +269,14 @@ document.addEventListener("input", event => {
 
 document.addEventListener("change", event => {
   const target = event.target;
-  if (target.id === "trainer-toggle") { state.trainer = target.checked; saveState(); render(); }
+  if (target.id === "trainer-toggle") {
+    if (!target.checked) { state.trainer = false; saveState(); render(); }
+    else {
+      target.checked = false;
+      document.getElementById("trainer-password-dialog").showModal();
+      document.getElementById("trainer-password").focus();
+    }
+  }
   else if (target.id === "fast-mode") { state.fast = target.checked; saveState(); render(); }
   else if (target.matches("[data-done]")) {
     const id = Number(target.dataset.done);
@@ -269,6 +284,28 @@ document.addEventListener("change", event => {
     state.done[id] = target.checked; saveState(); renderNav();
   } else if (target.id === "manual-check-confirm") { state.manualCheck = target.checked; saveState(); }
   else if (target.matches("[data-choice]")) { state.choices[target.dataset.choice] = target.value; saveState(); }
+});
+
+document.getElementById("trainer-password-form").addEventListener("submit", async event => {
+  event.preventDefault();
+  const input = document.getElementById("trainer-password");
+  if (!await checkTrainerPassword(input.value)) {
+    input.value = "";
+    document.getElementById("trainer-password-error").hidden = false;
+    input.focus();
+    return;
+  }
+  state.trainer = true;
+  document.getElementById("trainer-password-dialog").close();
+  event.currentTarget.reset();
+  document.getElementById("trainer-toggle").checked = true;
+  saveState();
+  render();
+});
+
+document.getElementById("trainer-password-dialog").addEventListener("close", () => {
+  document.getElementById("trainer-password-form").reset();
+  document.getElementById("trainer-password-error").hidden = true;
 });
 
 window.addEventListener("hashchange", updateRoute);
