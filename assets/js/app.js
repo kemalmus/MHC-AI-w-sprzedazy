@@ -9,11 +9,11 @@ const timers = new Map();
 
 function loadState() {
   try {
-    const saved = Object.assign({ trainer: false, fast: false, done: {}, revealed: {}, choices: {}, workflows: [{}, {}] }, JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"));
+    const saved = Object.assign({ trainer: false, fast: false, done: {}, revealed: {}, choices: {}, workflows: [{}, {}], factCheck: false }, JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"));
     saved.trainer = false;
     return saved;
   } catch {
-    return { trainer: false, fast: false, done: {}, revealed: {}, choices: {}, workflows: [{}, {}] };
+    return { trainer: false, fast: false, done: {}, revealed: {}, choices: {}, workflows: [{}, {}], factCheck: false };
   }
 }
 
@@ -73,12 +73,12 @@ function renderModule(module) {
   if (module.cards) html += renderSafetyCards(module);
   if (module.id === 8 && module.downloads?.length) html += renderDownloads(module);
   html += `<div class="content-block"><div class="block-label">Przebieg ćwiczenia</div><div class="steps" id="steps-${module.id}">${renderSteps(module)}</div>${renderNextButton(module)}</div>`;
-  if (module.id === 4) html += `<div class="manual-check"><label><input type="checkbox" id="manual-check-confirm" ${state.manualCheck ? "checked" : ""}><span><strong>Ręcznie sprawdziłem jedno obliczenie</strong><br>Wpisz lub pokaż wzór przed oznaczeniem modułu jako ukończonego.</span></label></div>`;
+  if (module.id === 4) html += `<div class="manual-check"><label><input type="checkbox" id="source-check-confirm" ${state.factCheck ? "checked" : ""}><span><strong>Zweryfikowałem kluczową informację</strong><br>Wskaż w arkuszu lub materiale, gdzie potwierdziłeś dane istotne dla rekomendacji.</span></label></div>`;
   html += `<div class="takeaway"><strong>Wniosek</strong>${esc(module.takeaway)}</div>`;
   if (module.id === 8 && module.source) html += `<div class="content-block"><div class="source-title">${esc(module.sourceTitle || "Materiał źródłowy")}</div><div class="source-box">${esc(module.source)}</div></div>`;
   if (module.downloads?.length && module.id !== 8) html += renderDownloads(module);
   html += `<div class="trainer-box trainer-only"><div class="trainer-label">NOTATKI DLA TRENERA</div><div class="trainer-grid"><div><h4>Prowadzenie</h4><p>${esc(module.trainer.guide)}</p></div><div><h4>Przykład / wskazówki</h4><p>${esc(module.trainer.golden)}</p></div><div><h4>Na co uważać</h4><ul>${module.trainer.pitfalls.map(p => `<li>${esc(p)}</li>`).join("")}</ul></div><div><h4>Pytania do dyskusji</h4><ul>${module.trainer.questions.map(q => `<li>${esc(q)}</li>`).join("")}</ul></div></div>${module.trainer.fast ? `<div class="fast-note" ${state.fast ? "" : "hidden"}><strong>Fast mode:</strong> ${esc(module.trainer.fast)}</div>` : ""}</div>`;
-  html += `<div class="module-tools trainer-only"><button class="button secondary small" type="button" data-action="timer" data-module="${module.id}">▶ Start timer</button><span class="timer" id="timer-${module.id}" hidden><output>--:--</output><button class="text-button" type="button" data-action="stop-timer" data-module="${module.id}">Stop</button></span><span class="fast-note" ${state.fast ? "" : "hidden"}>Fast mode aktywny. Zostaw ręczną kontrolę obliczenia, rozróżnienie faktów od hipotez oraz critique w Sales Lab.</span></div>`;
+  html += `<div class="module-tools trainer-only"><button class="button secondary small" type="button" data-action="timer" data-module="${module.id}">▶ Start timer</button><span class="timer" id="timer-${module.id}" hidden><output>--:--</output><button class="text-button" type="button" data-action="stop-timer" data-module="${module.id}">Stop</button></span><span class="fast-note" ${state.fast ? "" : "hidden"}>Fast mode aktywny. Zostaw weryfikację kluczowych informacji, rozróżnienie faktów od hipotez oraz critique w Sales Lab.</span></div>`;
   html += module.id === 11 ? renderWorkflows() : "";
   html += `<div class="module-status"><label class="module-complete"><input type="checkbox" data-done="${module.id}" ${state.done[module.id] ? "checked" : ""}><span>Oznacz moduł jako ukończony</span></label><div class="step-counter" id="step-count-${module.id}"></div></div>
     <nav class="module-pager" aria-label="Nawigacja między modułami">${module.id === 1 ? `<a class="button secondary" href="#start">← Agenda</a>` : `<a class="button secondary" href="#module-${module.id - 1}">← Poprzedni moduł</a>`}<span>Moduł ${module.id} z ${course.modules.length}</span>${module.id === course.modules.length ? `<a class="button primary" href="#start">Wróć do agendy <span aria-hidden="true">↗</span></a>` : `<a class="button primary" href="#module-${module.id + 1}">Następny moduł <span aria-hidden="true">→</span></a>`}</nav>
@@ -281,9 +281,9 @@ document.addEventListener("change", event => {
   else if (target.id === "fast-mode") { state.fast = target.checked; saveState(); render(); }
   else if (target.matches("[data-done]")) {
     const id = Number(target.dataset.done);
-    if (id === 4 && target.checked && !document.getElementById("manual-check-confirm")?.checked) { target.checked = false; alert("Najpierw potwierdź ręczną kontrolę jednego obliczenia."); return; }
+    if (id === 4 && target.checked && !document.getElementById("source-check-confirm")?.checked) { target.checked = false; alert("Najpierw potwierdź jedną ważną informację w źródle."); return; }
     state.done[id] = target.checked; saveState(); renderNav();
-  } else if (target.id === "manual-check-confirm") { state.manualCheck = target.checked; saveState(); }
+  } else if (target.id === "source-check-confirm") { state.factCheck = target.checked; saveState(); }
   else if (target.matches("[data-choice]")) { state.choices[target.dataset.choice] = target.value; saveState(); }
 });
 
