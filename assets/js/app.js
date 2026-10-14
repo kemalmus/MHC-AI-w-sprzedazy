@@ -290,6 +290,7 @@ document.addEventListener("change", event => {
 
 document.getElementById("trainer-password-form").addEventListener("submit", async event => {
   event.preventDefault();
+  const form = event.currentTarget;
   const input = document.getElementById("trainer-password");
   if (!await checkTrainerPassword(input.value)) {
     input.value = "";
@@ -299,7 +300,7 @@ document.getElementById("trainer-password-form").addEventListener("submit", asyn
   }
   state.trainer = true;
   document.getElementById("trainer-password-dialog").close();
-  event.currentTarget.reset();
+  form.reset();
   document.getElementById("trainer-toggle").checked = true;
   saveState();
   render();
