@@ -1,5 +1,5 @@
 const STORAGE_KEY = "mhc-ai-sales-training-v1";
-const TRAINER_PASSWORD_HASH = "0086f1b43fbe5a70d87a4dff48cb0a7ebd7af6ceaf460f5ad9800d44c0dfed20";
+const TRAINER_PASSWORD_HASH = "5d21d61712fdbbc2973ce7f4363949dfe7e91987e7e0eee29285a08e21f47a42";
 const courseContentUrl = new URL("source/training_content.json", document.baseURI);
 const courseRoot = document.getElementById("course-content");
 const navRoot = document.getElementById("course-nav");
