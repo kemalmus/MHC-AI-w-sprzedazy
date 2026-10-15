@@ -64,8 +64,8 @@ function renderHome() {
 
 function renderModule(module) {
   let html = `<section class="module" id="module-${module.id}" data-module="${module.id}">
-    <div class="module-head"><div><div class="module-index">MODUŁ ${String(module.id).padStart(2,"0")}</div><h2>${esc(module.title)}</h2><p class="module-objective">${esc(module.objective)}</p></div><span class="module-time">${esc(module.time)}</span></div>
-    <div class="module-intro"><div class="panel"><h3>Cel ćwiczenia</h3><p>${esc(module.objective)}</p></div><div class="panel problem"><h3>Problem biznesowy</h3><p>${esc(module.problem)}</p></div></div>`;
+    <div class="module-head"><div><div class="module-index">MODUŁ ${String(module.id).padStart(2,"0")}</div><h2>${esc(module.title)}</h2></div><span class="module-time">${esc(module.time)}</span></div>
+    <div class="module-intro"><div class="panel"><h3>Cel ćwiczenia</h3><p class="module-objective">${esc(module.objective)}</p></div><div class="panel problem"><h3>Problem biznesowy</h3><p>${esc(module.problem)}</p></div></div>`;
   if (module.content) html += `<div class="content-block"><div class="block-label">Warto zapamiętać</div><ul class="content-list">${module.content.map(item => `<li>${esc(item)}</li>`).join("")}</ul></div>`;
   if (module.source && module.id !== 8) html += `<div class="content-block"><div class="source-title">${esc(module.sourceTitle || "Materiał źródłowy")}</div><div class="source-box">${esc(module.source)}</div></div>`;
   if (module.table) html += renderTable(module.table);
