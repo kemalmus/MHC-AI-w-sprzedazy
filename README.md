@@ -1,56 +1,65 @@
 # AI w sprzedaży
 
-Interaktywny playbook jednodniowego szkolenia oparty na fikcyjnym case’ie BudMax Instalacje Sp. z o.o. Program główny obejmuje 11 modułów i kończy się o godz. 17:10. Po nim można zrealizować opcjonalny moduł 12, a następnie opcjonalny moduł 13 o narzędziach AI; oba kończą się o godz. 18:40. Materiały ćwiczeniowe są w katalogach `materials/` i `fallback/`.
+Jednodniowy warsztat na jednej fikcyjnej szansie sprzedażowej BudMax. Cel: doprowadzić zapytanie o ratę do uzgodnionego następnego kroku. Program główny trwa 09:00–17:10; osobne opcjonalne dodatki kończą się o 18:40.
+
+## Przebieg dnia
+
+1. Odpowiedź na lead i otwarcie rozmowy.
+2. Plan discovery na podstawie maila i historycznego CRM.
+3. Rozmowa z Anną: potrzeba, wpływ na biznes, kryteria i decyzja.
+4. Propozycja oparta na własnym discovery i ofertach dealerów.
+5. Usunięcie blokad z dealerem, operacjami i Ryzykiem.
+6. Argumentacja dla Anny i CFO.
+7. Rozmowa o cenie i porównywalności oferty FleetPro.
+8. Wyjaśnienie ograniczeń auta zastępczego.
+9. Rozmowa finałowa i follow-up.
+10. Kontrola własnego materiału przed wysłaniem.
+11. Jeden konkretny test do wykonania w pracy.
+
+Każdy etap określa wejście, rezultat i kryteria sukcesu. Grupy pracują w stałych trójkach, rotując role. Własna próba poprzedza wsparcie AI; po feedbacku następuje powtórka. W głównym programie nie budujemy mikroaplikacji ani kampanii. Materiały tych wcześniejszych ćwiczeń pozostają w repozytorium jako archiwum.
 
 ## Uruchomienie lokalne
 
-Strona pobiera wspólny plik treści przez HTTP, dlatego nie otwieraj `index.html` bezpośrednio jako `file://`.
+```sh
+python3 -m http.server 8000
+```
 
-1. Otwórz terminal w katalogu projektu.
-2. Uruchom `python3 -m http.server 8000`.
-3. Otwórz `http://localhost:8000` w przeglądarce.
+Otwórz `http://localhost:8000`. Strona pobiera JSON przez HTTP, więc nie otwieraj `index.html` jako `file://`. Nie wymaga buildu, backendu ani kluczy API. Uczestnicy sami kopiują wybrane dane i prompty do zatwierdzonego narzędzia.
 
-Nie jest potrzebny build ani instalacja zależności.
+## Prowadzenie
 
-## Publikacja na GitHub Pages
+Przed warsztatem przeczytaj [instrukcję trenera](docs/trainer-flow.md) i [karty klienta oraz zdarzeń](materials/budmax_client_cards.md). Kart nie rozdawaj wszystkim: część A trafia do osoby grającej Annę w module 3, B jest nowym zdarzeniem w module 5, C trafia do CFO w module 7, a D do klienta w finale.
 
-1. Umieść zawartość repozytorium na GitHub.
-2. W ustawieniach repozytorium wybierz **Pages**.
-3. Wskaż publikację z wybranej gałęzi i katalogu `/ (root)` albo skonfiguruj workflow GitHub Pages.
-4. Otwórz wygenerowany adres i przejdź do modułu z agendy.
+Tryb trenera pokazuje wskazówki, timer i odnośnik do kart. Po odświeżeniu jest wyłączony. Hasło ukrywa elementy interfejsu, ale pliki strony są publiczne. Fast mode skraca omówienie na forum; zachowuje własną próbę, feedback i powtórkę każdej osoby.
 
-Linki do treści i plików są względne, więc działają również wtedy, gdy strona jest opublikowana w podkatalogu repozytorium.
+## Karta szansy i zapis
 
-## Tryb trenera
+W modułach 1–10 grupa zapisuje wynik w polu karty szansy. Następne moduły pokazują wcześniejsze wpisy w rozwijanej sekcji „Wasze dotychczasowe ustalenia”. Brak wpisu pozostaje widocznym brakiem; strona nie uzupełnia go przykładową odpowiedzią. Zapisuj faktycznie uzyskane ustalenia, ich źródła i otwarte pytania.
 
-Użyj przełącznika **Tryb trenera** w górnym pasku i wpisz hasło. Tryb pokazuje wskazówki, przykładowe odpowiedzi, pytania do grupy, timer i pliki referencyjne. Po odświeżeniu strony jest wyłączony. Hasło jest lekką blokadą interfejsu: materiały nadal znajdują się w publicznych plikach strony i nie są chronione dostępem.
+Karta szansy, postęp i plan wdrożenia zapisują się w `localStorage` tej przeglądarki. Nie synchronizują się między urządzeniami i nie trafiają na serwer. Można wyeksportować kartę szansy i workflowy do Markdown. Reset usuwa zapisy obecnej wersji warsztatu.
 
-**Fast mode** pojawia się w nawigacji po włączeniu trybu trenera. Pozwala skrócić rundy role-play, liczbę kierunków komunikacji, wariantów kreacji i samodzielne ćwiczenie M365 do demo. Zachowaj ręczną kontrolę obliczenia, rozróżnienie faktów i hipotez oraz krytykę w Sales Lab.
+Nowy program używa klucza `mhc-ai-sales-training-v2`. Zapisy poprzedniego programu pod kluczem `v1` pozostają w przeglądarce, ale nie są wyświetlane jako postęp nowego case’u.
 
-## Edycja treści i plików
+## Edycja i weryfikacja
 
-- Najprostsza zmiana treści: skorzystaj z instrukcji [EDYCJA.md](EDYCJA.md). Teksty modułów, case i agenda są w jednym pliku: `source/training_content.json`.
-- Agenda, case, ćwiczenia, prompty i wskazówki trenerskie: `source/training_content.json`.
-- Układ i dostępne zachowania strony: `index.html`, `assets/css/site.css`, `assets/js/app.js`.
-- Pliki do ćwiczeń: `materials/`.
-- Przykładowe wyniki i warianty awaryjne: `fallback/`.
-- Osobny plik `materials/budmax_deal_desk_reference.html` jest referencyjną mikroaplikacją do pokazania po pierwszej próbie uczestników. To nie jest główna strona szkoleniowa.
-- Moduł 8 zawiera dwa odrębne ćwiczenia: główne wyszukiwanie klauzuli w dłuższej fikcyjnej umowie oraz opcjonalne, krótkie ćwiczenie reklamacyjne z osobnym plikiem.
+- Treści, agenda, kryteria, prompty i notatki trenera: `source/training_content.json`.
+- Interfejs i zapis karty szansy: `assets/js/app.js`, `assets/css/site.css`, `index.html`.
+- Nowe karty klienta: `materials/budmax_client_cards.md`.
+- Nowy fikcyjny fragment warunków: `materials/budmax_service_excerpt.txt`. W głównym programie nie zastępuj go wcześniejszą umową z innych ćwiczeń.
+- Instrukcje edycji: [EDYCJA.md](EDYCJA.md).
+- `docs/prompt-review.md` dokumentuje przegląd promptów poprzedniej wersji, nie aktualny program.
 
-Zmiany w `main` uruchamiają GitHub Actions: workflow sprawdza składnię edytowalnych plików i publikuje stronę w GitHub Pages.
+Weryfikacja składni:
 
-Wszystkie firmy, osoby, warunki, kwoty i zapisy w materiałach są fikcyjne. Nie dopisuj rzeczywistych warunków oferty MHC ani danych klientów.
+```sh
+python3 -m json.tool source/training_content.json > /dev/null
+node --check assets/js/app.js
+```
 
-## Postęp, notatki i reset
+Sprawdź też na stronie zapis wyniku, jego widoczność w następnym module, zachowanie po odświeżeniu, eksport i odsłanianie kroków. Czasy kroków muszą sumować się do czasu modułu, a agenda nie może mieć luk.
 
-Postęp modułów, notatki uczestnika, odpowiedzi z kart bezpieczeństwa i formularze workflow zapisują się w `localStorage` tej przeglądarki. Dane pozostają lokalnie na urządzeniu i nie są wysyłane na serwer. **Resetuj postęp i notatki** usuwa zapis szkoleniowy z bieżącej przeglądarki.
+## Publikacja
 
-Na końcu szkolenia przycisk eksportu zapisuje dwa workflowy do lokalnego pliku Markdown.
+Zmiany w `main` uruchamiają GitHub Actions: kontrolę składni i publikację GitHub Pages. Linki są względne, więc działają także w podkatalogu repozytorium.
 
-## Podmiana materiałów i storyboardu
-
-Zachowaj nazwy plików linkowanych w `source/training_content.json`, aby nie zmieniać odnośników. Można zastąpić pliki w `materials/` nowymi fikcyjnymi materiałami ćwiczeniowymi. Wideo można pominąć: moduł Sales Lab zawiera fallback do storyboardu sześciu kadrów. Podmieniaj go wyłącznie na materiał, do którego masz prawa; nie kopiuj wizerunku ani głosu realnej osoby.
-
-## No API keys / no backend
-
-Główna strona jest statyczna, nie wymaga backendu, logowania ani kluczy API. Uczestnik kopiuje prompt do narzędzia, które organizacja zatwierdziła. Funkcje szkoleniowe, zapis postępu i eksport odbywają się w przeglądarce.
+Wszystkie firmy, osoby, warunki, kwoty i zapisy w case’ie są fikcyjne. Nie dopisuj rzeczywistych warunków MHC ani danych klientów. Moduł 12 to odrębny wariant przetargowy: nowy wątek i osobne notatki, bez aktualizowania karty głównego case’u. Moduł 13 pozostaje opcjonalnym przeglądem narzędzi.

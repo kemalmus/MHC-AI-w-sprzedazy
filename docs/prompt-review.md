@@ -1,5 +1,7 @@
 # Przegląd promptów szkolenia „AI w sprzedaży”
 
+> Archiwum poprzedniej wersji szkolenia. Po przebudowie programu wokół kolejnych etapów sprzedaży te materiały nie opisują aktualnego przebiegu głównego case’u. Aktualna instrukcja: `docs/trainer-flow.md`.
+
 Data przeglądu: 15 października 2026. Zakres: wszystkie 32 pola `steps[].prompt` z 13 modułów w `source/training_content.json` oraz trzy odpowiadające im prompty w karcie modułu 7. Moduły 10 i 11 nie mają gotowych promptów; nie dodano nowych ćwiczeń.
 
 ## Założenia i zasady rewizji

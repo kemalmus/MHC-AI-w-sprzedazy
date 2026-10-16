@@ -1,5 +1,7 @@
 # Fallbacki dla trenera
 
+> Archiwum poprzedniej wersji szkolenia. Po przebudowie programu wokół kolejnych etapów sprzedaży te materiały nie opisują aktualnego przebiegu głównego case’u. Aktualna instrukcja: `docs/trainer-flow.md`.
+
 Ten folder zawiera przykładowe odpowiedzi do ujawnienia po pierwszej próbie uczestników oraz storyboard na wypadek braku narzędzia video.
 
 ## Zawartość

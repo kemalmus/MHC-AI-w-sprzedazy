@@ -12,6 +12,8 @@ Najczęściej zmieniane pola:
 - `case` — fikcyjny profil klienta i jego potrzeby.
 - `agenda` — godziny, nazwy punktów i odnośniki do modułów. Wartość `target` musi wskazywać istniejący identyfikator modułu.
 - `modules` — zawartość modułów. W każdym module można zmienić `title`, `time`, `duration`, `objective`, `problem`, `content`, `steps` i `takeaway`.
+- `entry`, `output`, `criteria` — wejście, wynik przekazywany dalej i obserwowalne kryteria sukcesu etapu. `output` włącza pole karty szansy dla modułów 1–10.
+- `case.mission`, `case.workingRules` — wspólny cel i rytm pracy w trójkach.
 - `trainer` — podpowiedzi widoczne po włączeniu trybu trenera.
 
 Elementy `steps` są listą. Każdy krok może mieć `title`, `body` i `prompt`; wzoruj nowy krok na sąsiednim elemencie w tym samym module. Nie zmieniaj nazw kluczy ani identyfikatorów `id`, jeśli nie aktualizujesz wszystkich powiązanych odnośników.
@@ -19,6 +21,8 @@ Elementy `steps` są listą. Każdy krok może mieć `title`, `body` i `prompt`;
 ## Zmiana plików do pobrania
 
 Pliki ćwiczeniowe są w `materials/`, a wyniki przykładowe w `fallback/`. Możesz podmienić plik przez przesłanie nowej wersji w GitHubie. Zachowaj jego nazwę i ścieżkę, bo odwołuje się do nich treść strony. Jeśli zmieniasz nazwę, popraw także pole `downloads` w odpowiednim module pliku `source/training_content.json`.
+
+Karty ról i ujawnianie zdarzeń są opisane w `docs/trainer-flow.md` oraz `materials/budmax_client_cards.md`. Zmieniając fakt, popraw wszystkie odpowiadające mu karty i materiały. Nie podmieniaj rezultatów uczestników gotowymi odpowiedziami z poprzedniego programu. Czasy kroków muszą sumować się do długości modułu, a agenda powinna zachować ciągłość.
 
 Wszystkie przykłady szkoleniowe mają pozostać fikcyjne. Nie wstawiaj rzeczywistych danych klientów ani warunków handlowych MHC.
 

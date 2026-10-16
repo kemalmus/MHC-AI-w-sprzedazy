@@ -1,4 +1,4 @@
-const STORAGE_KEY = "mhc-ai-sales-training-v1";
+const STORAGE_KEY = "mhc-ai-sales-training-v2";
 const TRAINER_PASSWORD_HASH = "5d21d61712fdbbc2973ce7f4363949dfe7e91987e7e0eee29285a08e21f47a42";
 const courseContentUrl = new URL("source/training_content.json", document.baseURI);
 const courseRoot = document.getElementById("course-content");
@@ -9,11 +9,11 @@ const timers = new Map();
 
 function loadState() {
   try {
-    const saved = Object.assign({ trainer: false, fast: false, done: {}, revealed: {}, choices: {}, workflows: [{}, {}], factCheck: false }, JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"));
+    const saved = Object.assign({ trainer: false, fast: false, done: {}, revealed: {}, choices: {}, caseOutputs: {}, workflows: [{}, {}], factCheck: false }, JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"));
     saved.trainer = false;
     return saved;
   } catch {
-    return { trainer: false, fast: false, done: {}, revealed: {}, choices: {}, workflows: [{}, {}], factCheck: false };
+    return { trainer: false, fast: false, done: {}, revealed: {}, choices: {}, caseOutputs: {}, workflows: [{}, {}], factCheck: false };
   }
 }
 
@@ -31,7 +31,7 @@ function render() {
   document.getElementById("trainer-toggle").checked = Boolean(state.trainer);
   document.getElementById("fast-mode").checked = Boolean(state.fast);
   renderNav();
-  courseRoot.innerHTML = `${renderHome()}${course.modules.map(renderModule).join("")}<footer class="site-footer">AI w sprzedaży · Playbook szkoleniowy · Materiał szkoleniowy — dane fikcyjne</footer>`;
+  courseRoot.innerHTML = `${renderHome()}${course.modules.map(renderModule).join("")}${renderPromptLibrary()}<footer class="site-footer">AI w sprzedaży · Playbook szkoleniowy · Materiał szkoleniowy — dane fikcyjne</footer>`;
   updateProgress();
   updateRoute();
 }
@@ -43,7 +43,12 @@ function renderNav() {
     if (seen.has(item.target)) return "";
     seen.add(item.target);
     return `<a class="nav-link ${state.done[Number(item.target.split("-")[1])] ? "done" : ""}" href="#${esc(item.target)}"><span class="nav-number">${esc(item.target.split("-")[1])}.</span><span>${esc(item.label.replace(/^\d+\. /, ""))}</span></a>`;
-  }).join("");
+  }).join("") + `<a class="nav-link" href="#prompt-library"><span class="nav-number">↗</span><span>Prompty do skopiowania</span></a>`;
+}
+
+function renderPromptLibrary() {
+  const prompts = course.promptLibrary || [];
+  return `<section class="module prompt-library" id="prompt-library"><div class="module-head"><div><div class="module-index">MATERIAŁY DLA UCZESTNIKÓW</div><h2>Prompty do skopiowania</h2></div></div><p class="module-objective">${prompts.length ? "Wybierz prompt i skopiuj go do zatwierdzonego narzędzia AI." : "Prompty pojawią się tutaj. Każdy będzie miał własny przycisk kopiowania."}</p>${prompts.length ? `<div class="steps">${prompts.map((item, index) => `<article class="step-card"><div class="step-card-head"><span class="step-badge">${String(index + 1).padStart(2, "0")}</span><h3>${esc(item.title)}</h3></div><div class="step-card-body"><div class="prompt-box"><pre>${esc(item.prompt)}</pre><button class="button secondary small" type="button" data-action="copy-prompt">Kopiuj prompt</button></div></div></article>`).join("")}</div>` : ""}</section>`;
 }
 
 function renderHome() {
@@ -53,8 +58,9 @@ function renderHome() {
     [course.case.contact, "kontakt po stronie klienta"]
   ];
   return `<section class="home" id="start">
-    <div class="hero"><div class="eyebrow">MHC Mobility · warsztat dla zespołu sprzedaży</div><h1>${esc(course.title)}</h1><p>${esc(course.subtitle)}. Jeden fikcyjny case prowadzi przez przygotowanie, rozmowę, decyzję, współpracę i dalsze działanie.</p><div class="hero-actions"><a class="button primary" href="#module-1">Rozpocznij szkolenie <span aria-hidden="true">↗</span></a><span class="micro-note">09:00–17:10 &nbsp;·&nbsp; 11 modułów obowiązkowych &nbsp;·&nbsp; opcjonalne moduły 12 i 13 do 18:40 &nbsp;·&nbsp; case BudMax</span></div></div>
+    <div class="hero"><div class="eyebrow">MHC Mobility · warsztat dla zespołu sprzedaży</div><h1>${esc(course.title)}</h1><p>${esc(course.subtitle)}.</p><div class="hero-actions"><a class="button primary" href="#module-1">Rozpocznij szkolenie <span aria-hidden="true">↗</span></a><span class="micro-note">09:00–17:10 &nbsp;·&nbsp; 11 modułów obowiązkowych &nbsp;·&nbsp; opcjonalne moduły 12 i 13 do 18:40 &nbsp;·&nbsp; case BudMax</span></div></div>
     <div class="notice"><span class="notice-icon" aria-hidden="true">i</span><div><strong>Zasada pracy z danymi</strong><p>${esc(course.case.notice)}</p></div></div>
+    <div class="content-block"><h2 class="section-heading">Wasza misja</h2><p>${esc(course.case.mission)}</p><p>${esc(course.case.workingRules)}</p></div>
     <h2 class="section-heading">Case BudMax</h2><div class="case-grid">${stats.map(([value,label]) => `<div class="case-stat"><strong>${esc(value)}</strong><span>${esc(label)}</span></div>`).join("")}</div>
     <h2 class="section-heading">Agenda dnia</h2><div class="agenda">${course.agenda.map(item => item.break
       ? `<div class="agenda-item break"><time>${esc(item.time)}</time><span>${esc(item.label)}</span><span></span></div>`
@@ -66,6 +72,7 @@ function renderModule(module) {
   let html = `<section class="module" id="module-${module.id}" data-module="${module.id}">
     <div class="module-head"><div><div class="module-index">MODUŁ ${String(module.id).padStart(2,"0")}</div><h2>${esc(module.title)}</h2></div><span class="module-time">${esc(module.time)}</span></div>
     <div class="module-intro"><div class="panel"><h3>Cel ćwiczenia</h3><p class="module-objective">${esc(module.objective)}</p></div><div class="panel problem"><h3>Problem biznesowy</h3><p>${esc(module.problem)}</p></div></div>`;
+  if (module.output) html += `<div class="takeaway"><strong>Wejście do etapu</strong>${esc(module.entry)}<strong>Rezultat do wykorzystania dalej</strong>${esc(module.output)}<strong>Kryteria sukcesu</strong>${esc(module.criteria)}</div><div class="case-history" data-case-history="${module.id}">${renderCaseHistory(module.id)}</div>`;
   if (module.content) html += `<div class="content-block"><div class="block-label">Warto zapamiętać</div><ul class="content-list">${module.content.map(item => `<li>${esc(item)}</li>`).join("")}</ul></div>`;
   if (module.source && module.id !== 8) html += `<div class="content-block"><div class="source-title">${esc(module.sourceTitle || "Materiał źródłowy")}</div><div class="source-box">${esc(module.source)}</div></div>`;
   if (module.table) html += renderTable(module.table);
@@ -77,7 +84,9 @@ function renderModule(module) {
   if (module.id === 8 && module.source) html += `<div class="content-block"><div class="source-title">${esc(module.sourceTitle || "Materiał źródłowy")}</div><div class="source-box">${esc(module.source)}</div></div>`;
   if (module.downloads?.length && module.id !== 8) html += renderDownloads(module);
   html += `<div class="trainer-box trainer-only"><div class="trainer-label">NOTATKI DLA TRENERA</div><div class="trainer-grid"><div><h4>Prowadzenie</h4><p>${esc(module.trainer.guide)}</p></div><div><h4>Przykład / wskazówki</h4><p>${esc(module.trainer.golden)}</p></div><div><h4>Na co uważać</h4><ul>${module.trainer.pitfalls.map(p => `<li>${esc(p)}</li>`).join("")}</ul></div><div><h4>Pytania do dyskusji</h4><ul>${module.trainer.questions.map(q => `<li>${esc(q)}</li>`).join("")}</ul></div></div>${module.trainer.fast ? `<div class="fast-note" ${state.fast ? "" : "hidden"}><strong>Fast mode:</strong> ${esc(module.trainer.fast)}</div>` : ""}</div>`;
-  html += `<div class="module-tools trainer-only"><button class="button secondary small" type="button" data-action="timer" data-module="${module.id}">▶ Start timer</button><span class="timer" id="timer-${module.id}" hidden><output>--:--</output><button class="text-button" type="button" data-action="stop-timer" data-module="${module.id}">Stop</button></span><span class="fast-note" ${state.fast ? "" : "hidden"}>Fast mode aktywny. Zostaw weryfikację kluczowych informacji, rozróżnienie faktów od hipotez oraz critique w Sales Lab.</span></div>`;
+  html += `<div class="module-tools trainer-only"><button class="button secondary small" type="button" data-action="timer" data-module="${module.id}">▶ Start timer</button><span class="timer" id="timer-${module.id}" hidden><output>--:--</output><button class="text-button" type="button" data-action="stop-timer" data-module="${module.id}">Stop</button></span><span class="fast-note" ${state.fast ? "" : "hidden"}>Fast mode aktywny. Zostaw weryfikację kluczowych informacji, rozróżnienie faktów od hipotez oraz feedback i powtórkę rozmowy.</span></div>`;
+  if (module.output && module.id !== 11) html += `<div class="content-block workflow-field"><label for="case-output-${module.id}">Karta szansy · ${esc(module.output)}</label><p>Zapisz zweryfikowany wynik waszej grupy. W kolejnych etapach znajdziesz go w sekcji „Wasze dotychczasowe ustalenia”. Zapis lokalny w tej przeglądarce; do AI kopiujesz go samodzielnie.</p><textarea id="case-output-${module.id}" data-case-output="${module.id}" rows="8" placeholder="Ustalenia i ich źródła, rezultat próby, otwarte pytania i następny krok…">${esc(state.caseOutputs?.[module.id] || "")}</textarea></div>`;
+  if (module.output) html += `<button class="button secondary small" type="button" data-action="export-case">Eksportuj kartę szansy .md</button>`;
   html += module.id === 11 ? renderWorkflows() : "";
   html += `<div class="module-status"><label class="module-complete"><input type="checkbox" data-done="${module.id}" ${state.done[module.id] ? "checked" : ""}><span>Oznacz moduł jako ukończony</span></label><div class="step-counter" id="step-count-${module.id}"></div></div>
     <nav class="module-pager" aria-label="Nawigacja między modułami">${module.id === 1 ? `<a class="button secondary" href="#start">← Agenda</a>` : `<a class="button secondary" href="#module-${module.id - 1}">← Poprzedni moduł</a>`}<span>Moduł ${module.id} z ${course.modules.length}</span>${module.id === course.modules.length ? `<a class="button primary" href="#start">Wróć do agendy <span aria-hidden="true">↗</span></a>` : `<a class="button primary" href="#module-${module.id + 1}">Następny moduł <span aria-hidden="true">→</span></a>`}</nav>
@@ -109,12 +118,29 @@ function renderNextButton(module) {
 }
 
 function renderDownloads(module) {
-  return `<div class="content-block"><div class="block-label">Materiały do ćwiczenia</div><div class="download-grid">${module.downloads.map(file => {
+  return `<div class="content-block ${module.downloads.every(file => file.trainerOnly) ? "trainer-only" : ""}"><div class="block-label">Materiały do ćwiczenia</div><div class="download-grid">${module.downloads.map(file => {
     const preview = /\.(docx|txt|md)$/i.test(file.href)
       ? `<button class="button secondary small" type="button" data-action="preview-document" data-href="${esc(file.href)}" data-title="${esc(file.label)}" aria-expanded="false">Pokaż tekst</button>`
       : "";
     return `<div class="download-card ${file.trainerOnly ? "trainer-only" : ""}"><strong>${esc(file.label)}</strong><div class="module-tools">${preview}<a class="button secondary small" href="${esc(file.href)}" download>Pobierz</a><a class="button secondary small" href="${esc(file.href)}" target="_blank" rel="noopener">Otwórz</a></div></div>`;
   }).join("")}</div></div>`;
+}
+
+function renderCaseHistory(moduleId) {
+  const previous = course.modules.filter(module => module.output && module.id < moduleId && module.id !== 11);
+  if (!previous.length) return "";
+  return `<details class="content-block"><summary>Wasze dotychczasowe ustalenia · karta szansy</summary>${previous.map(module => `<h3>${esc(module.title)}</h3><div class="source-box">${esc(state.caseOutputs?.[module.id] || "Brak zapisu z tego etapu. Wróć do niego i zapisz wynik lub pozostaw brak jako pytanie; nie zastępuj go wymyślonym ustaleniem.")}</div>`).join("")}</details>`;
+}
+
+function exportCase() {
+  const lines = ["# Karta szansy BudMax", "", "Materiał szkoleniowy — dane fikcyjne", ""];
+  course.modules.filter(module => module.output && module.id !== 11).forEach(module => {
+    lines.push(`## ${module.id}. ${module.title}`, "", state.caseOutputs?.[module.id] || "Brak zapisu — do uzupełnienia.", "");
+  });
+  const blob = new Blob([lines.join("\n")], { type: "text/markdown;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url; link.download = "budmax-karta-szansy.md"; link.click(); URL.revokeObjectURL(url);
 }
 
 const workflowFields = [
@@ -128,7 +154,7 @@ const workflowFields = [
 ];
 
 function renderWorkflows() {
-  return `<div class="content-block"><div class="block-label">Plan wdrożenia — zapis lokalny w tej przeglądarce</div>${[0,1].map(index => `<section class="workflow-group"><h3>Mój workflow nr ${index + 1}</h3><div class="workflow-fields">${workflowFields.map(([key,label,type]) => `<div class="workflow-field"><label for="wf-${index}-${key}">${esc(label)}</label>${type === "textarea" ? `<textarea id="wf-${index}-${key}" data-workflow="${index}" data-field="${key}" placeholder="Zapisz krótko…">${esc(state.workflows?.[index]?.[key] || "")}</textarea>` : `<input id="wf-${index}-${key}" data-workflow="${index}" data-field="${key}" value="${esc(state.workflows?.[index]?.[key] || "")}" placeholder="Zapisz krótko…">`}</div>`).join("")}</div></section>`).join("")}<button class="button primary small" type="button" data-action="export-workflows">Eksportuj workflowy do pliku .md</button><span class="export-note">Eksport jest tworzony w przeglądarce.</span></div>`;
+  return `<div class="content-block"><div class="block-label">Plan wdrożenia — zapis lokalny w tej przeglądarce</div>${[0,1].map(index => `<section class="workflow-group"><h3>Mój workflow nr ${index + 1}${index === 1 ? " · opcjonalny" : ""}</h3><div class="workflow-fields">${workflowFields.map(([key,label,type]) => `<div class="workflow-field"><label for="wf-${index}-${key}">${esc(label)}</label>${type === "textarea" ? `<textarea id="wf-${index}-${key}" data-workflow="${index}" data-field="${key}" placeholder="Zapisz krótko…">${esc(state.workflows?.[index]?.[key] || "")}</textarea>` : `<input id="wf-${index}-${key}" data-workflow="${index}" data-field="${key}" value="${esc(state.workflows?.[index]?.[key] || "")}" placeholder="Zapisz krótko…">`}</div>`).join("")}</div></section>`).join("")}<button class="button primary small" type="button" data-action="export-workflows">Eksportuj workflowy do pliku .md</button><span class="export-note">Eksport jest tworzony w przeglądarce.</span></div>`;
 }
 
 function updateProgress() {
@@ -152,7 +178,8 @@ function updateActiveNav() {
 function updateRoute() {
   closeDocument();
   const requested = decodeURIComponent(location.hash.slice(1));
-  const active = requested === "start" || course.modules.some(module => `module-${module.id}` === requested) ? requested : "start";
+  const active = requested === "start" || requested === "prompt-library" || course.modules.some(module => `module-${module.id}` === requested) ? requested : "start";
+  document.getElementById("prompt-library").hidden = active !== "prompt-library";
   courseRoot.querySelector(".home").hidden = active !== "start";
   courseRoot.querySelector(".site-footer").hidden = active !== "start";
   course.modules.forEach(module => {
@@ -160,6 +187,7 @@ function updateRoute() {
   });
   if (active !== requested) history.replaceState(null, "", "#start");
   const module = course.modules.find(item => `module-${item.id}` === active);
+  if (module?.output) document.querySelector(`[data-case-history="${module.id}"]`).innerHTML = renderCaseHistory(module.id);
   document.title = module ? `${module.title} · AI w sprzedaży` : "AI w sprzedaży · MHC Mobility";
   updateActiveNav();
   window.scrollTo(0, 0);
@@ -259,15 +287,17 @@ document.addEventListener("click", event => {
       stepBlock.insertAdjacentHTML("beforeend", renderNextButton(course.modules.find(m => m.id === moduleId)));
     } else if (action === "timer") startTimer(moduleId);
     else if (action === "stop-timer") { clearInterval(timers.get(moduleId)); timers.delete(moduleId); const timer = document.getElementById(`timer-${moduleId}`); timer.hidden = true; timer.classList.remove("timer-ended"); }
+    else if (action === "export-case") exportCase();
     else if (action === "export-workflows") exportWorkflows();
   }
   if (event.target.id === "reset-button") {
-    if (confirm("Usunąć zapisany postęp i workflowy z tej przeglądarki?")) { localStorage.removeItem(STORAGE_KEY); state = loadState(); location.hash = "#start"; render(); }
+    if (confirm("Usunąć zapisany postęp, kartę szansy i workflowy z tej przeglądarki?")) { localStorage.removeItem(STORAGE_KEY); state = loadState(); location.hash = "#start"; render(); }
   }
 });
 
 document.addEventListener("input", event => {
   const target = event.target;
+  if (target.matches("[data-case-output]")) { state.caseOutputs ||= {}; state.caseOutputs[target.dataset.caseOutput] = target.value; saveState(); }
   if (target.matches("[data-workflow]")) { const index = Number(target.dataset.workflow); state.workflows[index] ||= {}; state.workflows[index][target.dataset.field] = target.value; saveState(); }
 });
 
