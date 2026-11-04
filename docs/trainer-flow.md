@@ -8,7 +8,7 @@ Sprawdź cztery stanowiska pracy:
 
 1. Korespondencja: w module 1 uczestnicy dołączają plik `01_korespondencja_przed_spotkaniem.txt` do Copilot Chat lub wklejają jego treść. Nie potrzebują maila w skrzynce ani Copilota w Outlooku. Wynik kopiują do nowej wiadomości w Outlooku jako niewysłany szkic bez adresata. Osobny plik `03_reklamacja_Anny.txt` jest źródłem reklamacji w module 5.
 2. Excel: własna kopia `budmax_oferty.xlsx`, tabela OfertyDealerow, możliwość pracy z Copilotem i zapisu. Sprawdź edycję lub generowanie formuł. Nie zakładaj, że każde konto ma identyczne funkcje.
-3. PowerPoint: dostępny, zatwierdzony szablon organizacji oraz możliwość pracy na briefie Word. Tego szablonu nie ma w repozytorium — należy przygotować go w środowisku szkoleniowym. Nie używaj starego `proposal_deck_template.pptx` jako aktualnego wzoru; to materiał wcześniejszego programu.
+3. PowerPoint: dostępny, zatwierdzony szablon organizacji oraz możliwość pracy na briefie Word. Jeśli firmowy szablon nie jest dostępny, użyj prostego układu PowerPointa. Nie używaj starego `proposal_deck_template.pptx` jako aktualnego wzoru; to materiał wcześniejszego programu.
 4. Dokumenty: odczyt pliku `04_pakiet_dokumentow.docx` albo osobnych plików TXT w zatwierdzonym Copilot Chat. Sprawdź, jakie dokumenty model faktycznie widzi i jak wskazuje źródła.
 
 Nie używaj danych klientów ani odpowiedzi uczestników ankiety jako treści demonstracyjnej. Na początku wyjaśnij zatwierdzone środowisko, kategorie danych i sposób kontroli wyniku.
@@ -26,13 +26,13 @@ Kroki nie mają oznaczeń czasu. Agenda i długości modułów wyznaczają ramy 
 | 1 Korespondencja | Plik w Copilot Chat, briefing i odpowiedź; nowy szkic w Outlooku | Brief i pytania |
 | 2 Potrzeby klienta | Analiza korespondencji i notatki po spotkaniu z AI, kontrola źródeł i pytań otwartych | Notatka potrzeb |
 | 3 Excel | Porównanie wszystkich dealerów i test parametru | Arkusz i rekomendacja |
-| 4 PowerPoint | Cztery slajdy, kontrola i ewentualne tłumaczenie | Materiał do decyzji |
-| 5 Outlook | Cała reklamacja, triage i pierwsza odpowiedź | Mapa sprawy i pytania |
+| 4 Word i PowerPoint | Brief z AI, cztery slajdy i kontrola | Wewnętrzna decyzja zakupowa |
+| 5 Reklamacja | Analiza maila z pliku, pierwsza odpowiedź i lista informacji | Mapa sprawy i pytania |
 | 6 Dokumenty | Umowa, załączniki i analogie historyczne | Ustalenia z cytatami |
-| 7 Komunikacja | Odpowiedź, przekazanie, CRM i raport | Spójne komunikaty |
+| 7 Komunikacja | Odpowiedź aktualizująca, działania, raport i jeden mail wewnętrzny | Spójne komunikaty |
 | 8 Transfer | Własne zastosowanie i próbne uruchomienie | Plan testu i prompt |
 
-Przygotowanie propozycji (1–3) opiera się na wyniku uczestnika. W module 2 plik `02_notatka_po_spotkaniu.txt` wnosi zapis kolejnego kontaktu z klientem. Uczestnicy z AI wydobywają z korespondencji i notatki potrzeby, priorytety i braki. Nie symulują odpowiedzi klienta; każdy wniosek ma podstawę w źródłach.
+Przygotowanie propozycji (1–4) opiera się na wyniku uczestnika. Ceny w Excelu to koszty zakupu aut. Prezentacja jest skierowana do przełożonego w MHC i służy decyzji wewnętrznej; nie udaje oferty najmu dla CFO BudMax. W module 2 plik `02_notatka_po_spotkaniu.txt` wnosi zapis kolejnego kontaktu z klientem. Uczestnicy z AI wydobywają z korespondencji i notatki potrzeby, priorytety i braki. Nie symulują odpowiedzi klienta; każdy wniosek ma podstawę w źródłach.
 
 W module 5 jawnie przejdź do obsługi po sprzedaży. Wydano cztery auta i pojawia się reklamacja. Podpisany stan sprawy jest określony przez dokumenty w pliku `04_pakiet_dokumentow.docx`, a nie decyzję wygenerowaną wcześniej przez AI. Pakiet ten udostępnij po wstępnej analizie maila. W module 7 wprowadź plik `05_stan_sprawy_po_weryfikacji.txt` z odpowiedziami zespołów.
 
@@ -48,7 +48,7 @@ W module 5 jawnie przejdź do obsługi po sprzedaży. Wydano cztery auta i pojaw
 
 Brak funkcji AI w aplikacji nie oznacza braku zadania. W zatwierdzonym Copilot Chat można dołączyć materiał, uzyskać analizę lub propozycję formuł, a wynik sprawdzić i przenieść do właściwej aplikacji. Wyraźnie nazwij tę ścieżkę; nie twierdź, że model edytował plik lub czytał całą skrzynkę, jeżeli tego nie zrobił.
 
-Gdy tworzenie prezentacji z pliku jest niedostępne, uczestnik generuje układ i treści z AI, a następnie przenosi je do przygotowanego szablonu. Brak konta lub funkcji należy sprawdzić przed szkoleniem, aby nie zamienić ćwiczenia w konfigurację narzędzi.
+Gdy tworzenie prezentacji z pliku jest niedostępne, uczestnik generuje układ i treści z AI, a następnie przenosi je do dostępnego szablonu lub prostego układu. Brak konta lub funkcji należy sprawdzić przed szkoleniem, aby nie zamienić ćwiczenia w konfigurację narzędzi.
 
 ## Źródła funkcji i przygotowania
 
@@ -62,3 +62,7 @@ Sprawdzono 4 listopada 2026. Interfejsy i dostęp zależą od konta, wersji apli
 ## Ocena
 
 Uczestnik potrafi wskazać źródło twierdzenia, wykonać test parametru, poprawić prompt i zachować wynik w docelowej aplikacji. Na końcu ma własny plan zastosowania, a nie tylko wygenerowane dokumenty. Zaznaczenie ukończenia na stronie jest samooceną; skuteczność ćwiczeń trzeba obserwować w pilotażu.
+
+## Transfer do własnej pracy
+
+W module 8 AI tworzy plan i szablon promptu. Uczestnik kopiuje sam szablon do nowej rozmowy, dołącza materiał i rzeczywiście uruchamia zadanie. Nie wystarczy poprosić AI, by opisało udany test. Finalny prompt, termin i obserwację zachowuje w formularzu.

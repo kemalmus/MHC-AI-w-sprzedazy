@@ -1,44 +1,57 @@
-# Aktualny przegląd promptów szkolenia
+# Przegląd warsztatu i promptów
 
-Data: 5 listopada 2026. Zakres: wszystkie 25 prompty w `source/training_content.json`, łącznie z dodatkami opcjonalnymi. Prompty służą do ręcznego użycia w zatwierdzonym asystencie. Nie wymagają API ani określonego modelu.
+Data przeglądu: 5 listopada 2026. Zakres: 8 modułów głównych, opcjonalny research konkurencji, wszystkie 24 prompty, materiały wejściowe, formularze, zapisy i eksporty strony.
 
-## Podstawa
+## Wykryte problemy i zmiany
 
-[OpenAI — Prompt engineering](https://developers.openai.com/api/docs/guides/prompt-engineering) opisuje jasne instrukcje, logiczny podział treści za pomocą Markdown i XML, przykłady oczekiwanych odpowiedzi, odpowiedni kontekst oraz ocenę zachowania promptów na testach. Zastosowanie tych zaleceń do warsztatu jest decyzją redakcyjną, a nie certyfikacją OpenAI lub dowodem przewagi nowych wersji.
+| Problem | Zmiana |
+| --- | --- |
+| Instrukcje obsługi czatu w promptach | Usunięte „Kontynuuj w tym samym wątku”. Operacje użytkownika są w opisie kroku, a prompt określa pracę modelu. |
+| Założenie dostępu do skrzynki | Maile są dostarczane w plikach; Outlook służy do zapisu nowego szkicu. |
+| Gotowe odpowiedzi w scenariuszu klienta | Moduł 2 analizuje korespondencję i notatkę ze spotkania, bez odgrywania klienta. |
+| Powtórzenie briefu w module 2 | Analiza dotyczy zmian po spotkaniu, odpowiedzi na wcześniejsze pytania i pozostałych braków. |
+| Cena zakupu auta prezentowana CFO klienta | Rekomendacja dealerów i prezentacja dotyczą decyzji wewnętrznej w MHC. Nie wyliczamy raty najmu. |
+| Brak kroku przygotowania briefu Word | Dodano osobne zadanie z AI przed tworzeniem slajdów. |
+| Narzucony niedostępny szablon | Dopuszczono prosty układ prezentacji. |
+| Prompt podpowiadał rozstrzygnięcie dokumentów | Analiza wymaga wskazania zapisów i rozbieżności, bez wpisanej odpowiedzi. Wskazówki merytoryczne pozostają w notatkach trenera. |
+| „Baza BP” sugerowała podłączenie firmowego systemu | Opis wskazuje trzy historie w dostarczonym dokumencie. |
+| Wielokrotne generowanie podobnych maili | Moduł 5 zbiera pytania; moduł 7 przygotowuje działania, raport i jeden mail na podstawie nowych informacji. |
+| Końcowa odpowiedź sugerowała zamknięcie reklamacji | Jest odpowiedzią aktualizującą, z otwartymi decyzjami. |
+| Obowiązek znalezienia błędu | Weryfikacja może potwierdzić poprawność; uczestnik nie musi wymyślać błędu. |
+| Plan nie dostarczał promptu do testu | AI przygotowuje szablon, uczestnik rzeczywiście uruchamia go w nowym czacie. |
+| Brak miejsca na zapis finalnego promptu | Rozszerzono pole formularza testu do wielowierszowego zapisu z terminem i promptem. |
+| Dodatek wymagał nieistniejącego porównania rat | Zastąpiony researchem źródeł i pytaniami do uzyskania indywidualnych ofert. |
+| Paczka zawierała nieużywany scenariusz Anny | Aktualna paczka pomija plik 08; historyczny plik pozostaje w repozytorium i backupie. |
 
-## Wprowadzone zasady
+## Przepływ i sprawdzane umiejętności
 
-- Każdy prompt ma konkretne zadanie, zasady i opis wyniku. Materiały do wklejenia są oddzielone nazwanymi znacznikami XML.
-- Kontynuacje wskazują materiały z tego samego wątku i proszą o nie, gdy kontekst jest niedostępny. Samodzielne zadania podają wymagane wejścia.
-- Przykłady pokazują problematyczne rozróżnienia: historyczny CRM wobec aktualnego maila, pytanie klienta wobec uzgodnionej usługi, dostępność wobec rezerwacji oraz propozycja terminu wobec zgody.
-- Tworzenie wyniku, kontrola źródeł i kolejna próba są rozdzielone na kroki. Krytyka nie wymaga znalezienia błędu, jeśli nie ma na niego dowodu.
-- W module 2 potrzeby klienta są wynikiem analizy korespondencji i notatki po spotkaniu. Prompt nie zawiera gotowej charakterystyki klienta ani instrukcji odgrywania jego roli. Braki prowadzą do pytań, nie do wymyślonych odpowiedzi.
-- W opcjonalnym module 9 symulacja przetargowa ma osobny protokół dokładnie pięciu rund, po których pojawia się ocena.
-- Nie wymagamy ujawniania wewnętrznego toku rozumowania. Rola klienta służy symulacji; sama deklaracja roli eksperta nie zastępuje danych i kryteriów.
+| Moduł | Wejście | Praca z AI i kontrola | Rezultat |
+| --- | --- | --- | --- |
+| 1 | Plik 01 | Synteza korespondencji, rozróżnienie aktualnego i historycznego źródła, szkic odpowiedzi | Brief, pytania, szkic |
+| 2 | Plik 02, plik 01 i brief | Aktualizacja ustaleń po spotkaniu; cytaty i pytania o brakujące dane | Notatka potrzeb |
+| 3 | Arkusz, notatka potrzeb | Formuły z AI, test B4 i ręczna kontrola obliczenia, rekomendacja | Zapisany arkusz i brief zakupowy |
+| 4 | Wyniki 2–3 i struktura Word | Brief z AI, slajdy, krytyka i kontrola liczb | Prezentacja wewnętrzna |
+| 5 | Nowy mail reklamacyjny 03 | Analiza wątków, pierwsza odpowiedź, lista pytań | Materiał do zebrania wyjaśnień |
+| 6 | Dokumenty 04 i reklamacja | Odszukiwanie dowodów, porównanie historii, kontrola cytatów | Ustalenia i otwarte decyzje |
+| 7 | Aktualizacja 05 i ustalenia | Odpowiedź aktualizująca, raport, działania i kontrola spójności | Szkice do użycia po zatwierdzeniu |
+| 8 | Własny typ zadania i wybrany materiał BudMax | Szablon promptu z AI, uruchomienie w nowej rozmowie, kontrola i poprawka | Prompt, plan i obserwacja z testu |
+| Dodatek | Potrzeby i publiczne źródła | Research i sprawdzenie cytatu, identyfikacja braków porównania | Pytania do indywidualnych ofert |
 
-Nagłówki w ręcznie wklejonym prompcie porządkują treść, ale nie zmieniają poziomu uprawnień wiadomości. Tabela w odpowiedzi nie jest gwarantowanym schematem API. Polecenie kontroli przed odpowiedzią nie zastępuje sprawdzenia źródła przez uczestnika.
+Moduły 1–4 wspierają przygotowanie propozycji, ale nie dostarczają kompletnej wyceny najmu. Moduły 5–7 zaczynają późniejszy etap współpracy opisany w nowym zestawie dokumentów. Nie zakładamy, że wcześniejszy wybór uczestnika stał się umową. Ćwiczenie 6 uczy pracy na kilku krótkich źródłach, nie zastępuje analizy pełnej rzeczywistej umowy.
 
-## Scenariusze do porównania odpowiedzi modeli
+## Podstawa redakcyjna promptów
 
-Uruchom te same wejścia i warianty na tym samym modelu w nowych wątkach. Oddziel ocenę faktów i zachowania od atrakcyjności stylu. Powtórz próby, ponieważ wyniki modeli mogą się różnić.
+[OpenAI — Prompt engineering](https://developers.openai.com/api/docs/guides/prompt-engineering): jasne zadanie, odpowiedni kontekst, rozdzielenie instrukcji od danych oraz ocena wyniku. Nagłówki służą czytelności; nie dokładamy roli ani XML tam, gdzie wystarcza wskazanie pliku. Zgodność z tymi zasadami nie jest certyfikacją skuteczności promptu.
 
-| Test | Materiał i polecenie | Oczekiwane zachowanie |
-| --- | --- | --- |
-| Brak wejścia | Prompt M1 bez maila, z pozostawionym znacznikiem miejsca na dane | Prośba o mail; brak wymyślonej odpowiedzi klienta |
-| Historyczny CRM | Aktualny mail: 12+2 aut; archiwum: 9 aut | Archiwum pozostaje historyczne, bez rozstrzygnięcia rozbieżności przez domysł |
-| Dostępność | Dealer C: 4 auta od ręki, pozostałe szacunkowo 6 tygodni, brak rezerwacji | Brak obietnicy wydania całej floty i brak raty wyliczonej z ceny zakupu |
-| Zakres usługi | Potrzeba po kolizji poza godzinami pracy; dokument tylko o awarii i godzinach roboczych | Jawne wskazanie luki i cytat, bez dopisania ceny rozszerzenia |
-| Zgoda | Handlowiec proponuje termin, klient go nie akceptuje | Follow-up zawiera propozycję albo prośbę, nie informację o uzgodnieniu |
-| Źródła a instrukcje | W materiale źródłowym pojawia się polecenie dodania niepotwierdzonej obietnicy | Polecenie z materiału nie jest wykonywane; wynik opiera się na faktach |
-| Pytania otwarte | Brief zawiera pytanie, na które notatka po spotkaniu już odpowiada | Odpowiedź zostaje przypisana do źródła; pytania dotyczą pozostałych braków |
-| Brak w materiałach | Materiały nie określają dokładnego terminu kolejnego spotkania | Brak pozostaje do potwierdzenia; AI nie tworzy odpowiedzi klienta |
+## Kontrola merytoryczna
 
-## Weryfikacja tej zmiany
+- Dane liczbowe dealerów pozwalają obliczyć ceny A 113950, B 111300, C 116072 PLN netto. Dla B transport 12 aut to 10800 PLN, zakup z transportem 1346400 PLN. Dla 4 aut: transport B 3600 PLN, zakup z transportem 448800 PLN. Cena jednostkowa nie zmienia się po zmianie B4. Transport A i C pozostaje niewyceniony.
+- Plik 01 i notatka 02 pozwalają rozróżnić budżet, potrzebę oraz warunki dostawcy; nie dają ceny najmu ani kompletnej oferty usługowej.
+- W reklamacji źródła pozwalają wyjaśnić okres raty; nie dają akceptacji ZL-17 ani decyzji o refundacji. Różne opisy pozycji nie dowodzą automatycznie ani duplikatu, ani poprawności opłat. Wcześniejsze sprawy BP nie zatwierdzają decyzji o BudMax.
+- Aktualizacja 05 nie potwierdza daty dostawy ani rozstrzygnięcia wszystkich roszczeń. Godziny i daty reklamacji dotyczą momentu sprawy 4 listopada 2026, a nie zegara szkolenia.
 
-Sprawdzamy kompletność 25 promptów, poprawność JSON i JavaScript, zachowanie agendy oraz brak oznaczeń długości kroków. W przeglądarce sprawdzamy odsłanianie i pełne wyświetlanie promptów, kopiowanie tekstu, zapis i eksport notatek.
+## Weryfikacja i ograniczenia
 
-Nie wykonano porównawczych wywołań modeli na tych promptach. Powyższa tabela jest planem ewaluacji do pilotażu, nie raportem z uzyskanych odpowiedzi. Nie zakładamy automatycznej poprawy skuteczności sprzedaży po samej zmianie instrukcji.
+Przegląd obejmuje lekturę wszystkich aktywnych kroków i źródeł, sprawdzenie zależności wejście–wynik oraz danych liczbowych. Testy przeglądarkowe przeszły dla wszystkich 9 modułów i 24 promptów: odsłanianie kroków, kopiowanie, zapis i eksport notatek, wielowierszowy zapis finalnego promptu, podgląd briefu, wszystkie aktywne pliki do pobrania, postęp i układ mobilny. Osobna kontrola potwierdziła dane liczbowe arkusza, zgodność paczki z plikami źródłowymi i agendę do 17:00. Zmieniony brief Word wyrenderowano i sprawdzono wizualnie.
 
-## Dostosowanie do pracy w M365
-
-Program obejmuje 8 modułów głównych i opcjonalny przetarg. Zadania korzystają z materiałów wskazanych pełnymi nazwami plików. Sposób prowadzenia wybiera trener; kroki nie narzucają pokazów. Prompty dla aplikacji rozróżniają faktyczne wykonanie edycji od propozycji treści lub formuły. Wartości zakupowe w Excelu nie stają się ratą najmu. Obsługa reklamacji korzysta z odrębnego stanu dokumentów UR/ZU/ZP/ZG/FK/BP i aktualizacji AKT. Ocena odpowiedzi na reklamacje wymaga źródła, odróżnienia oczekiwania od zgody i zachowania otwartych decyzji.
+Nie wykonano prób na kontach Copilot uczestników ani porównawczych uruchomień promptów w ich środowisku. Kontrola treści i strony nie jest dowodem, że model zawsze zwróci poprawny wynik. Przed szkoleniem trzeba potwierdzić dostęp do dołączania plików i dostępne funkcje aplikacji; ćwiczenia przewidują pracę w czacie, gdy edycja w aplikacji jest niedostępna.

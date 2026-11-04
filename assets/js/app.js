@@ -150,7 +150,7 @@ const workflowFields = [
   ["ai", "Co AI może zrobić", "textarea"],
   ["context", "Jakie dane / kontekst są potrzebne", "textarea"],
   ["review", "Co człowiek musi sprawdzić", "textarea"],
-  ["test", "Jaki będzie pierwszy test", "input"],
+  ["test", "Pierwszy test, termin i finalny prompt", "textarea"],
   ["success", "Jak poznam, że to działa", "input"]
 ];
 

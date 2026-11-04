@@ -1,17 +1,17 @@
 # AI w sprzedaży i obsłudze klienta
 
-Warsztat na jednej historii BudMax z praktyczną pracą w Outlooku, Excelu, PowerPoincie i dokumentach. Agenda obejmuje 8 modułów od 09:00 do 17:00. Przetarg pozostaje dodatkiem opcjonalnym bez przypisanej godziny, poza agendą dnia.
+Warsztat na jednej historii BudMax z praktyczną pracą w Outlooku, Excelu, PowerPoincie i dokumentach. Agenda obejmuje 8 modułów od 09:00 do 17:00. Research konkurencji pozostaje dodatkiem opcjonalnym bez przypisanej godziny, poza agendą dnia.
 
 ## Przebieg
 
 1. Copilot Chat: briefing i odpowiedź na podstawie pliku z korespondencją; zapis nowego szkicu w Outlooku.
 2. Potrzeby klienta: analiza korespondencji i notatki po spotkaniu z AI, weryfikacja ustaleń oraz pytań otwartych.
 3. Excel: porównanie ofert, formuły, test zmiany parametru i rekomendacja.
-4. PowerPoint: cztery slajdy do decyzji CFO na podstawie briefu w Wordzie.
-5. Outlook: wielowątkowa reklamacja, mapa sprawy i pierwsza odpowiedź.
+4. Word i PowerPoint: brief z AI i cztery slajdy do wewnętrznej decyzji zakupowej.
+5. Reklamacja z pliku: mapa sprawy, pierwsza odpowiedź i lista informacji do zebrania.
 6. Dokumenty: umowa, załączniki, historia zgłoszenia, faktury i podobne sprawy.
-7. Outlook i raportowanie: końcowa odpowiedź, działania zespołów, CRM i brief dla przełożonego.
-8. Transfer: jeden prompt i plan zastosowania sprawdzony na materiale szkoleniowym.
+7. Komunikacja: aktualizująca odpowiedź, lista działań, raport i mail do zespołu; CRM opcjonalnie.
+8. Transfer: plan i szablon promptu z AI, samodzielne uruchomienie promptu oraz sprawdzenie wyniku.
 
 Każdy moduł opisuje zadanie z AI, materiały wejściowe i oczekiwany wynik. Trener decyduje na bieżąco o sposobie prowadzenia. Uczestnik sprawdza źródło i zapisuje rezultat. Nie ma obowiązkowego pisania szkiców bez AI ani oznaczeń czasu poszczególnych kroków.
 
