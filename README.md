@@ -1,65 +1,61 @@
-# AI w sprzedaży
+# AI w sprzedaży i obsłudze klienta
 
-Jednodniowy warsztat na jednej fikcyjnej szansie sprzedażowej BudMax. Cel: doprowadzić zapytanie o ratę do uzgodnionego następnego kroku. Program główny trwa 09:00–17:10; osobne opcjonalne dodatki kończą się o 18:40.
+Warsztat na jednej historii BudMax z praktyczną pracą w Outlooku, Excelu, PowerPoincie i dokumentach. Agenda obejmuje 8 modułów od 09:00 do 17:00. Przetarg pozostaje dodatkiem opcjonalnym bez przypisanej godziny, poza agendą dnia.
 
-## Przebieg dnia
+## Przebieg
 
-1. Odpowiedź na lead i otwarcie rozmowy.
-2. Plan discovery na podstawie maila i historycznego CRM.
-3. Rozmowa z Anną: potrzeba, wpływ na biznes, kryteria i decyzja.
-4. Propozycja oparta na własnym discovery i ofertach dealerów.
-5. Usunięcie blokad z dealerem, operacjami i Ryzykiem.
-6. Argumentacja dla Anny i CFO.
-7. Rozmowa o cenie i porównywalności oferty FleetPro.
-8. Wyjaśnienie ograniczeń auta zastępczego.
-9. Rozmowa finałowa i follow-up.
-10. Kontrola własnego materiału przed wysłaniem.
-11. Jeden konkretny test do wykonania w pracy.
+1. Outlook: briefing i szkic odpowiedzi z aktualnego maila oraz historycznego CRM.
+2. Discovery: jedna rozmowa z AI i notatka do dalszej analizy.
+3. Excel: porównanie ofert, formuły, test zmiany parametru i rekomendacja.
+4. PowerPoint: cztery slajdy do decyzji CFO na podstawie briefu w Wordzie.
+5. Outlook: wielowątkowa reklamacja, mapa sprawy i pierwsza odpowiedź.
+6. Dokumenty: umowa, załączniki, historia zgłoszenia, faktury i podobne sprawy.
+7. Outlook i raportowanie: końcowa odpowiedź, działania zespołów, CRM i brief dla przełożonego.
+8. Transfer: jeden prompt i plan zastosowania sprawdzony na materiale szkoleniowym.
 
-Każdy etap określa wejście, rezultat i kryteria sukcesu. Grupy pracują w stałych trójkach, rotując role. Własna próba poprzedza wsparcie AI; po feedbacku następuje powtórka. W głównym programie nie budujemy mikroaplikacji ani kampanii. Materiały tych wcześniejszych ćwiczeń pozostają w repozytorium jako archiwum.
+Każdy moduł zaczyna się pokazem fragmentu zadania przez trenera. Potem każdy uczestnik wykonuje pełne zadanie z AI, sprawdza źródło i zapisuje wynik. Nie ma obowiązkowego pisania szkiców bez AI ani oznaczeń czasu poszczególnych kroków.
 
-## Uruchomienie lokalne
+Przygotowanie propozycji wykorzystuje ustalenia uczestnika. Obsługa po sprzedaży to jawnie nowy etap współpracy z wydanymi czterema autami i nowym pakietem dokumentów. Wcześniejsza rekomendacja nie staje się automatycznie podpisaną ofertą. Podstawą odpowiedzi reklamacyjnej są materiały 03–05.
+
+## Uruchomienie
 
 ```sh
 python3 -m http.server 8000
 ```
 
-Otwórz `http://localhost:8000`. Strona pobiera JSON przez HTTP, więc nie otwieraj `index.html` jako `file://`. Nie wymaga buildu, backendu ani kluczy API. Uczestnicy sami kopiują wybrane dane i prompty do zatwierdzonego narzędzia.
+Otwórz `http://localhost:8000`. Nie otwieraj `index.html` jako `file://`: strona pobiera JSON przez HTTP. Nie potrzebuje backendu, klucza API ani buildu.
 
-## Prowadzenie
+Strona nie steruje aplikacjami M365, nie przesyła automatycznie do nich danych i nie wysyła maili. Uczestnik przenosi wynik i pliki między aplikacjami. Trener przed szkoleniem sprawdza konta, funkcje Copilota, testową skrzynkę oraz zatwierdzony szablon prezentacji.
 
-Przed warsztatem przeczytaj [instrukcję trenera](docs/trainer-flow.md) i [karty klienta oraz zdarzeń](materials/budmax_client_cards.md). Kart nie rozdawaj wszystkim: część A trafia do osoby grającej Annę w module 3, B jest nowym zdarzeniem w module 5, C trafia do CFO w module 7, a D do klienta w finale.
+## Materiały i przygotowanie trenera
 
-Tryb trenera pokazuje wskazówki, timer i odnośnik do kart. Po odświeżeniu jest wyłączony. Hasło ukrywa elementy interfejsu, ale pliki strony są publiczne. Fast mode skraca omówienie na forum; zachowuje własną próbę, feedback i powtórkę każdej osoby.
+- [Instrukcja trenera](docs/trainer-flow.md): przygotowanie aplikacji, przebieg pokazów i ścieżki zastępcze.
+- `materials/m365/`: korespondencja, skoroszyt, reklamacja, pakiet dokumentów Word i TXT, aktualizacja sprawy i brief do PowerPointa.
+- `materials/m365/budmax_materialy.zip`: pakiet do pobrania przez uczestników.
+- `docs/prompt-review-current.md`: zasady promptów i scenariusze do oceny odpowiedzi.
+- [EDYCJA.md](EDYCJA.md): edycja programu i plików.
 
-## Karta szansy i zapis
+Tryb trenera pokazuje wskazówki i timer modułu. Po odświeżeniu jest wyłączony. Hasło ukrywa elementy interfejsu, ale pliki strony są publiczne. Fast mode skraca omówienia i rozszerzenia, zachowując samodzielną obsługę AI przez uczestnika oraz kontrolę źródła.
 
-W modułach 1–10 grupa zapisuje wynik w polu karty szansy. Następne moduły pokazują wcześniejsze wpisy w rozwijanej sekcji „Wasze dotychczasowe ustalenia”. Brak wpisu pozostaje widocznym brakiem; strona nie uzupełnia go przykładową odpowiedzią. Zapisuj faktycznie uzyskane ustalenia, ich źródła i otwarte pytania.
+## Notatki i zapis
 
-Karta szansy, postęp i plan wdrożenia zapisują się w `localStorage` tej przeglądarki. Nie synchronizują się między urządzeniami i nie trafiają na serwer. Można wyeksportować kartę szansy i workflowy do Markdown. Reset usuwa zapisy obecnej wersji warsztatu.
+W modułach 1–7 uczestnik wkleja zweryfikowany wynik AI do notatek sprawy. Następne etapy pokazują wcześniejsze wpisy; brak wpisu pozostaje widocznym brakiem. Moduł 8 ma formularz planu zastosowania AI. Notatki, plany i postęp zapisują się lokalnie w przeglądarce, bez synchronizacji między urządzeniami. Można je eksportować do Markdown.
 
-Nowy program używa klucza `mhc-ai-sales-training-v2`. Zapisy poprzedniego programu pod kluczem `v1` pozostają w przeglądarce, ale nie są wyświetlane jako postęp nowego case’u.
+Nowy program używa `mhc-ai-sales-training-v3`. Wcześniejsze zapisy `v1` i `v2` pozostają w przeglądarce, ale nie są wyświetlane jako wyniki nowego programu.
 
-## Edycja i weryfikacja
+## Kopia poprzedniej wersji
 
-- Treści, agenda, kryteria, prompty i notatki trenera: `source/training_content.json`.
-- Interfejs i zapis karty szansy: `assets/js/app.js`, `assets/css/site.css`, `index.html`.
-- Nowe karty klienta: `materials/budmax_client_cards.md`.
-- Nowy fikcyjny fragment warunków: `materials/budmax_service_excerpt.txt`. W głównym programie nie zastępuj go wcześniejszą umową z innych ćwiczeń.
-- Instrukcje edycji: [EDYCJA.md](EDYCJA.md).
-- `docs/prompt-review.md` dokumentuje przegląd promptów poprzedniej wersji, nie aktualny program.
+[backups/budmax-before-m365-2026-11-04.zip](backups/budmax-before-m365-2026-11-04.zip) zawiera pełny stan strony i materiałów sprzed tej przebudowy, włącznie z niezacommitowanymi zmianami. Integralność ZIP i sumy SHA-256 wszystkich 46 plików zostały sprawdzone. Instrukcja uruchomienia i przywracania: [backups/README.md](backups/README.md).
 
-Weryfikacja składni:
+Nie usuwano wcześniejszych materiałów. Nowy program linkuje pakiet M365; stare dokumenty i szkice pozostają w repozytorium oraz kopii.
+
+## Weryfikacja i publikacja
 
 ```sh
 python3 -m json.tool source/training_content.json > /dev/null
 node --check assets/js/app.js
 ```
 
-Sprawdź też na stronie zapis wyniku, jego widoczność w następnym module, zachowanie po odświeżeniu, eksport i odsłanianie kroków. Czasy kroków muszą sumować się do czasu modułu, a agenda nie może mieć luk.
+Sprawdź też odnośniki, podgląd dokumentów, odsłanianie i kopiowanie promptów, zapis między modułami, eksport i widok mobilny. Agenda powinna być ciągła. Kontrola źródła dotyczy teraz modułu Excel, a formularz planu — modułu 8.
 
-## Publikacja
-
-Zmiany w `main` uruchamiają GitHub Actions: kontrolę składni i publikację GitHub Pages. Linki są względne, więc działają także w podkatalogu repozytorium.
-
-Wszystkie firmy, osoby, warunki, kwoty i zapisy w case’ie są fikcyjne. Nie dopisuj rzeczywistych warunków MHC ani danych klientów. Moduł 12 to odrębny wariant przetargowy: nowy wątek i osobne notatki, bez aktualizowania karty głównego case’u. Moduł 13 pozostaje opcjonalnym przeglądem narzędzi.
+Zmiany w `main` uruchamiają GitHub Actions: kontrolę składni i publikację GitHub Pages. BudMax jest scenariuszem szkoleniowym; dane ankiety uczestników nie zostały dodane do publicznej strony ani pakietów.

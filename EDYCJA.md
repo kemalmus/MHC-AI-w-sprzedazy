@@ -2,18 +2,23 @@
 
 ## Zmiana tekstu, agendy lub case’u
 
-Edytuj `source/training_content.json`. To jedyne miejsce, w którym zapisane są teksty modułów, prompty, agenda, dane fikcyjnego case’u i wskazówki dla trenera. Do zwykłej zmiany tekstu nie trzeba ruszać HTML, CSS ani JavaScriptu.
+Edytuj `source/training_content.json`. To jedyne miejsce, w którym zapisane są teksty modułów, prompty, agenda, dane szkoleniowego case’u i wskazówki dla trenera. Do zwykłej zmiany tekstu nie trzeba ruszać HTML, CSS ani JavaScriptu.
 
 Na GitHubie otwórz `source/training_content.json`, wybierz edycję pliku, zmień treść i zapisz commit na gałęzi `main`. Workflow sprawdzi składnię JSON i JavaScript, a następnie opublikuje stronę. Jeśli sprawdzenie się nie powiedzie, popraw błąd wskazany w zakładce **Actions** i zapisz kolejny commit.
 
 Najczęściej zmieniane pola:
 
 - `title`, `subtitle` — tytuł i opis strony.
-- `case` — fikcyjny profil klienta i jego potrzeby.
+- `case` — profil klienta i jego potrzeby.
 - `agenda` — godziny, nazwy punktów i odnośniki do modułów. Wartość `target` musi wskazywać istniejący identyfikator modułu.
 - `modules` — zawartość modułów. W każdym module można zmienić `title`, `time`, `duration`, `objective`, `problem`, `content`, `steps` i `takeaway`.
-- `entry`, `output`, `criteria` — wejście, wynik przekazywany dalej i obserwowalne kryteria sukcesu etapu. `output` włącza pole karty szansy dla modułów 1–10.
-- `case.mission`, `case.workingRules` — wspólny cel i rytm pracy w trójkach.
+- `entry`, `output`, `criteria` — wejście, wynik przekazywany dalej i obserwowalne kryteria sukcesu etapu. `output` włącza pole notatek sprawy dla modułów z wynikiem, poza formularzem planu.
+- `case.mission`, `case.workingRules` — wspólny cel i rytm pracy z AI.
+- `chapter`, `app` — rozdział historii i aplikacja widoczna w nagłówku modułu.
+- `steps[].kind` — `demo`, `practice`, `review` lub `handoff`; określa podpis rodzaju pracy.
+- `workflowPlan` — włącza formularze planu zastosowania AI zamiast zwykłego pola notatek.
+- `requiresSourceCheck` — włącza kontrolę źródła przed ukończeniem modułu Excel.
+- `downloads[].textHref` — podgląd tekstowy pliku Word w nowym katalogu materiałów.
 - `trainer` — podpowiedzi widoczne po włączeniu trybu trenera.
 
 Elementy `steps` są listą. Każdy krok może mieć `title`, `body` i `prompt`; wzoruj nowy krok na sąsiednim elemencie w tym samym module. Nie zmieniaj nazw kluczy ani identyfikatorów `id`, jeśli nie aktualizujesz wszystkich powiązanych odnośników.
@@ -22,9 +27,9 @@ Elementy `steps` są listą. Każdy krok może mieć `title`, `body` i `prompt`;
 
 Pliki ćwiczeniowe są w `materials/`, a wyniki przykładowe w `fallback/`. Możesz podmienić plik przez przesłanie nowej wersji w GitHubie. Zachowaj jego nazwę i ścieżkę, bo odwołuje się do nich treść strony. Jeśli zmieniasz nazwę, popraw także pole `downloads` w odpowiednim module pliku `source/training_content.json`.
 
-Karty ról i ujawnianie zdarzeń są opisane w `docs/trainer-flow.md` oraz `materials/budmax_client_cards.md`. Zmieniając fakt, popraw wszystkie odpowiadające mu karty i materiały. Nie podmieniaj rezultatów uczestników gotowymi odpowiedziami z poprzedniego programu. Czasy kroków muszą sumować się do długości modułu, a agenda powinna zachować ciągłość.
+Scenariusze rozmów, materiały M365 i ujawnianie odpowiedzi zespołów są opisane w `docs/trainer-flow.md` oraz `materials/m365/`. Zmieniając fakt, popraw wszystkie odpowiadające mu scenariusze w promptach i materiały. Nie podmieniaj rezultatów uczestników gotowymi odpowiedziami z poprzedniego programu. Nie dodawaj oznaczeń czasu do kroków ani instrukcji ćwiczeń. Zachowaj ciągłość agendy i długości modułów. Przy zmianach promptów stosuj kryteria opisane w `docs/prompt-review-current.md`.
 
-Wszystkie przykłady szkoleniowe mają pozostać fikcyjne. Nie wstawiaj rzeczywistych danych klientów ani warunków handlowych MHC.
+Zachowaj szkoleniowy charakter scenariusza. Nie wstawiaj rzeczywistych danych klientów ani warunków handlowych MHC.
 
 ## Zmiana wyglądu lub działania
 
@@ -39,3 +44,7 @@ Otwórz `http://localhost:8000`. Zatrzymaj serwer skrótem `Ctrl+C`. Strony nie 
 ## Publikacja
 
 Każdy commit do `main` uruchamia publikację. Postęp sprawdzisz w zakładce **Actions** repozytorium. Po udanym przebiegu GitHub Pages zaktualizuje stronę automatycznie. Nie ma ręcznego buildu ani zależności do instalowania.
+
+## Wersja M365 i kopia
+
+Poprzednią stronę zapisano w `backups/budmax-before-m365-2026-11-04.zip`. Nowa treść ma 8 modułów głównych i 1 opcjonalny. Nagłówek startu korzysta z `scheduleNote`, a postęp liczy moduły bez `optional`. Po zmianie plików w `materials/m365/` odśwież pakiet `budmax_materialy.zip`. Nie kopiuj do niego wyników ankiety ani materiałów spoza ćwiczenia.

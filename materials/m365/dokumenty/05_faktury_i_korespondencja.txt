@@ -1,0 +1,7 @@
+Faktury i korespondencja FK 01
+
+[FK 1] Faktura FV-10/26: BM-03, rata 2300 zł netto za okres 12 października–11 listopada 2026; najem zastępczego 320 zł netto; organizacja mobilności 150 zł netto. Numery zleceń przy dwóch ostatnich pozycjach: ZL-17. Pakiet nie potwierdza akceptacji zlecenia.
+[FK 2] Rachunek zewnętrznej wypożyczalni: 640 zł netto. Brak kompletu danych o okresie najmu i brak wcześniejszej zgody na refundację. Kwota rachunku nie oznacza przyznanego zwrotu.
+[FK 3] Fragment prezentacji handlowej: „auto zastępcze do 24h”. Brak na tym slajdzie doprecyzowania godzin roboczych i wyłączenia kolizji. Trzeba wyjaśnić rozbieżność komunikacji z podpisanym zakresem; nie rozstrzygnięto odpowiedzialności.
+[FK 4] Dealer, 3 listopada: „Celujemy w przełom miesięcy, datę potwierdzimy po sprawdzeniu konfiguracji”. Brak rezerwacji i ostatecznej daty w tej korespondencji.
+[FK 5] CFO, 4 listopada: „Zatrzymałem akceptację faktury do wyjaśnienia. Rozważmy zakończenie, jeśli problem nie zostanie rozwiązany”. Anna następnie wyraźnie zaznacza, że nie składają wypowiedzenia.

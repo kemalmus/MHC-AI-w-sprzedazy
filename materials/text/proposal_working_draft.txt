@@ -1,8 +1,8 @@
-MATERIAŁ SZKOLENIOWY – DANE FIKCYJNE  |  STRONA 1 / 4 · SYTUACJA I POTRZEBY
+MATERIAŁ SZKOLENIOWY  |  STRONA 1 / 4 · SYTUACJA I POTRZEBY
 
 Roboczy szkic propozycji dla BudMax
 
-Fikcyjny materiał szkoleniowy wersja do uzupełnienia
+Materiał szkoleniowy wersja do uzupełnienia
 
 1 Sytuacja klienta
 
@@ -28,11 +28,11 @@ Kolejność kryteriów: [DO UZUPEŁNIENIA: ustalić priorytet między ratą, dos
 
 Oczekiwanie dotyczące auta zastępczego: Anna pyta o auto zastępcze w 24h; zakres usługi i jej dostępność wymagają potwierdzenia.
 
-MATERIAŁ SZKOLENIOWY – DANE FIKCYJNE  |  STRONA 2 / 4 · PROPONOWANE ROZWIĄZANIE
+MATERIAŁ SZKOLENIOWY  |  STRONA 2 / 4 · PROPONOWANE ROZWIĄZANIE
 
 3 Proponowane rozwiązanie
 
-Do rozmowy można przygotować wariant oparty na fikcyjnym pakiecie BUSINESS MOBILITY dla aut handlowców. Jego limit 45 tys. km/rok odpowiada deklarowanemu przebiegowi około 45 tys. km rocznie; pakiet obejmuje opony sezonowe, auto zastępcze do 24h i raport miesięczny floty. Dopasowanie trzeba sprawdzić dla przebiegu każdego auta, szczegółowego zakresu usługi oraz warunków kontraktowych.
+Do rozmowy można przygotować wariant oparty na pakiecie BUSINESS MOBILITY dla aut handlowców. Jego limit 45 tys. km/rok odpowiada deklarowanemu przebiegowi około 45 tys. km rocznie; pakiet obejmuje opony sezonowe, auto zastępcze do 24h i raport miesięczny floty. Dopasowanie trzeba sprawdzić dla przebiegu każdego auta, szczegółowego zakresu usługi oraz warunków kontraktowych.
 
 Ten wariant jest kandydatem do porównania, a nie zatwierdzoną ofertą. Nie znamy w materiale jego ceny ani dostępności.
 
@@ -54,7 +54,7 @@ Dane do kalkulacji
 
 Okres najmu w case’ie wynosi 48 miesięcy. Hak nie jest potrzebny. Duży bagażnik jest ważny. Wartość miesięcznej opłaty, opłaty dodatkowe, zasady przekroczenia limitu oraz dostępność pojazdów trzeba dopiero ustalić.
 
-MATERIAŁ SZKOLENIOWY – DANE FIKCYJNE  |  STRONA 3 / 4 · WARTOŚĆ I ZAŁOŻENIA
+MATERIAŁ SZKOLENIOWY  |  STRONA 3 / 4 · WARTOŚĆ I ZAŁOŻENIA
 
 4 Wartość i kompromisy
 
@@ -84,7 +84,7 @@ Czy limit kredytowy klienta został sprawdzony przez Dział Ryzyka? Materiał m�
 
 Otwarte warunki handlowe lub umowne: [DO UZUPEŁNIENIA: wpisać wyłącznie potwierdzone warunki]
 
-MATERIAŁ SZKOLENIOWY – DANE FIKCYJNE  |  STRONA 4 / 4 · KOLEJNE KROKI
+MATERIAŁ SZKOLENIOWY  |  STRONA 4 / 4 · KOLEJNE KROKI
 
 6 Kolejne kroki
 

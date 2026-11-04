@@ -1,0 +1,49 @@
+Umowa ramowa UR 01
+
+[UR §1] Przedmiotem jest obsługa pojazdów wskazanych w podpisanym zestawieniu. Zakres dla danego auta wynika łącznie z umowy i załącznika usługowego. Prezentacja i wstępne maile nie zastępują podpisanego zakresu.
+[UR §2] Miesięczny okres rozliczeniowy dla pierwszych czterech pojazdów trwa od 12. dnia miesiąca do 11. dnia następnego miesiąca. Faktura obejmuje pełny taki okres, jeśli protokół wydania wskazuje pierwszy dzień tego okresu. Sama data miesiąca na fakturze nie określa okresu usługi.
+[UR §3] Reklamacja pojedynczej pozycji nie jest w tym dokumencie uzgodnieniem wstrzymania płatności wszystkich pozostałych pozycji. Indywidualny sposób rozliczenia spornych należności wymaga potwierdzenia z finansami; ten materiał nie zawiera takiego potwierdzenia.
+[UR §4] Zmiana przebiegu lub zakresu usługi wymaga pisemnego wniosku i propozycji zmiany ceny do akceptacji. Nie podano automatycznej ceny zmiany ani zgody na zmianę wsteczną.
+[UR §5] Zawieszenie dostaw i zakończenie współpracy wymagają osobnego uzgodnienia zgodnie z dokumentami zamówienia. Koszty zawieszenia nie zostały podane w tym pakiecie. Przekazanie reklamacji nie jest samo w sobie wypowiedzeniem.
+[UR §6] Przekazanie dokumentów szkody brokerowi wymaga uzgodnienia zakresu i upoważnienia z osobą prowadzącą sprawę. W tym pakiecie brak potwierdzonego zakresu udostępnienia.
+
+
+Załącznik usługowy ZU 01
+
+[ZU §1] Wariant podpisany dla pojazdu BM-03 obejmuje organizację pojazdu zastępczego po awarii unieruchamiającej. Nie obejmuje organizacji auta po kolizji w ramach stałej opłaty.
+[ZU §2] Termin do 24 godzin roboczych liczony jest od przyjęcia kompletnego zgłoszenia. Godziny robocze: poniedziałek–piątek, 8:00–16:00, z wyłączeniem świąt. Brak określonej klasy auta zastępczego.
+[ZU §3] Organizacja auta poza podpisanym zakresem wymaga osobnego zamówienia. Stawki jednorazowe znajdują się w zleceniu ZL-17; samo udzielenie pomocy nie oznacza bezpłatnego rozszerzenia stałego pakietu.
+[ZU §4] Nie ma w tym załączniku zgody na refundację samodzielnego wynajmu ani wyceny utraconego dnia pracy. Roszczenie wymaga analizy dokumentów i decyzji, której nie zawiera pakiet.
+
+
+Zestawienie pojazdów i wydanie ZP 01
+
+[ZP §1] Podpisane zestawienie z 1 października 2026: BM-01, BM-02 i BM-04 — limit 45000 km/rok; BM-03 — 40000 km/rok. W materiale brak wyjaśnienia, dlaczego BM-03 ma inny limit. Sam podpis zestawienia nie rozstrzyga, czy prawidłowo odzwierciedlono potrzebę z rozmowy.
+[ZP §2] Protokół wydania BM-03: 12 października 2026. Miesięczna stawka netto w tym stanie sprawy wynosi 2300 zł; dotyczy pierwszego okresu rozliczeniowego 12 października–11 listopada 2026, a nie pełnego miesiąca kalendarzowego.
+[ZP §3] Dalsze osiem aut: wcześniejsza korespondencja mówi o szacunku sześciu tygodni od zamówienia. Brak w pakiecie potwierdzonej daty zamówienia oraz wiążącej daty wydania całej ósemki. Dwa auta zarządu mają osobne uzgodnienia i nie są przedmiotem tej reklamacji.
+
+
+Historia zgłoszenia ZG 17
+
+[ZG 1] 29 października 2026, 16:40 — telefon kierowcy, przyczyna: kolizja. Zarejestrowano potrzebę auta zastępczego.
+[ZG 2] 29 października, 17:05 — prośba operatora o zdjęcia i oświadczenie. Brak w pakiecie załączników pozwalających potwierdzić kompletność pierwszego zgłoszenia.
+[ZG 3] 30 października, 10:15 — operator potwierdził komplet zgłoszenia.
+[ZG 4] 30 października, 11:20 — operator wysłał zlecenie ZL-17 do potwierdzenia: najem auta 320 zł netto oraz organizacja 150 zł netto. Osobne pozycje nie oznaczają automatycznie podwójnego naliczenia. Brak w pakiecie potwierdzenia akceptacji zlecenia przez osobę uprawnioną po stronie BudMax.
+[ZG 5] 2 listopada, 15:10 — protokół podstawienia auta. Rejestr nie zawiera decyzji uznającej lub odrzucającej reklamację.
+[ZG 6] Kierowca sprzeciwia się dalszemu rozsyłaniu oświadczenia i zdjęć. Danych osobowych, zdjęć i oświadczenia nie dołączono do pakietu warsztatowego.
+
+
+Faktury i korespondencja FK 01
+
+[FK 1] Faktura FV-10/26: BM-03, rata 2300 zł netto za okres 12 października–11 listopada 2026; najem zastępczego 320 zł netto; organizacja mobilności 150 zł netto. Numery zleceń przy dwóch ostatnich pozycjach: ZL-17. Pakiet nie potwierdza akceptacji zlecenia.
+[FK 2] Rachunek zewnętrznej wypożyczalni: 640 zł netto. Brak kompletu danych o okresie najmu i brak wcześniejszej zgody na refundację. Kwota rachunku nie oznacza przyznanego zwrotu.
+[FK 3] Fragment prezentacji handlowej: „auto zastępcze do 24h”. Brak na tym slajdzie doprecyzowania godzin roboczych i wyłączenia kolizji. Trzeba wyjaśnić rozbieżność komunikacji z podpisanym zakresem; nie rozstrzygnięto odpowiedzialności.
+[FK 4] Dealer, 3 listopada: „Celujemy w przełom miesięcy, datę potwierdzimy po sprawdzeniu konfiguracji”. Brak rezerwacji i ostatecznej daty w tej korespondencji.
+[FK 5] CFO, 4 listopada: „Zatrzymałem akceptację faktury do wyjaśnienia. Rozważmy zakończenie, jeśli problem nie zostanie rozwiązany”. Anna następnie wyraźnie zaznacza, że nie składają wypowiedzenia.
+
+
+Baza wcześniejszych spraw BP 01
+
+[BP A] Klient Alfa: zakwestionował pełną ratę po wydaniu w połowie miesiąca. Ustalono inny niż kalendarzowy okres rozliczeniowy; korekta nie była potrzebna. Podstawa: sprawdzony protokół i faktura. Dla BudMax potrzebna jest osobna kontrola dokumentów ZP i FK.
+[BP B] Klient Beta: dwie pozycje organizacji auta, jedna potwierdzona akceptacja. Finansowanie i operacje uzgodniły korektę po odtworzeniu zleceń. To wynik tamtej sprawy, nie decyzja o BudMax.
+[BP C] Klient Gamma: wniosek o podniesienie limitu przebiegu. Przygotowano propozycję zmiany po ustaleniu profilu użytkowania; koszt zależał od danych umowy. Nie podano uniwersalnej stawki ani zgody na zmianę wsteczną.

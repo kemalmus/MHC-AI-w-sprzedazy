@@ -1,0 +1,12 @@
+BUDMAX — ZAPIS ROZMOWY DO DEMONSTRACJI I RAPORTOWANIA
+
+[SPOT-01] Anna: Ostatnio po dwóch kolizjach handlowcy odwoływali wizyty, bo organizacja auta zastępczego wymagała wielu telefonów. Nie mamy wyliczonego kosztu utraconej sprzedaży.
+[SPOT-02] Anna: Szukamy 12 aut dla handlowców i dwóch dla zarządu. Około 45 tys. km rocznie na auto handlowca to szacunek; rozpiski per auto nie mamy.
+[SPOT-03] Anna: Bardziej niż dodatkowe wyposażenie liczy się przewidywalność wydania i wsparcie przy unieruchomieniu. Cztery auta chcielibyśmy wcześniej, pozostałe osiem później. Harmonogram i konfigurację trzeba potwierdzić.
+[SPOT-04] CFO: Chcę porównywalnych wariantów przy tym samym okresie i zakresie. Limit to 2400 zł netto miesięcznie na auto handlowca. Limit 4200 zł dla zarządu również jest netto; nie jest to zaakceptowana rata oferty.
+[SPOT-05] Anna: Pytam o pojazd zastępczy w ciągu 24 godzin także po kolizji i poza godzinami pracy. Nie dostałam jeszcze szczegółowego zakresu.
+[SPOT-06] Anna zbiera porównanie operacyjne. CFO zatwierdza dostawcę i budżet. Ustalono powrót z porównaniem; konkretna data kolejnego spotkania nie została uzgodniona.
+[SPOT-07] Handlowiec: Spróbuję sprawdzić możliwość rezerwacji czterech aut. Nie mamy jeszcze potwierdzenia dealera ani decyzji Ryzyka.
+[SPOT-08] CFO: Konkurencja wspominała o niższej racie, ale dokumentu jeszcze nie przekazałem. Nie porównujmy kwot bez zakresu.
+
+Ten zapis jest źródłem do pokazu trenera oraz ćwiczenia raportowania. W notatce z własnej symulacji uczestnik zachowuje tylko informacje, które faktycznie padły w jego dialogu.

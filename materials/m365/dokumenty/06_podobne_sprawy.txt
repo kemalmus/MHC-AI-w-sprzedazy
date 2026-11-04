@@ -1,0 +1,5 @@
+Baza wcześniejszych spraw BP 01
+
+[BP A] Klient Alfa: zakwestionował pełną ratę po wydaniu w połowie miesiąca. Ustalono inny niż kalendarzowy okres rozliczeniowy; korekta nie była potrzebna. Podstawa: sprawdzony protokół i faktura. Dla BudMax potrzebna jest osobna kontrola dokumentów ZP i FK.
+[BP B] Klient Beta: dwie pozycje organizacji auta, jedna potwierdzona akceptacja. Finansowanie i operacje uzgodniły korektę po odtworzeniu zleceń. To wynik tamtej sprawy, nie decyzja o BudMax.
+[BP C] Klient Gamma: wniosek o podniesienie limitu przebiegu. Przygotowano propozycję zmiany po ustaleniu profilu użytkowania; koszt zależał od danych umowy. Nie podano uniwersalnej stawki ani zgody na zmianę wsteczną.

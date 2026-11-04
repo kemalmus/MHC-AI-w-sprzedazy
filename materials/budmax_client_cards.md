@@ -1,8 +1,6 @@
-# BudMax — karty klienta i zdarzeń dla trenera
+# BudMax — scenariusze rozmów i odpowiedzi zespołów
 
-Wszystkie informacje są fikcyjne i służą wyłącznie temu scenariuszowi. Nie są warunkami MHC. To uzupełnienie aktualnego maila Anny, nie wcześniejszych wariantów case’u. Trener przekazuje osobom grającym klienta tylko właściwą część. Nie rozdawaj całego pliku wszystkim uczestnikom. Tryb trenera ukrywa materiały w interfejsie, ale nie zapewnia poufności plików.
-
-Pracujcie w trójkach. Handlowiec korzysta z własnych wyników, klient z karty, obserwator notuje konkretne wypowiedzi. W kolejnych rotacjach część informacji będzie już znana; nadal trzeba o nią zapytać, wysłuchać odpowiedzi i potwierdzić podsumowanie. Nie oceniajcie zgadywania odpowiedzi. Klient nie dodaje cen ani faktów spoza karty. Na pytanie bez odpowiedzi w karcie mówi „tego jeszcze nie ustaliliśmy”.
+Scenariusze A, C i D są wiedzą roli klienta odgrywanej przez AI. Ich treść jest również w promptach modułów 3, 7 i 9. Do notatek sprawy trafiają tylko informacje ujawnione w dialogu, nie całe opisy ról. Część B trener udostępnia w module 5 po wygenerowaniu zapytań. Materiały strony są publiczne.
 
 ## A. Anna — discovery, moduł 3; reakcja na propozycję, moduł 6
 
@@ -22,7 +20,7 @@ W podsumowaniu popraw przekłamania. Jeżeli handlowiec nie zapytał o potrzebę
 
 ## B. Odpowiedzi wewnętrzne — zdarzenie w module 5
 
-Trener ujawnia dopiero po napisaniu przez grupę własnych zapytań. Odczytaj wszystkie trzy odpowiedzi; grupa sprawdza, czy jej zapytania obejmowały najważniejsze blokady.
+Trener udostępnia po wygenerowaniu zapytań z AI. Uczestnicy dołączają wszystkie trzy odpowiedzi do wątku i analizują ich wpływ na propozycję.
 
 **Dealer C:** cztery auta są obecnie dostępne, ale nie są zarezerwowane i trzeba sprawdzić zgodność konfiguracji. Pozostałe osiem dealer szacuje na sześć tygodni od zamówienia. To szacunek, nie gwarancja daty wydania. Oferta jest ważna siedem dni od wystawienia; daty wystawienia nie podano. Termin dwóch aut zarządu nie jest objęty tą odpowiedzią.
 
@@ -49,7 +47,7 @@ Nie zatwierdzaj zakupu. Celem jest ruch w stronę porównywalnej propozycji, nie
 
 ## D. Anna lub CFO — finał w module 9
 
-Wybierz jedną rolę na daną rotację. Korzystaj z potrzeb z części A lub C i wyników, które grupa rzeczywiście ma. Nie zamieniaj niezdobytych informacji w automatyczne ustalenia. Nie wprowadzaj nowych cen ani nowych problemów.
+Wybierz rolę Anny albo CFO na daną rozmowę. Korzystaj wyłącznie z potrzeb i warunków zawartych w dołączonych notatkach sprawy. Nie zamieniaj niezdobytych informacji w automatyczne ustalenia. Nie wprowadzaj nowych cen ani nowych problemów.
 
 Anna pyta: „Czy ta propozycja rozwiązuje nasz problem po kolizji i kiedy dostaniemy auta?”. CFO pyta: „Co konkretnie porównamy i czego potrzebujecie ode mnie?”.
 
@@ -60,6 +58,6 @@ Zgódź się na następny krok, jeśli handlowiec:
 3. Zaproponuje konkretne działanie prowadzące do decyzji, np. udostępnienie zakresu FleetPro, potwierdzenie warunków rozszerzenia albo spotkanie nad porównaniem.
 4. Spyta o właściciela i termin oraz pozwoli ci je zaakceptować lub zmienić.
 
-Na potrzeby symulacji możesz uzgodnić przekazanie materiału do końca następnego dnia roboczego, powrót handlowca z potwierdzeniem w ciągu dwóch dni roboczych i termin kolejnej rozmowy do wspólnego ustalenia. To zobowiązania powstające w rozmowie, nie gotowe ustalenia z karty. Nie potwierdzaj za operacje zakresu i ceny rozszerzenia ani za dealera dostępności.
+Na potrzeby symulacji możesz uzgodnić przekazanie materiału do końca następnego dnia roboczego, powrót handlowca z potwierdzeniem w ciągu dwóch dni roboczych i termin kolejnej rozmowy do wspólnego ustalenia. To zobowiązania powstające w rozmowie, nie gotowe ustalenia ze scenariusza. Nie potwierdzaj za operacje zakresu i ceny rozszerzenia ani za dealera dostępności.
 
 Jeśli warunki nie zostały spełnione, powiedz, czego potrzebujesz przed zgodą. Klient nie musi zgodzić się na zakup. Po rozmowie przeczytaj follow-up i popraw każdą deklarację, której nie zaakceptowałeś.

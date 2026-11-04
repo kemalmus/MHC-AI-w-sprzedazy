@@ -1,0 +1,17 @@
+BUDMAX — BRIEF DO PREZENTACJI DLA CFO
+
+Ten plik jest strukturą wejścia do uzupełnienia wynikami pracy z AI w modułach 2 i 3. Nie zawiera gotowej rekomendacji.
+
+1 Potrzeba i kryteria klienta
+[WKLEJ ZWERYFIKOWANE DISCOVERY]
+
+2 Porównanie dealerów
+[WKLEJ WYNIK Z EXCELA Z JEDNOSTKAMI I ŹRÓDŁAMI]
+
+3 Rekomendacja i kompromis
+[WKLEJ WARUNKOWY WYBÓR ORAZ ALTERNATYWĘ]
+
+4 Otwarte warunki i decyzja
+[WKLEJ PYTANIA DO POTWIERDZENIA ORAZ OCZEKIWANĄ DECYZJĘ CFO]
+
+Przygotuj cztery slajdy, używając dostępnego szablonu organizacji. Materiał nie wycenia rat najmu na podstawie cen zakupu. Brakujące dane mają pozostać oznaczone. Angielska wersja podsumowania nie może zmieniać kwot i zastrzeżeń.

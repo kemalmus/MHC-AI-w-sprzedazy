@@ -1,51 +1,64 @@
-# Jak prowadzić nowy case BudMax
+# Prowadzenie warsztatu BudMax w M365
 
-## Przygotowanie
+## Przed szkoleniem
 
-Utwórz stałe trójki i wybierz po jednym urządzeniu do wspólnej karty szansy. Każdy zachowuje również własne próby. Sprawdź dostęp do zatwierdzonego narzędzia AI i otwieranie plików. Przygotuj oddzielne wydruki lub wiadomości z częściami A, B, C i D pliku `materials/budmax_client_cards.md`. Nie pokazuj całego pliku na wspólnym ekranie.
+Przygotuj własne kopie pakietu `materials/m365/budmax_materialy.zip` w zatwierdzonym środowisku. Każdy uczestnik powinien mieć dostęp do AI i samodzielnie uruchamiać zadania. Przy jednym urządzeniu zmieniaj operatora. Podstawowe zadanie ma działać na prostym wejściu; osoby sprawniejsze wykonują rozszerzenie wskazane w module.
 
-Powiedz uczestnikom: „Prowadzicie jedną sprawę. Nie zbieramy promptów. Na końcu macie umieć przedstawić propozycję, odpowiedzieć na obiekcję i uzgodnić następny krok. To, czego nie odkryjecie, będzie brakować wam później”.
+Sprawdź cztery stanowiska pracy:
 
-## Zasady ćwiczeń
+1. Outlook: przygotowany warsztatowy wątek z pakietu 01 oraz osobna wiadomość reklamacyjna z pakietu 03. TXT nie jest natywnym wątkiem Outlooka. Sprawdź podsumowanie i tworzenie niewysłanego szkicu na rzeczywistym koncie demonstracyjnym.
+2. Excel: własna kopia `budmax_oferty.xlsx`, tabela OfertyDealerow, możliwość pracy z Copilotem i zapisu. Sprawdź edycję lub generowanie formuł. Nie zakładaj, że każde konto ma identyczne funkcje.
+3. PowerPoint: dostępny, zatwierdzony szablon organizacji oraz możliwość pracy na briefie Word. Tego szablonu nie ma w repozytorium — należy przygotować go w środowisku szkoleniowym. Nie używaj starego `proposal_deck_template.pptx` jako aktualnego wzoru; to materiał wcześniejszego programu.
+4. Dokumenty: odczyt pakietu 04 DOCX albo osobnych plików TXT w zatwierdzonym Copilot Chat. Sprawdź, jakie dokumenty model faktycznie widzi i jak wskazuje źródła.
 
-- Pierwsza próba jest własna. Gotowy prompt odsłaniamy dopiero w kroku wsparcia AI.
-- W rozmowach role rotują. Każdy ćwiczy handlowca, a nie tylko jedna osoba przy ekranie.
-- Feedback zaczyna się od samooceny, potem wypowiadają się obserwator i klient. Oceniamy konkretne wypowiedzi i reakcje, nie wrażenie „profesjonalnego tonu”.
-- AI otrzymuje zapis próby lub rzetelne notatki z konkretnymi wypowiedziami. Nie ma zapisu — nie udajemy, że model ocenił rozmowę. Można pominąć coaching AI i wykorzystać obserwację partnera.
-- Po feedbacku trzeba powtórzyć zachowanie. Poprawiony tekst na ekranie nie zastępuje powtórnej rozmowy.
-- Na końcu etapu grupa zapisuje wspólny rezultat. Kopiuje go do kolejnego promptu samodzielnie. Strona niczego nie przesyła do AI.
-- Nie przywracaj grupie automatycznie wszystkich faktów. Jeśli nie zapytali o kryterium, muszą do niego wrócić lub warunkowo sformułować propozycję.
+Nie używaj danych klientów ani odpowiedzi uczestników ankiety jako treści demonstracyjnej. Na początku wyjaśnij zatwierdzone środowisko, kategorie danych i sposób kontroli wyniku.
 
-## Co buduje się przez dzień
+## Rytm każdego modułu
 
-| Etap | Co powstaje | Do czego posłuży |
-| --- | --- | --- |
-| 1 | Odpowiedź na lead i cel spotkania | Plan rozmowy |
-| 2 | Własny plan i pytania | Discovery |
-| 3 | Potwierdzone potrzeby i proces decyzji | Kryteria propozycji |
-| 4 | Wariant, argumenty, kompromis i blokady | Zapytania wewnętrzne |
-| 5 | Nowe potwierdzenia i braki | Wiarygodna prezentacja |
-| 6 | Argumentacja dla Anny i CFO | Obrona wartości w rozmowie o cenie |
-| 7 | Zakres porównania i reakcja CFO | Finał |
-| 8 | Luka w warunkach usługi i działanie | Uczciwa propozycja w finale |
-| 9 | Rozmowa i follow-up | Kontrola materiału |
-| 10 | Poprawiony mail i otwarte warunki | Końcowy rezultat case’u |
-| 11 | Jeden plan testu w pracy | Transfer zachowania |
+Trener pokazuje fragment zadania i weryfikację jednego wyniku. Następnie każdy uczestnik wykonuje pełne zadanie z AI, zmienia jedną instrukcję w razie potrzeby, sprawdza źródło i zachowuje rezultat. Pokaz nie powinien ujawniać całego rozwiązania.
 
-## Ujawnianie informacji
+Kroki nie mają oznaczeń czasu. Agenda i długości modułów wyznaczają ramy dnia. Skracaj omówienie na forum i rozszerzenie, a nie bezpośrednią pracę uczestników z AI.
 
-W module 3 kartę A ma klientka; ujawnia informacje po trafnych pytaniach. W module 5 odczytaj część B dopiero po przygotowaniu zapytań przez grupę. W module 7 tylko CFO otrzymuje część C. W module 8 wszyscy dostają nowy fragment warunków. W module 9 klient ma część D i nie akceptuje następnego kroku automatycznie.
+## Trzy rozdziały i transfer
 
-Nie mieszaj materiałów wcześniejszego wariantu: starych notatek koordynacyjnych, szkicu oferty, pełnej umowy, kampanii i mikroaplikacji. Główny case korzysta z aktualnego maila, historycznego CRM, ofert dealerów, katalogu, nowych kart i nowego fragmentu warunków. Ogólny katalog usług nie potwierdza szczegółowego SLA ani ceny dla BudMax.
+| Moduł | Pokaz trenera | Praca uczestnika | Rezultat |
+| --- | --- | --- | --- |
+| 1 Outlook | Fragment korespondencji i szkic | Cały wątek, briefing i odpowiedź | Brief i pytania |
+| 2 Discovery | Jedno pytanie i STOP | Jedna rozmowa z AI, opcjonalna poprawka | Notatka potrzeb |
+| 3 Excel | Jedna formuła i jej źródło | Porównanie wszystkich dealerów i test parametru | Arkusz i rekomendacja |
+| 4 PowerPoint | Struktura briefu i pierwszy slajd | Cztery slajdy, kontrola i ewentualne tłumaczenie | Materiał do decyzji |
+| 5 Outlook | Jeden akapit reklamacji | Cała reklamacja, triage i pierwsza odpowiedź | Mapa sprawy i pytania |
+| 6 Dokumenty | Okres faktury z trzech źródeł | Umowa, załączniki i analogie historyczne | Ustalenia z cytatami |
+| 7 Komunikacja | Jeden fakt dla dwóch odbiorców | Odpowiedź, przekazanie, CRM i raport | Spójne komunikaty |
+| 8 Transfer | Wyodrębnienie szablonu promptu | Własne zastosowanie i próbne uruchomienie | Plan testu i prompt |
 
-## Gdy narzędzie nie działa lub brakuje czasu
+Przygotowanie propozycji (1–3) opiera się na wyniku uczestnika. Zapis spotkania 02 jest jawnym źródłem zastępczym, jeśli symulacja nie zadziała, i materiałem do pokazu raportowania. Nie przedstawiaj go jako informacji zdobytych w dialogu, którego nie było.
 
-Przy braku AI uczestnicy wykonują zadania i krytykę w trójce; wykorzystaj wskazówki trenera z modułu dopiero po ich własnej próbie. Przy braku zapisu w przeglądarce użyj wspólnego lokalnego dokumentu z nagłówkami etapów 1–10. Nie zastępuj zdobytych ustaleń starym gotowym briefingiem.
+W module 5 jawnie przejdź do obsługi po sprzedaży. Wydano cztery auta i pojawia się reklamacja. Podpisany stan sprawy jest określony przez dokumenty 04, a nie decyzję wygenerowaną wcześniej przez AI. Pakiet ten udostępnij po wstępnej analizie maila. W module 7 wprowadź aktualizację 05 z odpowiedziami zespołów.
 
-Skracaj omówienia na forum i liczbę prezentowanych przykładów. Zachowaj udział każdego w rozmowie, feedback i drugą próbę. Jeżeli zmieniasz długość modułu, jawnie przesuń agendę; nie pomijaj finału na rzecz dodatkowego demo narzędzia.
+## Kontrole ważne dla case’u
 
-## Jak ocenić rezultat
+- Excel: cena A po rabacie 113950 PLN, B 111300 PLN, C 116072 PLN. Transport B dla 12 aut: 10800 PLN; zakup i transport B: 1346400 PLN netto. Transport A/C nie jest wyceniony. Wartości pakietów nie odejmujemy od ceny zakupu. Po testach przywróć B4=12.
+- Reklamacja: sam mail nie potwierdza załączników. Uwaga CFO o rozważaniu zakończenia nie jest wypowiedzeniem. Nie dopisuj brokera do wątku i nie rozsyłaj dokumentów szkody.
+- Dokumenty: UR §2, ZP §2 i FK 1 wyjaśniają okres raty. ZU opisuje awarię i godziny robocze, a zdarzenie to kolizja. ZG/FK nie zawierają akceptacji ZL-17. Różny opis dwóch opłat nie dowodzi automatycznie ani duplikatu, ani poprawności obciążenia.
+- Historia podobnych spraw BP daje wskazówki, nie decyzję o korekcie lub zwrocie dla BudMax.
+- Aktualizacja 05 potwierdza koordynację i część faktów, lecz nie decyzję o refundacji ani wiążącą datę wydania pozostałych aut.
 
-Porównaj pierwszą i drugą próbę tej samej osoby. Czy pyta o skutek problemu? Czy argument wynika z odpowiedzi klienta? Czy sprawdza zakres przed reakcją na cenę? Czy klient rzeczywiście zaakceptował działanie, właściciela i termin? Czy mail odzwierciedla ustalenia?
+## Ścieżki zastępcze
 
-Ukończenie modułu w interfejsie jest samooceną, nie dowodem nabycia kompetencji. Sprawdzona składnia strony również nie potwierdza skuteczności warsztatu. Po pilotażu zbierz obserwacje dotyczące liczby odbytych prób i jakości uzgodnionych następnych kroków.
+Brak funkcji AI w aplikacji nie oznacza braku zadania. W zatwierdzonym Copilot Chat można dołączyć materiał, uzyskać analizę lub propozycję formuł, a wynik sprawdzić i przenieść do właściwej aplikacji. Wyraźnie nazwij tę ścieżkę; nie twierdź, że model edytował plik lub czytał całą skrzynkę, jeżeli tego nie zrobił.
+
+Gdy tworzenie prezentacji z pliku jest niedostępne, uczestnik generuje układ i treści z AI, a następnie przenosi je do przygotowanego szablonu. Brak konta lub funkcji należy sprawdzić przed szkoleniem, aby nie zamienić ćwiczenia w konfigurację narzędzi.
+
+## Źródła funkcji i przygotowania
+
+Sprawdzono 4 listopada 2026. Interfejsy i dostęp zależą od konta, wersji aplikacji oraz ustawień organizacji. Dokumentacja nie potwierdza dostępności na kontach uczestników.
+
+- [Microsoft — podsumowanie korespondencji w Outlooku](https://support.microsoft.com/office/summarize-an-email-thread-with-copilot-in-outlook-a79873f2-396b-46dc-b852-7fe5947ab640)
+- [Microsoft — wskazówki pracy z Copilotem w Excelu](https://support.microsoft.com/office/format-data-for-copilot-in-excel-1604c8eb-57f1-4db1-8363-d53336228c65)
+- [Microsoft — tworzenie prezentacji z Copilotem i praca na szablonie](https://support.microsoft.com/office/create-a-new-presentation-with-copilot-in-powerpoint-3222ee03-f5a4-4d27-8642-9c387ab4854d)
+- Zasady promptów i scenariusze sprawdzania odpowiedzi: `docs/prompt-review-current.md`.
+
+## Ocena
+
+Uczestnik potrafi wskazać źródło twierdzenia, wykonać test parametru, poprawić prompt i zachować wynik w docelowej aplikacji. Na końcu ma własny plan zastosowania, a nie tylko wygenerowane dokumenty. Zaznaczenie ukończenia na stronie jest samooceną; skuteczność ćwiczeń trzeba obserwować w pilotażu.

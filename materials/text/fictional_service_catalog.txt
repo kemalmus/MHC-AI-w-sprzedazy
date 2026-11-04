@@ -1,8 +1,8 @@
-Fikcyjny katalog pakietów najmu
+Katalog pakietów najmu
 
 Materiał porównawczy do ćwiczenia wyboru
 
-MATERIAŁ SZKOLENIOWY – DANE FIKCYJNE · To fikcyjny katalog szkoleniowy. Nie przedstawia rzeczywistej oferty MHC i nie zawiera rzeczywistych cenników MHC.
+MATERIAŁ SZKOLENIOWY · To katalog szkoleniowy. Nie przedstawia rzeczywistej oferty MHC i nie zawiera rzeczywistych cenników MHC.
 
 Porównanie pakietów
 
