@@ -1,6 +1,6 @@
 # Aktualny przegląd promptów szkolenia
 
-Data: 4 listopada 2026. Zakres: wszystkie 32 prompty w `source/training_content.json`, łącznie z dodatkami opcjonalnymi. Prompty służą do ręcznego użycia w zatwierdzonym asystencie. Nie wymagają API ani określonego modelu.
+Data: 5 listopada 2026. Zakres: wszystkie 25 prompty w `source/training_content.json`, łącznie z dodatkami opcjonalnymi. Prompty służą do ręcznego użycia w zatwierdzonym asystencie. Nie wymagają API ani określonego modelu.
 
 ## Podstawa
 
@@ -36,10 +36,10 @@ Uruchom te same wejścia i warianty na tym samym modelu w nowych wątkach. Oddzi
 
 ## Weryfikacja tej zmiany
 
-Sprawdzamy kompletność 32 promptów, poprawność JSON i JavaScript, zachowanie agendy oraz brak oznaczeń długości kroków. W przeglądarce sprawdzamy odsłanianie i pełne wyświetlanie promptów, kopiowanie tekstu, zapis i eksport notatek.
+Sprawdzamy kompletność 25 promptów, poprawność JSON i JavaScript, zachowanie agendy oraz brak oznaczeń długości kroków. W przeglądarce sprawdzamy odsłanianie i pełne wyświetlanie promptów, kopiowanie tekstu, zapis i eksport notatek.
 
 Nie wykonano porównawczych wywołań modeli na tych promptach. Powyższa tabela jest planem ewaluacji do pilotażu, nie raportem z uzyskanych odpowiedzi. Nie zakładamy automatycznej poprawy skuteczności sprzedaży po samej zmianie instrukcji.
 
 ## Dostosowanie do pracy w M365
 
-Program obejmuje 8 modułów głównych i opcjonalny przetarg. Pokazy trenera używają fragmentów źródła; zadania uczestników pełnego pakietu. Prompty dla aplikacji rozróżniają faktyczne wykonanie edycji od propozycji treści lub formuły. Wartości zakupowe w Excelu nie stają się ratą najmu. Obsługa reklamacji korzysta z odrębnego stanu dokumentów UR/ZU/ZP/ZG/FK/BP i aktualizacji AKT. Ocena odpowiedzi na reklamacje wymaga źródła, odróżnienia oczekiwania od zgody i zachowania otwartych decyzji.
+Program obejmuje 8 modułów głównych i opcjonalny przetarg. Zadania korzystają z materiałów wskazanych pełnymi nazwami plików. Sposób prowadzenia wybiera trener; kroki nie narzucają pokazów. Prompty dla aplikacji rozróżniają faktyczne wykonanie edycji od propozycji treści lub formuły. Wartości zakupowe w Excelu nie stają się ratą najmu. Obsługa reklamacji korzysta z odrębnego stanu dokumentów UR/ZU/ZP/ZG/FK/BP i aktualizacji AKT. Ocena odpowiedzi na reklamacje wymaga źródła, odróżnienia oczekiwania od zgody i zachowania otwartych decyzji.

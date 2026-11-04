@@ -6,35 +6,35 @@ Przygotuj własne kopie pakietu `materials/m365/budmax_materialy.zip` w zatwierd
 
 Sprawdź cztery stanowiska pracy:
 
-1. Outlook: przygotowany warsztatowy wątek z pakietu 01 oraz osobna wiadomość reklamacyjna z pakietu 03. TXT nie jest natywnym wątkiem Outlooka. Sprawdź podsumowanie i tworzenie niewysłanego szkicu na rzeczywistym koncie demonstracyjnym.
+1. Outlook: przygotowany warsztatowy wątek z pliku `01_korespondencja_przed_spotkaniem.txt` oraz osobna wiadomość reklamacyjna z pliku `03_reklamacja_Anny.txt`. TXT nie jest natywnym wątkiem Outlooka. Sprawdź podsumowanie i tworzenie niewysłanego szkicu na rzeczywistym koncie demonstracyjnym.
 2. Excel: własna kopia `budmax_oferty.xlsx`, tabela OfertyDealerow, możliwość pracy z Copilotem i zapisu. Sprawdź edycję lub generowanie formuł. Nie zakładaj, że każde konto ma identyczne funkcje.
 3. PowerPoint: dostępny, zatwierdzony szablon organizacji oraz możliwość pracy na briefie Word. Tego szablonu nie ma w repozytorium — należy przygotować go w środowisku szkoleniowym. Nie używaj starego `proposal_deck_template.pptx` jako aktualnego wzoru; to materiał wcześniejszego programu.
-4. Dokumenty: odczyt pakietu 04 DOCX albo osobnych plików TXT w zatwierdzonym Copilot Chat. Sprawdź, jakie dokumenty model faktycznie widzi i jak wskazuje źródła.
+4. Dokumenty: odczyt pliku `04_pakiet_dokumentow.docx` albo osobnych plików TXT w zatwierdzonym Copilot Chat. Sprawdź, jakie dokumenty model faktycznie widzi i jak wskazuje źródła.
 
 Nie używaj danych klientów ani odpowiedzi uczestników ankiety jako treści demonstracyjnej. Na początku wyjaśnij zatwierdzone środowisko, kategorie danych i sposób kontroli wyniku.
 
-## Rytm każdego modułu
+## Sposób prowadzenia
 
-Trener pokazuje fragment zadania i weryfikację jednego wyniku. Następnie każdy uczestnik wykonuje pełne zadanie z AI, zmienia jedną instrukcję w razie potrzeby, sprawdza źródło i zachowuje rezultat. Pokaz nie powinien ujawniać całego rozwiązania.
+Sam decydujesz w trakcie warsztatu, co pokazujesz, co wykonujecie wspólnie, a co uczestnicy robią samodzielnie. Kroki na stronie opisują zadania i rezultaty, bez narzuconego podziału. Każdy uczestnik pracuje z AI, sprawdza źródło i zachowuje wynik.
 
 Kroki nie mają oznaczeń czasu. Agenda i długości modułów wyznaczają ramy dnia. Skracaj omówienie na forum i rozszerzenie, a nie bezpośrednią pracę uczestników z AI.
 
 ## Trzy rozdziały i transfer
 
-| Moduł | Pokaz trenera | Praca uczestnika | Rezultat |
-| --- | --- | --- | --- |
-| 1 Outlook | Fragment korespondencji i szkic | Cały wątek, briefing i odpowiedź | Brief i pytania |
-| 2 Discovery | Jedno pytanie i STOP | Jedna rozmowa z AI, opcjonalna poprawka | Notatka potrzeb |
-| 3 Excel | Jedna formuła i jej źródło | Porównanie wszystkich dealerów i test parametru | Arkusz i rekomendacja |
-| 4 PowerPoint | Struktura briefu i pierwszy slajd | Cztery slajdy, kontrola i ewentualne tłumaczenie | Materiał do decyzji |
-| 5 Outlook | Jeden akapit reklamacji | Cała reklamacja, triage i pierwsza odpowiedź | Mapa sprawy i pytania |
-| 6 Dokumenty | Okres faktury z trzech źródeł | Umowa, załączniki i analogie historyczne | Ustalenia z cytatami |
-| 7 Komunikacja | Jeden fakt dla dwóch odbiorców | Odpowiedź, przekazanie, CRM i raport | Spójne komunikaty |
-| 8 Transfer | Wyodrębnienie szablonu promptu | Własne zastosowanie i próbne uruchomienie | Plan testu i prompt |
+| Moduł | Praca uczestnika | Rezultat |
+| --- | --- | --- |
+| 1 Outlook | Cały wątek, briefing i odpowiedź | Brief i pytania |
+| 2 Discovery | Jedna rozmowa z AI, opcjonalna poprawka | Notatka potrzeb |
+| 3 Excel | Porównanie wszystkich dealerów i test parametru | Arkusz i rekomendacja |
+| 4 PowerPoint | Cztery slajdy, kontrola i ewentualne tłumaczenie | Materiał do decyzji |
+| 5 Outlook | Cała reklamacja, triage i pierwsza odpowiedź | Mapa sprawy i pytania |
+| 6 Dokumenty | Umowa, załączniki i analogie historyczne | Ustalenia z cytatami |
+| 7 Komunikacja | Odpowiedź, przekazanie, CRM i raport | Spójne komunikaty |
+| 8 Transfer | Własne zastosowanie i próbne uruchomienie | Plan testu i prompt |
 
-Przygotowanie propozycji (1–3) opiera się na wyniku uczestnika. Zapis spotkania 02 jest jawnym źródłem zastępczym, jeśli symulacja nie zadziała, i materiałem do pokazu raportowania. Nie przedstawiaj go jako informacji zdobytych w dialogu, którego nie było.
+Przygotowanie propozycji (1–3) opiera się na wyniku uczestnika. Plik `02_notatka_po_spotkaniu.txt` jest jawnym źródłem zastępczym, jeśli symulacja nie zadziała, i materiałem do dodatkowej próby raportowania. Nie przedstawiaj go jako informacji zdobytych w dialogu, którego nie było.
 
-W module 5 jawnie przejdź do obsługi po sprzedaży. Wydano cztery auta i pojawia się reklamacja. Podpisany stan sprawy jest określony przez dokumenty 04, a nie decyzję wygenerowaną wcześniej przez AI. Pakiet ten udostępnij po wstępnej analizie maila. W module 7 wprowadź aktualizację 05 z odpowiedziami zespołów.
+W module 5 jawnie przejdź do obsługi po sprzedaży. Wydano cztery auta i pojawia się reklamacja. Podpisany stan sprawy jest określony przez dokumenty w pliku `04_pakiet_dokumentow.docx`, a nie decyzję wygenerowaną wcześniej przez AI. Pakiet ten udostępnij po wstępnej analizie maila. W module 7 wprowadź plik `05_stan_sprawy_po_weryfikacji.txt` z odpowiedziami zespołów.
 
 ## Kontrole ważne dla case’u
 
@@ -42,7 +42,7 @@ W module 5 jawnie przejdź do obsługi po sprzedaży. Wydano cztery auta i pojaw
 - Reklamacja: sam mail nie potwierdza załączników. Uwaga CFO o rozważaniu zakończenia nie jest wypowiedzeniem. Nie dopisuj brokera do wątku i nie rozsyłaj dokumentów szkody.
 - Dokumenty: UR §2, ZP §2 i FK 1 wyjaśniają okres raty. ZU opisuje awarię i godziny robocze, a zdarzenie to kolizja. ZG/FK nie zawierają akceptacji ZL-17. Różny opis dwóch opłat nie dowodzi automatycznie ani duplikatu, ani poprawności obciążenia.
 - Historia podobnych spraw BP daje wskazówki, nie decyzję o korekcie lub zwrocie dla BudMax.
-- Aktualizacja 05 potwierdza koordynację i część faktów, lecz nie decyzję o refundacji ani wiążącą datę wydania pozostałych aut.
+- Plik `05_stan_sprawy_po_weryfikacji.txt` potwierdza koordynację i część faktów, lecz nie decyzję o refundacji ani wiążącą datę wydania pozostałych aut.
 
 ## Ścieżki zastępcze
 

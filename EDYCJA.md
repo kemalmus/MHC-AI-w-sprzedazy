@@ -15,7 +15,7 @@ Najczęściej zmieniane pola:
 - `entry`, `output`, `criteria` — wejście, wynik przekazywany dalej i obserwowalne kryteria sukcesu etapu. `output` włącza pole notatek sprawy dla modułów z wynikiem, poza formularzem planu.
 - `case.mission`, `case.workingRules` — wspólny cel i rytm pracy z AI.
 - `chapter`, `app` — rozdział historii i aplikacja widoczna w nagłówku modułu.
-- `steps[].kind` — `demo`, `practice`, `review` lub `handoff`; określa podpis rodzaju pracy.
+- `steps[].kind` — `practice`, `review` lub `handoff`; określa podpis rodzaju pracy.
 - `workflowPlan` — włącza formularze planu zastosowania AI zamiast zwykłego pola notatek.
 - `requiresSourceCheck` — włącza kontrolę źródła przed ukończeniem modułu Excel.
 - `downloads[].textHref` — podgląd tekstowy pliku Word w nowym katalogu materiałów.

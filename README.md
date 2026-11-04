@@ -13,7 +13,7 @@ Warsztat na jednej historii BudMax z praktyczną pracą w Outlooku, Excelu, Powe
 7. Outlook i raportowanie: końcowa odpowiedź, działania zespołów, CRM i brief dla przełożonego.
 8. Transfer: jeden prompt i plan zastosowania sprawdzony na materiale szkoleniowym.
 
-Każdy moduł zaczyna się pokazem fragmentu zadania przez trenera. Potem każdy uczestnik wykonuje pełne zadanie z AI, sprawdza źródło i zapisuje wynik. Nie ma obowiązkowego pisania szkiców bez AI ani oznaczeń czasu poszczególnych kroków.
+Każdy moduł opisuje zadanie z AI, materiały wejściowe i oczekiwany wynik. Trener decyduje na bieżąco o sposobie prowadzenia. Uczestnik sprawdza źródło i zapisuje rezultat. Nie ma obowiązkowego pisania szkiców bez AI ani oznaczeń czasu poszczególnych kroków.
 
 Przygotowanie propozycji wykorzystuje ustalenia uczestnika. Obsługa po sprzedaży to jawnie nowy etap współpracy z wydanymi czterema autami i nowym pakietem dokumentów. Wcześniejsza rekomendacja nie staje się automatycznie podpisaną ofertą. Podstawą odpowiedzi reklamacyjnej są materiały 03–05.
 
@@ -29,7 +29,7 @@ Strona nie steruje aplikacjami M365, nie przesyła automatycznie do nich danych 
 
 ## Materiały i przygotowanie trenera
 
-- [Instrukcja trenera](docs/trainer-flow.md): przygotowanie aplikacji, przebieg pokazów i ścieżki zastępcze.
+- [Instrukcja trenera](docs/trainer-flow.md): przygotowanie aplikacji, przebieg zadań i ścieżki zastępcze.
 - `materials/m365/`: korespondencja, skoroszyt, reklamacja, pakiet dokumentów Word i TXT, aktualizacja sprawy i brief do PowerPointa.
 - `materials/m365/budmax_materialy.zip`: pakiet do pobrania przez uczestników.
 - `docs/prompt-review-current.md`: zasady promptów i scenariusze do oceny odpowiedzi.
