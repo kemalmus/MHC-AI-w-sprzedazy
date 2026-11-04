@@ -6,7 +6,7 @@ Przygotuj własne kopie pakietu `materials/m365/budmax_materialy.zip` w zatwierd
 
 Sprawdź cztery stanowiska pracy:
 
-1. Outlook: przygotowany warsztatowy wątek z pliku `01_korespondencja_przed_spotkaniem.txt` oraz osobna wiadomość reklamacyjna z pliku `03_reklamacja_Anny.txt`. TXT nie jest natywnym wątkiem Outlooka. Sprawdź podsumowanie i tworzenie niewysłanego szkicu na rzeczywistym koncie demonstracyjnym.
+1. Korespondencja: w module 1 uczestnicy dołączają plik `01_korespondencja_przed_spotkaniem.txt` do Copilot Chat lub wklejają jego treść. Nie potrzebują maila w skrzynce ani Copilota w Outlooku. Wynik kopiują do nowej wiadomości w Outlooku jako niewysłany szkic bez adresata. Osobny plik `03_reklamacja_Anny.txt` jest źródłem reklamacji w module 5.
 2. Excel: własna kopia `budmax_oferty.xlsx`, tabela OfertyDealerow, możliwość pracy z Copilotem i zapisu. Sprawdź edycję lub generowanie formuł. Nie zakładaj, że każde konto ma identyczne funkcje.
 3. PowerPoint: dostępny, zatwierdzony szablon organizacji oraz możliwość pracy na briefie Word. Tego szablonu nie ma w repozytorium — należy przygotować go w środowisku szkoleniowym. Nie używaj starego `proposal_deck_template.pptx` jako aktualnego wzoru; to materiał wcześniejszego programu.
 4. Dokumenty: odczyt pliku `04_pakiet_dokumentow.docx` albo osobnych plików TXT w zatwierdzonym Copilot Chat. Sprawdź, jakie dokumenty model faktycznie widzi i jak wskazuje źródła.
@@ -23,7 +23,7 @@ Kroki nie mają oznaczeń czasu. Agenda i długości modułów wyznaczają ramy 
 
 | Moduł | Praca uczestnika | Rezultat |
 | --- | --- | --- |
-| 1 Outlook | Cały wątek, briefing i odpowiedź | Brief i pytania |
+| 1 Korespondencja | Plik w Copilot Chat, briefing i odpowiedź; nowy szkic w Outlooku | Brief i pytania |
 | 2 Discovery | Jedna rozmowa z AI, opcjonalna poprawka | Notatka potrzeb |
 | 3 Excel | Porównanie wszystkich dealerów i test parametru | Arkusz i rekomendacja |
 | 4 PowerPoint | Cztery slajdy, kontrola i ewentualne tłumaczenie | Materiał do decyzji |

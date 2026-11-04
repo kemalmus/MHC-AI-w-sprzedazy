@@ -4,7 +4,7 @@ Warsztat na jednej historii BudMax z praktyczną pracą w Outlooku, Excelu, Powe
 
 ## Przebieg
 
-1. Outlook: briefing i szkic odpowiedzi z aktualnego maila oraz historycznego CRM.
+1. Copilot Chat: briefing i odpowiedź na podstawie pliku z korespondencją; zapis nowego szkicu w Outlooku.
 2. Discovery: jedna rozmowa z AI i notatka do dalszej analizy.
 3. Excel: porównanie ofert, formuły, test zmiany parametru i rekomendacja.
 4. PowerPoint: cztery slajdy do decyzji CFO na podstawie briefu w Wordzie.
@@ -25,7 +25,7 @@ python3 -m http.server 8000
 
 Otwórz `http://localhost:8000`. Nie otwieraj `index.html` jako `file://`: strona pobiera JSON przez HTTP. Nie potrzebuje backendu, klucza API ani buildu.
 
-Strona nie steruje aplikacjami M365, nie przesyła automatycznie do nich danych i nie wysyła maili. Uczestnik przenosi wynik i pliki między aplikacjami. Trener przed szkoleniem sprawdza konta, funkcje Copilota, testową skrzynkę oraz zatwierdzony szablon prezentacji.
+Strona nie steruje aplikacjami M365, nie przesyła automatycznie do nich danych i nie wysyła maili. Uczestnik przenosi wynik i pliki między aplikacjami. Trener przed szkoleniem sprawdza konta, funkcje Copilota oraz zatwierdzony szablon prezentacji.
 
 ## Materiały i przygotowanie trenera
 
