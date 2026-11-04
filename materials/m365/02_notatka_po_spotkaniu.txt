@@ -1,4 +1,4 @@
-BUDMAX — ZAPIS ROZMOWY DO DEMONSTRACJI I RAPORTOWANIA
+BUDMAX — NOTATKA PO SPOTKANIU Z KLIENTEM
 
 [SPOT-01] Anna: Ostatnio po dwóch kolizjach handlowcy odwoływali wizyty, bo organizacja auta zastępczego wymagała wielu telefonów. Nie mamy wyliczonego kosztu utraconej sprzedaży.
 [SPOT-02] Anna: Szukamy 12 aut dla handlowców i dwóch dla zarządu. Około 45 tys. km rocznie na auto handlowca to szacunek; rozpiski per auto nie mamy.
@@ -9,4 +9,4 @@ BUDMAX — ZAPIS ROZMOWY DO DEMONSTRACJI I RAPORTOWANIA
 [SPOT-07] Handlowiec: Spróbuję sprawdzić możliwość rezerwacji czterech aut. Nie mamy jeszcze potwierdzenia dealera ani decyzji Ryzyka.
 [SPOT-08] CFO: Konkurencja wspominała o niższej racie, ale dokumentu jeszcze nie przekazałem. Nie porównujmy kwot bez zakresu.
 
-Ten zapis jest źródłem do pokazu trenera oraz ćwiczenia raportowania. W notatce z własnej symulacji uczestnik zachowuje tylko informacje, które faktycznie padły w jego dialogu.
+To zapis kolejnego kontaktu po korespondencji z pliku 01. Wykorzystaj go razem z tą korespondencją do analizy potrzeb i pytań otwartych. Brak odpowiedzi w materiałach pozostaje informacją do potwierdzenia z klientem.

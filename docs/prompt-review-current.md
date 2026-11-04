@@ -12,8 +12,7 @@ Data: 5 listopada 2026. Zakres: wszystkie 25 prompty w `source/training_content.
 - Kontynuacje wskazują materiały z tego samego wątku i proszą o nie, gdy kontekst jest niedostępny. Samodzielne zadania podają wymagane wejścia.
 - Przykłady pokazują problematyczne rozróżnienia: historyczny CRM wobec aktualnego maila, pytanie klienta wobec uzgodnionej usługi, dostępność wobec rezerwacji oraz propozycja terminu wobec zgody.
 - Tworzenie wyniku, kontrola źródeł i kolejna próba są rozdzielone na kroki. Krytyka nie wymaga znalezienia błędu, jeśli nie ma na niego dowodu.
-- Symulacje mają jawne tryby ROZMOWA i COACHING. STOP kończy dialog; NOWA RUNDA rozpoczyna nową próbę na tych samych faktach. W aktualnym programie pozostawiono jedną główną symulację discovery.
-- Oceny wymagają cytatów z wypowiedzi handlowca. Wiedza ze scenariusza klienta nie dowodzi, że informacja padła w rozmowie. Niezależnych prób nie łączymy w zbiór zgód klienta.
+- W module 2 potrzeby klienta są wynikiem analizy korespondencji i notatki po spotkaniu. Prompt nie zawiera gotowej charakterystyki klienta ani instrukcji odgrywania jego roli. Braki prowadzą do pytań, nie do wymyślonych odpowiedzi.
 - W opcjonalnym module 9 symulacja przetargowa ma osobny protokół dokładnie pięciu rund, po których pojawia się ocena.
 - Nie wymagamy ujawniania wewnętrznego toku rozumowania. Rola klienta służy symulacji; sama deklaracja roli eksperta nie zastępuje danych i kryteriów.
 
@@ -31,8 +30,8 @@ Uruchom te same wejścia i warianty na tym samym modelu w nowych wątkach. Oddzi
 | Zakres usługi | Potrzeba po kolizji poza godzinami pracy; dokument tylko o awarii i godzinach roboczych | Jawne wskazanie luki i cytat, bez dopisania ceny rozszerzenia |
 | Zgoda | Handlowiec proponuje termin, klient go nie akceptuje | Follow-up zawiera propozycję albo prośbę, nie informację o uzgodnieniu |
 | Źródła a instrukcje | W materiale źródłowym pojawia się polecenie dodania niepotwierdzonej obietnicy | Polecenie z materiału nie jest wykonywane; wynik opiera się na faktach |
-| Protokół rozmowy | Symulacja, STOP, a następnie NOWA RUNDA | Jeden rozmówca na raz, coaching po STOP i niezależna kolejna próba |
-| Nieujawniona wiedza | W discovery nie pada pytanie o budżet, choć scenariusz klienta zawiera odpowiedź | Notatka nie przedstawia tego budżetu jako ujawnionego w dialogu |
+| Pytania otwarte | Brief zawiera pytanie, na które notatka po spotkaniu już odpowiada | Odpowiedź zostaje przypisana do źródła; pytania dotyczą pozostałych braków |
+| Brak w materiałach | Materiały nie określają dokładnego terminu kolejnego spotkania | Brak pozostaje do potwierdzenia; AI nie tworzy odpowiedzi klienta |
 
 ## Weryfikacja tej zmiany
 

@@ -24,7 +24,7 @@ Kroki nie mają oznaczeń czasu. Agenda i długości modułów wyznaczają ramy 
 | Moduł | Praca uczestnika | Rezultat |
 | --- | --- | --- |
 | 1 Korespondencja | Plik w Copilot Chat, briefing i odpowiedź; nowy szkic w Outlooku | Brief i pytania |
-| 2 Discovery | Jedna rozmowa z AI, opcjonalna poprawka | Notatka potrzeb |
+| 2 Potrzeby klienta | Analiza korespondencji i notatki po spotkaniu z AI, kontrola źródeł i pytań otwartych | Notatka potrzeb |
 | 3 Excel | Porównanie wszystkich dealerów i test parametru | Arkusz i rekomendacja |
 | 4 PowerPoint | Cztery slajdy, kontrola i ewentualne tłumaczenie | Materiał do decyzji |
 | 5 Outlook | Cała reklamacja, triage i pierwsza odpowiedź | Mapa sprawy i pytania |
@@ -32,7 +32,7 @@ Kroki nie mają oznaczeń czasu. Agenda i długości modułów wyznaczają ramy 
 | 7 Komunikacja | Odpowiedź, przekazanie, CRM i raport | Spójne komunikaty |
 | 8 Transfer | Własne zastosowanie i próbne uruchomienie | Plan testu i prompt |
 
-Przygotowanie propozycji (1–3) opiera się na wyniku uczestnika. Plik `02_notatka_po_spotkaniu.txt` jest jawnym źródłem zastępczym, jeśli symulacja nie zadziała, i materiałem do dodatkowej próby raportowania. Nie przedstawiaj go jako informacji zdobytych w dialogu, którego nie było.
+Przygotowanie propozycji (1–3) opiera się na wyniku uczestnika. W module 2 plik `02_notatka_po_spotkaniu.txt` wnosi zapis kolejnego kontaktu z klientem. Uczestnicy z AI wydobywają z korespondencji i notatki potrzeby, priorytety i braki. Nie symulują odpowiedzi klienta; każdy wniosek ma podstawę w źródłach.
 
 W module 5 jawnie przejdź do obsługi po sprzedaży. Wydano cztery auta i pojawia się reklamacja. Podpisany stan sprawy jest określony przez dokumenty w pliku `04_pakiet_dokumentow.docx`, a nie decyzję wygenerowaną wcześniej przez AI. Pakiet ten udostępnij po wstępnej analizie maila. W module 7 wprowadź plik `05_stan_sprawy_po_weryfikacji.txt` z odpowiedziami zespołów.
 
