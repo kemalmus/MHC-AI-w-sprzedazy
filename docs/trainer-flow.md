@@ -25,7 +25,7 @@ Kroki nie mają oznaczeń czasu. Agenda i długości modułów wyznaczają ramy 
 | --- | --- | --- |
 | 1 Korespondencja | Plik w Copilot Chat, briefing i odpowiedź; nowy szkic w Outlooku | Brief i pytania |
 | 2 Potrzeby klienta | Analiza korespondencji i notatki po spotkaniu z AI, kontrola źródeł i pytań otwartych | Notatka potrzeb |
-| 3 Excel | Porównanie wszystkich dealerów i test parametru | Arkusz i rekomendacja |
+| 3 Excel | Jakość i łączenie danych, koszty i przestoje modeli, oferty i test partii | Arkusz i rekomendacja |
 | 4 Word i PowerPoint | Brief z AI, cztery slajdy i kontrola | Wewnętrzna decyzja zakupowa |
 | 5 Reklamacja | Analiza maila z pliku, pierwsza odpowiedź i lista informacji | Mapa sprawy i pytania |
 | 6 Dokumenty | Umowa, załączniki i analogie historyczne | Ustalenia z cytatami |
@@ -38,7 +38,7 @@ W module 5 jawnie przejdź do obsługi po sprzedaży. Wydano cztery auta i pojaw
 
 ## Kontrole ważne dla case’u
 
-- Excel: cena A po rabacie 113950 PLN, B 111300 PLN, C 116072 PLN. Transport B dla 12 aut: 10800 PLN; zakup i transport B: 1346400 PLN netto. Transport A/C nie jest wyceniony. Wartości pakietów nie odejmujemy od ceny zakupu. Po testach przywróć B4=12.
+- Excel: pięć arkuszy, 632 rekordy i cztery tabele źródłowe. Sprawdź relacje danych, raport jakości, definicję kosztu/km i test Analiza!B6 (4→6→4). Klucz kontroli: [Excel — dane i wyniki kontrolne](excel-case-checks.md).
 - Reklamacja: sam mail nie potwierdza załączników. Uwaga CFO o rozważaniu zakończenia nie jest wypowiedzeniem. Nie dopisuj brokera do wątku i nie rozsyłaj dokumentów szkody.
 - Dokumenty: UR §2, ZP §2 i FK 1 wyjaśniają okres raty. ZU opisuje awarię i godziny robocze, a zdarzenie to kolizja. ZG/FK nie zawierają akceptacji ZL-17. Różny opis dwóch opłat nie dowodzi automatycznie ani duplikatu, ani poprawności obciążenia.
 - Historia podobnych spraw BP daje wskazówki, nie decyzję o korekcie lub zwrocie dla BudMax.

@@ -138,50 +138,64 @@
     },
     {
       "id": 3,
-      "title": "Excel: analiza ofert i rekomendacja",
+      "title": "Excel: analiza floty i wybór wariantu zakupu",
       "time": "65 min",
       "duration": 65,
       "chapter": "I. Przygotowanie propozycji",
       "app": "Excel + Copilot",
-      "objective": "Porównać koszty zakupu 12 aut i przygotować wewnętrzną rekomendację, uwzględniając potrzeby BudMax.",
-      "problem": "Rabat, wyposażenie, transport i dostępność nie są tym samym; cena zakupu nie jest ratą najmu.",
-      "entry": "Zweryfikowana notatka potrzeb z modułu 2 i skoroszyt budmax_oferty.xlsx, tabela OfertyDealerow.",
-      "output": "Arkusz z formułami i brief wewnętrznej rekomendacji zakupu do prezentacji.",
-      "criteria": "Formuły odwołują się do źródeł. Brak kosztu transportu nie zmienia się w zero. Pakietów nie odejmujemy od ceny. Termin C nie oznacza wszystkich aut od ręki.",
+      "objective": "Z Copilotem połączyć dane z kilku tabel, ocenić jakość, porównać eksploatację i oferty oraz przygotować rekomendację zakupową.",
+      "problem": "Sam rabat nie wystarcza. Historia kosztów, profil użytkowania, przestoje, braki danych i warunki dostawy mogą zmienić rekomendację.",
+      "entry": "Notatka potrzeb z modułu 2 i nowy skoroszyt „budmax_oferty.xlsx”: Analiza, Pojazdy, Miesiace, Serwis i Oferty. Historia dotyczy portfela referencyjnego MHC, nie aut BudMax z późniejszej reklamacji.",
+      "output": "Skoroszyt z raportem jakości, porównaniem modeli i ofert, wykresem oraz rekomendacją do prezentacji.",
+      "criteria": "Połączenia zachowują liczbę rekordów. Koszty nie są naliczone dwukrotnie. Wskaźniki mają wspólną próbę i jednostki. Formuły reagują na parametry, a rekomendacja uwzględnia ograniczenia danych i dostaw.",
       "steps": [
         {
           "kind": "practice",
-          "title": "Zbuduj porównanie z AI",
-          "body": "Pobierz plik „budmax_oferty.xlsx” z sekcji materiałów poniżej i otwórz własną kopię w Excelu. Dane są w tabeli OfertyDealerow, a liczba zamawianych aut w komórce B4. Poproś Copilota o kolumny z ceną po rabacie, wartością zakupu wskazanej liczby aut i kosztami transportu. Jeśli brak edycji w aplikacji, wygeneruj formuły w Copilot Chat i sprawdź je w Excelu.",
-          "prompt": "# Zadanie\nPorównaj oferty zakupu samochodów dla 12 aut handlowców BudMax.\n\n# Materiały\nSkoroszyt budmax_oferty.xlsx, arkusz Oferty, tabela OfertyDealerow. Liczba aut jest w B4.\n\n# Zasady\nZachowaj dane wejściowe. Koszty są w PLN netto. Pusty koszt transportu oznacza brak wyceny, nie zero. Wartość pakietu jest osobną informacją, nie rabatem. Nie wyliczaj raty najmu z ceny zakupu. Jeśli nie możesz edytować arkusza, podaj formuły i miejsce ich wstawienia.\n\n# Wynik\nKolumny z formułami: cena po rabacie, koszt zakupu dla liczby aut z B4, znany koszt transportu i suma tylko dla ofert z wycenionym transportem. Przy brakach pokaż „do potwierdzenia”. Opisz użyte formuły i zachowaj terminy oraz uwagi dealerów do dalszego porównania."
+          "title": "Poznaj skoroszyt i sprawdź jakość danych",
+          "body": "Pobierz nową kopię „budmax_oferty.xlsx” i zacznij od arkusza Analiza. Otwórz plik w Excelu z Copilotem. Jeśli korzystasz z Copilot Chat, dołącz cały plik. Poproś o rozpoznanie tabel i kontrolę jakości. Zachowaj źródła; poprawki i wykluczenia zapisuj w kopii roboczej. Na podstawie raportu podejmij decyzje potrzebne do dalszej analizy i przekaż je AI.",
+          "prompt": "# Zadanie\nRozpoznaj skoroszyt i przygotuj dane do analizy floty oraz ofert zakupu.\n\n# Materiały\nbudmax_oferty.xlsx. Tabele: PojazdyRef, Eksploatacja, Zdarzenia, OfertyDealerow. Parametry w arkuszu Analiza.\n\n# Zasady\nNajpierw wskaż znaczenie jednego rekordu w każdej tabeli i klucze łączenia. Sprawdź duplikaty, braki, niedopasowane identyfikatory i wartości nietypowe. Nie usuwaj automatycznie odstających rekordów i nie zastępuj braków zerem. Nie nadpisuj źródeł. Jeśli nie widzisz wszystkich arkuszy, nazwij brak.\n\n# Wynik\nMapa tabel i relacji, a następnie tabela: rekord/komórka | problem lub obserwacja | wpływ na analizę | proponowane postępowanie. Rozróżnij błędy, niewiadome i poprawne, choć nietypowe wartości. Zaproponuj zasady stworzenia kopii roboczej do akceptacji. Zapisz raport jakości w arkuszu Analiza, a przy braku edycji zwróć go do przeniesienia."
         },
         {
           "kind": "practice",
-          "title": "Przetestuj formuły po zmianie liczby aut",
-          "body": "Zmień B4 z 12 na 4 i sprawdź w Excelu, czy kolumny reagują na parametr. Poproś AI o pomoc w sprawdzeniu zależności. Przywróć B4=12. Jeśli pracujesz przez czat, dołącz aktualny arkusz lub wklej formuły i wyniki; sam opis zmiany nie udostępnia AI pliku.",
-          "prompt": "# Zadanie\nPomóż sprawdzić formuły po zmianie liczby aut z 12 na 4 i po powrocie do 12.\n\n# Materiały\nAktualny arkusz z formułami lub wklejone formuły i wyniki przed zmianą oraz po niej.\n\n# Zasady\nNie zmieniaj cen jednostkowych ani danych dealerów. Odróżnij kontrolę formuły od potwierdzenia aktualnej dostępności. Jeśli brakuje wyników, wskaż, co mam sprawdzić w arkuszu; nie deklaruj wykonanego testu.\n\n# Wynik\nLista oczekiwanych zmian i ocena przekazanych wyników. Wskaż ewentualną błędną formułę oraz poprawkę. Cena jednostkowa ma pozostać stała, wartości zamówienia mają zależeć od B4."
+          "title": "Połącz dane i porównaj eksploatację modeli",
+          "body": "W tej samej pracy z plikiem zleć AI analizę po przyjętych decyzjach jakościowych. Porównaj trzy modele w profilu „Trasy”, najbardziej zbliżonym do pracy handlowców BudMax. Sprawdź ręcznie jedną sumę kosztów dla wybranego auta i miesiąca oraz sposób obliczenia kosztu/km. Zdarzenia serwisowe wykorzystaj do wyjaśnienia przestojów.",
+          "prompt": "# Zadanie\nPorównaj modele z portfela referencyjnego dla profilu Trasy.\n\n# Materiały\nTabele PojazdyRef, Eksploatacja i Zdarzenia oraz zaakceptowane decyzje z raportu jakości.\n\n# Zasady\nDołącz model i profil do miesięcy przez Pojazd_ID, bez mnożenia wierszy. Koszty i przestoje ze Zdarzenia są już w miesięcznych sumach: nie dodawaj ich drugi raz. Koszt paliwa i serwisu na km oblicz jako sumę tych kosztów podzieloną przez sumę km dla tej samej kompletnej próby, nie średnią z miesięcznych ilorazów. Nie dziel przez zero i nie traktuj brakującego kosztu jako zera. Nie nazywaj wybranych kosztów eksploatacji pełnym TCO. Historia nie dowodzi przyczynowości ani przyszłych wyników nowego auta.\n\n# Wynik\nTabela według modelu: liczba aut i użytych miesięcy, pominięte rekordy, km, paliwo i serwis netto, koszt/km oraz przestoje. Podaj definicję próby i formuły lub sposób agregacji. Oddzielnie wskaż, które zdarzenia pomagają wyjaśnić wysokie przestoje. Dodaj wykres porównawczy kosztu/km do arkusza Analiza, z jednostkami i wskazaniem profilu."
+        },
+        {
+          "kind": "practice",
+          "title": "Porównaj 18 ofert z uwzględnieniem dostawy",
+          "body": "Dołącz do AI notatkę potrzeb z modułu 2. Poproś o porównanie ofert według modeli oraz kosztów i dostępności. Parametry partii i dni w arkuszu Analiza to założenia testowe do potwierdzenia z klientem. Sprawdź obliczenie jednej oferty i status jej dostawy; wynik ma pozostać w Excelu jako działające formuły.",
+          "prompt": "# Zadanie\nZbuduj porównanie ofert dealerów do wewnętrznej decyzji zakupowej.\n\n# Materiały\nTabela OfertyDealerow, parametry Analiza!B5:B10, analiza modeli i notatka potrzeb BudMax:\n<potrzeby>\n[WKLEJ NOTATKĘ Z MODUŁU 2]\n</potrzeby>\n\n# Zasady\nLiczba aut jest w B5, pierwsza partia w B6, limit dni pierwszej partii w B7, pełnej dostawy w B8, docelowy przebieg w B9, data porównania w B10. Stany od ręki są częścią całej dostawy; Reszta_dni dotyczy pozostałych aut. Gdy stan od ręki nie wystarcza, także pierwsza partia czeka Reszta_dni. Oceniaj ważność oferty i zgodność konfiguracji osobno. Brak transportu oznacza niepełny koszt, pakietu nie odejmuj od ceny. Ceny zakupu nie są ratą najmu.\n\n# Wynik\nDla każdej oferty dodaj formuły ceny po rabacie, kosztu zakupu dla B5, znanego transportu i łącznego kosztu tylko przy pełnych danych. Dodaj ocenę pierwszej partii, całej dostawy, ważności i konfiguracji: spełnia/nie spełnia/do potwierdzenia, ze wskazaniem powodu. Wskaż kierunki do dalszej weryfikacji, bez ukrywania braków i bez łączenia stanów różnych ofert jako pewnej dostawy."
+        },
+        {
+          "kind": "practice",
+          "title": "Zmień warunek i sprawdź, czy analiza reaguje",
+          "body": "Zmień Analiza!B6 z 4 na 6 aut w pierwszej partii. Sprawdź w arkuszu, które oferty zmieniły status i dlaczego. Poproś AI o kontrolę zależności, po czym przywróć B6=4. Jeśli pracujesz przez czat, ponownie dołącz zmieniony plik lub przekaż formuły i wyniki. Dodatkowo możesz poprosić o wykres miesięcznych przestojów.",
+          "prompt": "# Zadanie\nSprawdź wpływ zwiększenia pierwszej partii z 4 do 6 aut na status dostaw.\n\n# Materiały\nAktualny skoroszyt z formułami i wynikami dla Analiza!B6=4 oraz B6=6.\n\n# Zasady\nZmieniamy tylko B6, nie ceny, terminy, stan magazynowy ani łączną liczbę aut. Kontroluj formuły odwołujące się do parametru, nie ręcznie wpisane statusy. Nie deklaruj zmiany pliku, jeśli tylko opisujesz kontrolę.\n\n# Wynik\nLista ofert, których status pierwszej partii się zmienił, z przyczyną. Wskaż ewentualne formuły wymagające poprawki. Po powrocie do B6=4 sprawdź przywrócenie statusów. Koszt zamówienia nie powinien zmienić się po zmianie samej wielkości pierwszej partii."
         },
         {
           "kind": "review",
-          "title": "Przygotuj wewnętrzną rekomendację zakupu",
-          "body": "Sprawdź samodzielnie jedno obliczenie i koszt transportu. Do AI dołącz aktualny arkusz oraz notatkę potrzeb z modułu 2. Przygotuj rekomendację dla swojego przełożonego w MHC. To wybór źródła zakupu aut, a nie oferta raty dla klienta. Zapisz arkusz i brief w notatkach sprawy.",
-          "prompt": "# Zadanie\nPrzygotuj wewnętrzny brief rekomendacji zakupu aut dla BudMax.\n\n# Materiały\nZweryfikowany arkusz dealerów oraz notatka potrzeb z modułu 2 — dołącz ją lub wklej poniżej:\n<potrzeby_klienta>\n[WKLEJ NOTATKĘ POTRZEB]\n</potrzeby_klienta>\n\n# Zasady\nPorównuj koszt, termin, dostępność i wyposażenie z potrzebami klienta. Nie traktuj najwyższego rabatu jako automatycznej przewagi. Ceny zakupu nie określają raty ani rentowności najmu. Nie wybieraj pakietu usług na podstawie tabeli dealerów.\n\n# Wynik\nDo 200 słów: rekomendowany kierunek zakupu i alternatywa, liczby z odwołaniem do komórek, kompromis oraz warunki wymagające sprawdzenia przed zamówieniem. Zakończ konkretną decyzją lub zgodą na dalszą weryfikację, potrzebną od przełożonego. Brak wystarczających danych może uzasadniać wstrzymanie wyboru."
+          "title": "Przygotuj rekomendację popartą analizą",
+          "body": "Z AI przygotuj brief dla przełożonego w MHC. Odnieś wybór modelu i kierunek zakupu do kosztów, przestojów, potrzeb klienta i warunków dostaw. Sprawdź jedno kluczowe twierdzenie w źródle. Zapisz plik i wklej brief do notatek sprawy — to materiał do modułu 4.",
+          "prompt": "# Zadanie\nPrzygotuj wewnętrzną rekomendację zakupu 12 aut handlowców dla BudMax.\n\n# Materiały\nZweryfikowany skoroszyt, raport jakości, porównanie modeli i ofert oraz notatka potrzeb klienta.\n\n# Zasady\nOddziel wnioski z historii od warunków bieżących ofert. Nie wyliczaj rat najmu ani prognozowanych oszczędności z samych kosztów paliwa i serwisu. Nie pomijaj małej próby, różnic wieku i profilu aut ani wykluczonych rekordów. Jeśli żadna oferta nie daje pełnego potwierdzenia warunków, rekomenduj sprawdzenia zamiast pozornej pewności.\n\n# Wynik\nBrief do 250 słów: rekomendowany model i kierunek zakupu, alternatywa, 3 najważniejsze argumenty z identyfikatorami ofert i zakresami danych, kompromis, braki oraz decyzja potrzebna od przełożonego. Dołącz krótką tabelę najważniejszych liczb do prezentacji. Zapisz wynik w Analiza lub zwróć treść do wklejenia."
         }
       ],
       "trainer": {
-        "guide": "Pracuj w Excelu, a nie wyłącznie na tabeli w czacie. Sprawdź dostępne funkcje na kontach. Nie obiecuj edycji pliku, jeśli Copilot tylko proponuje formuły. Uczestnicy muszą wykonać kontrolę liczby i przywrócić parametr.",
-        "golden": "A: 113950 zł po rabacie, B: 111300 zł, C: 116072 zł. B transport 12 aut =10800 zł, zakup + znany transport =1346400 zł netto. Transport A i C nie jest wyceniony. Pakiety pozostają osobną informacją.",
+        "guide": "To analiza kilku źródeł, nie pokaz kalkulatora rabatów. Zachowaj rozpoznanie jakości, poprawne łączenie tabel, analizę jednego profilu i sprawdzenie statusów po zmianie B6. Nie wymagaj automatycznej edycji, jeśli konto jej nie obsługuje; AI proponuje wtedy formuły i zestawienia, a uczestnik stosuje je w kopii pliku.",
+        "golden": "36 aut, 433 rekordy miesięczne (w tym jeden duplikat), 145 zdarzeń i 18 ofert. Klucz kontroli i niezależne obliczenia: docs/excel-case-checks.md. Parametry są na Analiza, nie w starym Oferty!B4.",
         "pitfalls": [
-          "Brak transportu zamieniony na zero",
-          "Gratisowy pakiet odjęty od ceny",
-          "Przyjęcie wyliczenia czatu za działający arkusz",
-          "Nieprzywrócony test B4"
+          "Połączenie miesięcy ze zdarzeniami mnoży koszty",
+          "Średnia z miesięcznych kosztów/km zamiast ilorazu sum",
+          "Duplikat, ujemny przebieg lub brak kosztu trafia do wyniku bez decyzji",
+          "Najtańszy dealer nie spełnia warunków pierwszej partii",
+          "Wybrane koszty eksploatacji są przedstawiane jako TCO"
         ],
         "questions": [
-          "Która informacja może zmienić rekomendację?",
-          "Czy potrafisz wskazać formułę i jej źródło?"
+          "Jak połączenie tabel wpłynęło na liczbę rekordów?",
+          "Dlaczego rekomendacja różni się od rankingu rabatów?",
+          "Który status zmienił się po zwiększeniu pierwszej partii?"
         ],
-        "fast": "Skróć omówienie na forum i zadanie dodatkowe. Zachowaj pracę każdej osoby z AI, kontrolę źródła i zapis rezultatu."
+        "fast": "Skup się na profilu Trasy i jednym wykresie. Dodatkowy trend przestojów jest opcjonalny. Zachowaj kontrolę jakości, jednego obliczenia i test B6."
       },
       "downloads": [
         {
@@ -204,21 +218,21 @@
       "app": "Word → PowerPoint + Copilot",
       "objective": "Zamienić zweryfikowane wyniki analizy w krótką prezentację decyzyjną.",
       "problem": "Lista cech i efektowne slajdy nie zastępują rekomendacji, kompromisu i pytania o decyzję.",
-      "entry": "Notatka potrzeb, zweryfikowany arkusz i brief rekomendacji z modułów 2–3. Dostępny szablon prezentacji; jeśli nie masz firmowego, wybierz prosty układ w PowerPoincie.",
+      "entry": "Notatka potrzeb, zweryfikowany skoroszyt analizy floty i ofert oraz brief rekomendacji z modułów 2–3. Dostępny szablon prezentacji; jeśli nie masz firmowego, wybierz prosty układ w PowerPoincie.",
       "output": "Cztery slajdy dla przełożonego: potrzeba, porównanie dealerów, rekomendacja i decyzja do podjęcia.",
       "criteria": "Slajdy zachowują liczby i zastrzeżenia ze źródła. Każdy ma jasny przekaz. Braki nie stają się obietnicami.",
       "steps": [
         {
           "kind": "practice",
           "title": "Przygotuj z AI dokument źródłowy do prezentacji",
-          "body": "Do czatu dołącz plik „06_brief_do_powerpoint.docx”, arkusz i notatkę potrzeb oraz wklej rekomendację z modułu 3. Z AI wypełnij strukturę briefu. Sprawdź liczby, a gotową treść zapisz w Wordzie. Nie pisz briefu od zera samodzielnie.",
-          "prompt": "# Zadanie\nWypełnij brief do prezentacji dla mojego przełożonego w MHC.\n\n# Materiały\nStruktura 06_brief_do_powerpoint.docx, notatka potrzeb z modułu 2, arkusz dealerów i rekomendacja z modułu 3.\n\n# Zasady\nUżywaj wyłącznie zweryfikowanych wyników i zaznacz brakujące dane. To wewnętrzna decyzja zakupowa, nie oferta dla CFO klienta. Jeśli nie możesz odczytać któregoś źródła, poproś o jego treść.\n\n# Wynik\nTreść w czterech sekcjach struktury Word: potrzeba klienta; porównanie dealerów z liczbami i źródłami; rekomendacja i alternatywa; warunki i decyzja do podjęcia. Nie uzupełniaj nieznanej raty ani daty dostawy."
+          "body": "Do czatu dołącz plik „06_brief_do_powerpoint.docx”, skoroszyt z analizą modeli, ofert i wykresem oraz notatkę potrzeb oraz wklej rekomendację z modułu 3. Z AI wypełnij strukturę briefu. Sprawdź liczby, a gotową treść zapisz w Wordzie. Nie pisz briefu od zera samodzielnie.",
+          "prompt": "# Zadanie\nWypełnij brief do prezentacji dla mojego przełożonego w MHC.\n\n# Materiały\nStruktura 06_brief_do_powerpoint.docx, notatka potrzeb z modułu 2, arkusz dealerów i rekomendacja z modułu 3.\n\n# Zasady\nUżywaj wyłącznie zweryfikowanych wyników i zaznacz brakujące dane. To wewnętrzna decyzja zakupowa, nie oferta dla CFO klienta. Jeśli nie możesz odczytać któregoś źródła, poproś o jego treść.\n\n# Wynik\nTreść w czterech sekcjach struktury Word: potrzeba klienta; porównanie modeli i dealerów z liczbami, wykresem i źródłami; rekomendacja i alternatywa; warunki i decyzja do podjęcia. Nie uzupełniaj nieznanej raty ani daty dostawy."
         },
         {
           "kind": "practice",
           "title": "Utwórz prezentację z briefu",
           "body": "Przejdź do PowerPointa. Użyj zapisanego briefu Word do tworzenia prezentacji, jeśli masz tę funkcję. W przeciwnym razie dołącz brief do czatu AI, wygeneruj treść slajdów i przenieś ją do PowerPointa. Użyj firmowego szablonu, jeśli go masz, lub prostego układu.",
-          "prompt": "# Zadanie\nPrzygotuj cztery slajdy do wewnętrznej decyzji o dalszym przygotowaniu zakupu aut dla BudMax.\n\n# Materiały\nUzupełniony brief Word z poprzedniego kroku.\n\n# Zasady\nNie dodawaj kwot ani obietnic spoza briefu. Każdy slajd ma jeden główny wniosek. Zachowaj dostępny szablon, a przy braku możliwości utworzenia pliku podaj treści do przeniesienia.\n\n# Wynik\nSlajdy: 1. Potrzeba i kryteria. 2. Porównanie dealerów. 3. Rekomendacja i kompromis. 4. Warunki oraz decyzja. Maksymalnie 3 krótkie punkty na slajd; liczby w PLN netto, źródła w notatkach."
+          "prompt": "# Zadanie\nPrzygotuj cztery slajdy do wewnętrznej decyzji o dalszym przygotowaniu zakupu aut dla BudMax.\n\n# Materiały\nUzupełniony brief Word z poprzedniego kroku.\n\n# Zasady\nNie dodawaj kwot ani obietnic spoza briefu. Każdy slajd ma jeden główny wniosek. Zachowaj dostępny szablon, a przy braku możliwości utworzenia pliku podaj treści do przeniesienia.\n\n# Wynik\nSlajdy: 1. Potrzeba i kryteria. 2. Porównanie modeli i ofert. 3. Rekomendacja i kompromis. 4. Warunki oraz decyzja. Maksymalnie 3 krótkie punkty na slajd; liczby w PLN netto, źródła w notatkach."
         },
         {
           "kind": "review",
@@ -551,7 +565,7 @@
     },
     {
       "time": "10:10–11:15",
-      "label": "3. Excel: analiza ofert i rekomendacja",
+      "label": "3. Excel: analiza floty i wybór wariantu zakupu",
       "target": "module-3"
     },
     {

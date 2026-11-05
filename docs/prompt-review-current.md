@@ -1,6 +1,6 @@
 # Przegląd warsztatu i promptów
 
-Data przeglądu: 5 listopada 2026. Zakres: 8 modułów głównych, opcjonalny research konkurencji, wszystkie 24 prompty, materiały wejściowe, formularze, zapisy i eksporty strony.
+Data przeglądu: 5 listopada 2026. Zakres: 8 modułów głównych, opcjonalny research konkurencji, wszystkie 26 promptów, materiały wejściowe, formularze, zapisy i eksporty strony.
 
 ## Wykryte problemy i zmiany
 
@@ -29,7 +29,7 @@ Data przeglądu: 5 listopada 2026. Zakres: 8 modułów głównych, opcjonalny re
 | --- | --- | --- | --- |
 | 1 | Plik 01 | Synteza korespondencji, rozróżnienie aktualnego i historycznego źródła, szkic odpowiedzi | Brief, pytania, szkic |
 | 2 | Plik 02, plik 01 i brief | Aktualizacja ustaleń po spotkaniu; cytaty i pytania o brakujące dane | Notatka potrzeb |
-| 3 | Arkusz, notatka potrzeb | Formuły z AI, test B4 i ręczna kontrola obliczenia, rekomendacja | Zapisany arkusz i brief zakupowy |
+| 3 | Arkusz, notatka potrzeb | Kontrola jakości i łączenia źródeł, analiza eksploatacji i ofert, test pierwszej partii, rekomendacja | Zapisany arkusz i brief zakupowy |
 | 4 | Wyniki 2–3 i struktura Word | Brief z AI, slajdy, krytyka i kontrola liczb | Prezentacja wewnętrzna |
 | 5 | Nowy mail reklamacyjny 03 | Analiza wątków, pierwsza odpowiedź, lista pytań | Materiał do zebrania wyjaśnień |
 | 6 | Dokumenty 04 i reklamacja | Odszukiwanie dowodów, porównanie historii, kontrola cytatów | Ustalenia i otwarte decyzje |
@@ -45,13 +45,13 @@ Moduły 1–4 wspierają przygotowanie propozycji, ale nie dostarczają kompletn
 
 ## Kontrola merytoryczna
 
-- Dane liczbowe dealerów pozwalają obliczyć ceny A 113950, B 111300, C 116072 PLN netto. Dla B transport 12 aut to 10800 PLN, zakup z transportem 1346400 PLN. Dla 4 aut: transport B 3600 PLN, zakup z transportem 448800 PLN. Cena jednostkowa nie zmienia się po zmianie B4. Transport A i C pozostaje niewyceniony.
+- Rozszerzone ćwiczenie Excel: 36 aut, 433 rekordy miesięczne, 145 zdarzeń i 18 ofert. Dane i wyniki niezależnej kontroli opisuje [klucz ćwiczenia Excel](excel-case-checks.md). Zmiana Analiza!B6 z 4 na 6 zmienia ocenę pierwszej partii dla sześciu ofert, nie zmieniając kosztu całego zamówienia.
 - Plik 01 i notatka 02 pozwalają rozróżnić budżet, potrzebę oraz warunki dostawcy; nie dają ceny najmu ani kompletnej oferty usługowej.
 - W reklamacji źródła pozwalają wyjaśnić okres raty; nie dają akceptacji ZL-17 ani decyzji o refundacji. Różne opisy pozycji nie dowodzą automatycznie ani duplikatu, ani poprawności opłat. Wcześniejsze sprawy BP nie zatwierdzają decyzji o BudMax.
 - Aktualizacja 05 nie potwierdza daty dostawy ani rozstrzygnięcia wszystkich roszczeń. Godziny i daty reklamacji dotyczą momentu sprawy 4 listopada 2026, a nie zegara szkolenia.
 
 ## Weryfikacja i ograniczenia
 
-Przegląd obejmuje lekturę wszystkich aktywnych kroków i źródeł, sprawdzenie zależności wejście–wynik oraz danych liczbowych. Testy przeglądarkowe przeszły dla wszystkich 9 modułów i 24 promptów: odsłanianie kroków, kopiowanie, zapis i eksport notatek, wielowierszowy zapis finalnego promptu, podgląd briefu, wszystkie aktywne pliki do pobrania, postęp i układ mobilny. Osobna kontrola potwierdziła dane liczbowe arkusza, zgodność paczki z plikami źródłowymi i agendę do 17:00. Zmieniony brief Word wyrenderowano i sprawdzono wizualnie.
+Przegląd obejmuje lekturę wszystkich aktywnych kroków i źródeł, sprawdzenie zależności wejście–wynik oraz danych liczbowych. Testy przeglądarkowe przeszły dla wszystkich 9 modułów i 26 promptów: odsłanianie kroków, kopiowanie, zapis i eksport notatek, wielowierszowy zapis finalnego promptu, podgląd briefu, wszystkie aktywne pliki do pobrania, postęp i układ mobilny. Osobna kontrola potwierdziła dane liczbowe arkusza, zgodność paczki z plikami źródłowymi i agendę do 17:00. Zmieniony brief Word wyrenderowano i sprawdzono wizualnie.
 
 Nie wykonano prób na kontach Copilot uczestników ani porównawczych uruchomień promptów w ich środowisku. Kontrola treści i strony nie jest dowodem, że model zawsze zwróci poprawny wynik. Przed szkoleniem trzeba potwierdzić dostęp do dołączania plików i dostępne funkcje aplikacji; ćwiczenia przewidują pracę w czacie, gdy edycja w aplikacji jest niedostępna.

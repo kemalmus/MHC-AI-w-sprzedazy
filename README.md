@@ -6,7 +6,7 @@ Warsztat na jednej historii BudMax z praktyczną pracą w Outlooku, Excelu, Powe
 
 1. Copilot Chat: briefing i odpowiedź na podstawie pliku z korespondencją; zapis nowego szkicu w Outlooku.
 2. Potrzeby klienta: analiza korespondencji i notatki po spotkaniu z AI, weryfikacja ustaleń oraz pytań otwartych.
-3. Excel: porównanie ofert, formuły, test zmiany parametru i rekomendacja.
+3. Excel: kontrola jakości i łączenie danych floty, analiza kosztów i przestojów, porównanie 18 ofert, test warunków dostawy i rekomendacja.
 4. Word i PowerPoint: brief z AI i cztery slajdy do wewnętrznej decyzji zakupowej.
 5. Reklamacja z pliku: mapa sprawy, pierwsza odpowiedź i lista informacji do zebrania.
 6. Dokumenty: umowa, załączniki, historia zgłoszenia, faktury i podobne sprawy.
