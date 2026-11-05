@@ -85,7 +85,6 @@ function renderHome() {
     <div class="content-block"><h2 class="section-heading">Wasza misja</h2><p>${esc(course.case.mission)}</p><p>${esc(course.case.workingRules)}</p></div>
     <h2 class="section-heading">Case BudMax</h2><div class="case-grid">${stats.map(([value,label]) => `<div class="case-stat"><strong>${esc(value)}</strong><span>${esc(label)}</span></div>`).join("")}</div>
     ${course.materialsBundle ? `<p><a class="button secondary" href="${esc(course.materialsBundle.href)}" download>${esc(course.materialsBundle.label)}</a></p>` : ""}
-    ${course.backup ? `<p><a href="${esc(course.backup.href)}" download>${esc(course.backup.label)}</a></p>` : ""}
     <h2 class="section-heading">Agenda dnia</h2><div class="agenda">${course.agenda.map(item => item.break
       ? `<div class="agenda-item break"><time>${esc(item.time)}</time><span>${esc(item.label)}</span><span></span></div>`
       : `<a class="agenda-item" href="#${esc(item.target)}"><time>${esc(item.time)}</time><span>${esc(item.label)}</span><span class="agenda-arrow" aria-hidden="true">↗</span></a>`).join("")}</div>

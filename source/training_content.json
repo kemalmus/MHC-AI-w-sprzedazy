@@ -28,10 +28,6 @@
     "workingRules": "Zacznij moduł 1 od nowej rozmowy w zatwierdzonym czacie AI. Moduł 2 rozwija tę analizę o notatkę po spotkaniu. W module 3 pracujesz na własnej kopii Excela, a w module 4 tworzysz prezentację wewnętrzną. Moduł 5 zaczyna osobny etap obsługi klienta i nową rozmowę z AI; moduły 6–7 uzupełniają ją dokumentami i aktualizacją. Materiały znajdziesz pod krokami każdego zadania. Przed skopiowaniem promptu dołącz wskazane pliki lub zastąp pola w nawiasach ich treścią. Wyniki zapisuj w notatkach sprawy. Strona nie przekazuje ich automatycznie do AI."
   },
   "scheduleNote": "09:00–17:00 · 8 modułów · dodatki opcjonalne bez przypisanej godziny",
-  "backup": {
-    "href": "backups/budmax-before-m365-2026-11-04.zip",
-    "label": "Pobierz poprzednią wersję strony i materiałów"
-  },
   "modules": [
     {
       "id": 1,
