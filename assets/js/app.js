@@ -43,12 +43,12 @@ function renderNav() {
     if (seen.has(item.target)) return "";
     seen.add(item.target);
     return `<a class="nav-link ${state.done[Number(item.target.split("-")[1])] ? "done" : ""}" href="#${esc(item.target)}"><span class="nav-number">${esc(item.target.split("-")[1])}.</span><span>${esc(item.label.replace(/^\d+\. /, ""))}</span></a>`;
-  }).join("") + `<a class="nav-link" href="#prompt-library"><span class="nav-number">↗</span><span>Prompty do skopiowania</span></a>`;
+  }).join("") + `<a class="nav-link" href="#prompt-library"><span class="nav-number">↗</span><span>Prompty</span></a>`;
 }
 
 function renderPromptLibrary() {
-  const prompts = course.promptLibrary?.length ? course.promptLibrary : course.modules.flatMap(module => module.steps.filter(step => step.prompt).map(step => ({ title: `${module.id}. ${module.title} · ${step.title}`, prompt: step.prompt })));
-  return `<section class="module prompt-library" id="prompt-library"><div class="module-head"><div><div class="module-index">MATERIAŁY DLA UCZESTNIKÓW</div><h2>Prompty do skopiowania</h2></div></div><p class="module-objective">${prompts.length ? "Wybierz prompt i skopiuj go do zatwierdzonego narzędzia AI." : "Prompty pojawią się tutaj. Każdy będzie miał własny przycisk kopiowania."}</p>${prompts.length ? `<div class="steps">${prompts.map((item, index) => `<article class="step-card"><div class="step-card-head"><span class="step-badge">${String(index + 1).padStart(2, "0")}</span><h3>${esc(item.title)}</h3></div><div class="step-card-body"><div class="prompt-box"><pre>${esc(item.prompt)}</pre><button class="button secondary small" type="button" data-action="copy-prompt">Kopiuj prompt</button></div></div></article>`).join("")}</div>` : ""}</section>`;
+  const prompts = [...(course.promptLibrary || []), ...course.modules.flatMap(module => module.steps.filter(step => step.prompt).map(step => ({ title: `${module.id}. ${module.title} · ${step.title}`, prompt: step.prompt })))];
+  return `<section class="module prompt-library" id="prompt-library"><div class="module-head"><div><div class="module-index">MATERIAŁY DLA UCZESTNIKÓW</div><h2>Prompty</h2></div></div><p class="module-objective">${prompts.length ? "Wybierz prompt i skopiuj go do zatwierdzonego narzędzia AI." : "Prompty pojawią się tutaj. Każdy będzie miał własny przycisk kopiowania."}</p>${prompts.length ? `<div class="steps">${prompts.map((item, index) => `<article class="step-card"><div class="step-card-head"><span class="step-badge">${String(index + 1).padStart(2, "0")}</span><h3>${esc(item.title)}</h3></div><div class="step-card-body"><div class="prompt-box"><pre>${esc(item.prompt)}</pre><button class="button secondary small" type="button" data-action="copy-prompt">Kopiuj prompt</button></div></div></article>`).join("")}</div>` : ""}</section>`;
 }
 
 function renderHome() {
