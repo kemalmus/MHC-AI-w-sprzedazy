@@ -108,14 +108,14 @@ function renderSafetyCards(module) {
 }
 
 function renderSteps(module) {
-  const revealed = Math.max(1, Number(state.revealed[module.id] || 1));
+  const revealed = Math.min(module.steps.length, Math.max(0, Number(state.revealed[module.id] ?? 1)));
   return module.steps.map((step,index) => `<article class="step-card ${index >= revealed ? "locked" : ""}" data-step-index="${index}"><div class="step-card-head"><span class="step-badge">${String(index + 1).padStart(2,"0")}</span><h3>${esc(step.title)}</h3></div><div class="step-card-body">${step.kind ? `<div class="block-label">${esc(({ practice: "Praca z AI", review: "Sprawdzenie wyniku", handoff: "Zapis i dalszy krok" })[step.kind] || step.kind)}</div>` : ""}<p>${esc(step.body)}</p>${step.prompt ? `<button class="prompt-toggle" type="button" aria-expanded="false" data-action="toggle-prompt">＋ Pokaż prompt</button><div class="prompt-box" hidden><pre>${esc(step.prompt)}</pre><button class="button secondary small" type="button" data-action="copy-prompt">Kopiuj prompt</button></div>` : ""}</div></article>`).join("");
 }
 
 function renderNextButton(module) {
-  const revealed = Math.max(1, Number(state.revealed[module.id] || 1));
+  const revealed = Math.min(module.steps.length, Math.max(0, Number(state.revealed[module.id] ?? 1)));
   const remaining = module.steps.length - revealed;
-  return remaining > 0 ? `<button class="button secondary small reveal-next" type="button" data-action="next-step" data-module="${module.id}">Pokaż kolejny krok <span aria-hidden="true">↓</span></button><span class="step-counter">${remaining} ${remaining === 1 ? "krok do odsłonięcia" : "kroki do odsłonięcia"}</span>` : `<span class="step-counter">Wszystkie kroki odsłonięte</span>`;
+  return `<div class="step-controls module-tools">${remaining > 0 ? `<button class="button secondary small reveal-next" type="button" data-action="next-step" data-module="${module.id}">Pokaż kolejny krok <span aria-hidden="true">↓</span></button>` : ""}${revealed > 0 ? `<button class="button secondary small" type="button" data-action="hide-step" data-module="${module.id}">Ukryj ostatni krok <span aria-hidden="true">↑</span></button>` : ""}<span class="step-counter">Odsłonięte kroki: ${revealed} / ${module.steps.length}</span></div>`;
 }
 
 function renderDownloads(module) {
@@ -281,12 +281,24 @@ document.addEventListener("click", event => {
       closeDocument();
     } else if (action === "cancel-trainer-login") {
       document.getElementById("trainer-password-dialog").close();
-    } else if (action === "next-step") {
-      const section = document.getElementById(`module-${moduleId}`); const stepBlock = actionButton.closest(".content-block"); const hidden = section.querySelector(".step-card.locked");
-      if (hidden) { hidden.classList.remove("locked"); state.revealed[moduleId] = Number(state.revealed[moduleId] || 1) + 1; saveState(); }
-      stepBlock.querySelector(".reveal-next + .step-counter")?.remove();
-      stepBlock.querySelector(".reveal-next")?.remove();
-      stepBlock.insertAdjacentHTML("beforeend", renderNextButton(course.modules.find(m => m.id === moduleId)));
+    } else if (action === "next-step" || action === "hide-step") {
+      const section = document.getElementById(`module-${moduleId}`);
+      const cards = [...section.querySelectorAll(".steps .step-card")];
+      const revealed = cards.filter(card => !card.classList.contains("locked")).length;
+      const card = action === "next-step" ? cards[revealed] : cards[revealed - 1];
+      if (card) {
+        const hide = action === "hide-step";
+        card.classList.toggle("locked", hide);
+        if (hide) {
+          const promptBox = card.querySelector(".prompt-box");
+          const toggle = card.querySelector('[data-action="toggle-prompt"]');
+          if (promptBox) promptBox.hidden = true;
+          if (toggle) { toggle.setAttribute("aria-expanded", "false"); toggle.textContent = "＋ Pokaż prompt"; }
+        }
+        state.revealed[moduleId] = revealed + (hide ? -1 : 1);
+        saveState();
+      }
+      section.querySelector(".step-controls").outerHTML = renderNextButton(course.modules.find(m => m.id === moduleId));
     } else if (action === "timer") startTimer(moduleId);
     else if (action === "stop-timer") { clearInterval(timers.get(moduleId)); timers.delete(moduleId); const timer = document.getElementById(`timer-${moduleId}`); timer.hidden = true; timer.classList.remove("timer-ended"); }
     else if (action === "export-case") exportCase();
