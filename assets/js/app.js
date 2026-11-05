@@ -46,9 +46,31 @@ function renderNav() {
   }).join("") + `<a class="nav-link" href="#prompt-library"><span class="nav-number">↗</span><span>Prompty</span></a>`;
 }
 
+function renderPromptCards(prompts) {
+  return `<div class="steps">${prompts.map((item, index) => `<article class="step-card"><div class="step-card-head"><span class="step-badge">${String(index + 1).padStart(2, "0")}</span><h3>${esc(item.title)}</h3></div><div class="step-card-body"><div class="prompt-box"><pre>${esc(item.prompt)}</pre><button class="button secondary small" type="button" data-action="copy-prompt">Kopiuj prompt</button></div></div></article>`).join("")}</div>`;
+}
+
+function renderScheduledPrompts() {
+  return `<p class="module-objective">Pięć duetów zaplanowanych promptów do Microsoft 365 Copilot, dostosowanych do pracy w MHC Mobility. Pierwszy prompt identyfikuje informacje lub problemy, drugi przekłada je na priorytety, rekomendacje albo działania.</p>
+    <aside class="schedule-note"><strong>Najmocniejszy przykład warsztatowy</strong><p>Detektor problemów operacyjnych + Łowca usprawnień. Pokazuje przejście od codziennej komunikacji do identyfikacji powtarzalnych problemów i konkretnych pomysłów na automatyzację.</p></aside>
+    <aside class="schedule-note technical"><strong>Dwa zadania, nie automatyczny proces</strong><p>Dwa Scheduled Prompts uruchomione kolejno nie tworzą automatycznie połączonego procesu. Drugi prompt nie ma gwarantowanego dostępu do wyniku pierwszego. Każdy z poniższych promptów może działać samodzielnie, korzystając z dostępnych danych Microsoft 365.</p><p>Aby drugi etap rzeczywiście przetwarzał wynik pierwszego, potrzebny jest dodatkowy mechanizm przekazywania danych, np. odpowiednio skonfigurowany przepływ Power Automate.</p></aside>
+    <div class="schedule-duets">${(course.scheduledPrompts || []).map((duet, index) => `<section class="schedule-duet ${duet.recommended ? "recommended" : ""}" aria-labelledby="schedule-title-${index}"><div class="schedule-duet-head"><span class="block-label">DUET ${String(index + 1).padStart(2, "0")} · ${esc(duet.benefit)}</span>${duet.recommended ? `<span class="schedule-badge">Polecany na warsztat</span>` : ""}<h3 id="schedule-title-${index}">${esc(duet.title)}</h3><p>${esc(duet.goal)}</p></div><div class="schedule-pair">${duet.prompts.map((item, i) => `<article class="schedule-card"><span class="block-label">${i === 0 ? "A · Identyfikacja" : "B · Wnioski i działania"}</span><h4>${esc(item.title)}</h4><span class="schedule-time">${esc(item.schedule)}</span><div class="prompt-box"><pre>${esc(item.prompt)}</pre><button class="button secondary small" type="button" data-action="copy-prompt">Kopiuj prompt ${i === 0 ? "A" : "B"}</button></div></article>`).join("")}</div></section>`).join("")}</div>`;
+}
+
 function renderPromptLibrary() {
-  const prompts = [...(course.promptLibrary || []), ...course.modules.flatMap(module => module.steps.filter(step => step.prompt).map(step => ({ title: `${module.id}. ${module.title} · ${step.title}`, prompt: step.prompt })))];
-  return `<section class="module prompt-library" id="prompt-library"><div class="module-head"><div><div class="module-index">MATERIAŁY DLA UCZESTNIKÓW</div><h2>Prompty</h2></div></div><p class="module-objective">${prompts.length ? "Wybierz prompt i skopiuj go do zatwierdzonego narzędzia AI." : "Prompty pojawią się tutaj. Każdy będzie miał własny przycisk kopiowania."}</p>${prompts.length ? `<div class="steps">${prompts.map((item, index) => `<article class="step-card"><div class="step-card-head"><span class="step-badge">${String(index + 1).padStart(2, "0")}</span><h3>${esc(item.title)}</h3></div><div class="step-card-body"><div class="prompt-box"><pre>${esc(item.prompt)}</pre><button class="button secondary small" type="button" data-action="copy-prompt">Kopiuj prompt</button></div></div></article>`).join("")}</div>` : ""}</section>`;
+  const exercisePrompts = course.modules.flatMap(module => module.steps.filter(step => step.prompt).map(step => ({ title: `${module.id}. ${module.title} · ${step.title}`, prompt: step.prompt })));
+  const tabs = [["work", "Do pracy"], ["schedule", "Schedule"], ["exercises", "Z ćwiczeń"]];
+  return `<section class="module prompt-library" id="prompt-library"><div class="module-head"><div><div class="module-index">MATERIAŁY DLA UCZESTNIKÓW</div><h2>Prompty</h2></div></div><p class="module-objective">Wybierz kategorię i skopiuj prompt do swojego narzędzia AI.</p><div class="prompt-tabs" role="tablist" aria-label="Kategorie promptów">${tabs.map(([id, label], index) => `<button class="prompt-tab" type="button" role="tab" id="prompt-tab-${id}" aria-controls="prompt-panel-${id}" aria-selected="${index === 0}" tabindex="${index === 0 ? "0" : "-1"}" data-action="prompt-tab">${label}</button>`).join("")}</div><div id="prompt-panel-work" role="tabpanel" aria-labelledby="prompt-tab-work">${renderPromptCards(course.promptLibrary || [])}</div><div id="prompt-panel-schedule" role="tabpanel" aria-labelledby="prompt-tab-schedule" hidden><h3 class="section-heading">Schedule — zaplanowane prompty</h3>${renderScheduledPrompts()}</div><div id="prompt-panel-exercises" role="tabpanel" aria-labelledby="prompt-tab-exercises" hidden>${renderPromptCards(exercisePrompts)}</div></section>`;
+}
+
+function selectPromptTab(tab) {
+  const library = document.getElementById("prompt-library");
+  library.querySelectorAll('[role="tab"]').forEach(item => {
+    const selected = item === tab;
+    item.setAttribute("aria-selected", String(selected));
+    item.tabIndex = selected ? 0 : -1;
+    document.getElementById(item.getAttribute("aria-controls")).hidden = !selected;
+  });
 }
 
 function renderHome() {
@@ -270,7 +292,9 @@ document.addEventListener("click", event => {
   if (actionButton) {
     const action = actionButton.dataset.action;
     const moduleId = Number(actionButton.dataset.module);
-    if (action === "toggle-prompt") {
+    if (action === "prompt-tab") {
+      selectPromptTab(actionButton);
+    } else if (action === "toggle-prompt") {
       const box = actionButton.nextElementSibling;
       const open = box.hidden; box.hidden = !open; actionButton.setAttribute("aria-expanded", String(open)); actionButton.innerHTML = open ? "− Ukryj prompt" : "＋ Pokaż prompt";
     } else if (action === "copy-prompt") {
@@ -370,4 +394,15 @@ fetch(courseContentUrl).then(response => {
   return response.json();
 }).then(data => { course = data; render(); }).catch(error => {
   courseRoot.innerHTML = `<div class="empty-state"><strong>Nie mogę wczytać treści szkolenia.</strong><p>${esc(error.message)} Otwórz stronę przez lokalny serwer HTTP — instrukcję znajdziesz w README.</p></div>`;
+});
+
+document.addEventListener("keydown", event => {
+  if (!event.target.matches('.prompt-tab')) return;
+  const tabs = [...event.target.closest('[role="tablist"]').querySelectorAll('[role="tab"]')];
+  const index = tabs.indexOf(event.target);
+  const next = { ArrowRight: (index + 1) % tabs.length, ArrowLeft: (index + tabs.length - 1) % tabs.length, Home: 0, End: tabs.length - 1 }[event.key];
+  if (next === undefined) return;
+  event.preventDefault();
+  selectPromptTab(tabs[next]);
+  tabs[next].focus();
 });

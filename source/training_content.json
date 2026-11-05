@@ -607,5 +607,93 @@
   "materialsBundle": {
     "href": "materials/m365/budmax_materialy.zip",
     "label": "Pobierz materiały do warsztatu M365"
-  }
+  },
+  "scheduledPrompts": [
+    {
+      "title": "Poranny radar → Priorytety dnia",
+      "goal": "Szybka orientacja w sytuacji i ustalenie najważniejszych działań.",
+      "benefit": "Codzienna organizacja pracy",
+      "prompts": [
+        {
+          "title": "Poranny radar",
+          "schedule": "Codziennie, 08:00",
+          "prompt": "Przeanalizuj moje wiadomości e-mail, konwersacje Teams i spotkania z ostatnich 24 godzin. Zidentyfikuj nowe problemy, pilne prośby, nierozstrzygnięte decyzje i zobowiązania. Przygotuj krótkie podsumowanie z linkami do źródeł. Pomiń informacje rutynowe."
+        },
+        {
+          "title": "Priorytety dnia",
+          "schedule": "Codziennie, 08:15",
+          "prompt": "Na podstawie moich ostatnich wiadomości e-mail, konwersacji Teams, zobowiązań i dzisiejszego kalendarza wskaż 5 działań o największym znaczeniu biznesowym lub pilności. Dla każdego wyjaśnij, dlaczego jest ważne, podaj termin i najbliższy konkretny krok."
+        }
+      ]
+    },
+    {
+      "title": "Sygnały od klientów → Rekomendacje eskalacji",
+      "goal": "Wczesne wykrywanie problemów w obsłudze klientów flotowych.",
+      "benefit": "Proaktywna obsługa klientów",
+      "prompts": [
+        {
+          "title": "Radar problemów klientów",
+          "schedule": "Codziennie, 14:00",
+          "prompt": "Przeanalizuj wiadomości e-mail i konwersacje Teams dotyczące klientów z ostatnich 48 godzin. Zidentyfikuj powtarzające się reklamacje, opóźnienia w obsłudze, nierozwiązane zgłoszenia oraz oznaki niezadowolenia klientów. Pogrupuj wyniki według klientów i wskaż źródła."
+        },
+        {
+          "title": "Doradca eskalacji",
+          "schedule": "Codziennie, 14:15",
+          "prompt": "Przeanalizuj ostatnie reklamacje, nierozwiązane problemy i eskalacje klientów widoczne w mojej poczcie i Teams. Wybierz maksymalnie 3 sprawy wymagające interwencji kierownictwa. Dla każdej zaproponuj konkretne działanie, wskaż osobę odpowiedzialną, jeśli jest znana, i uzasadnij potrzebę eskalacji."
+        }
+      ]
+    },
+    {
+      "title": "Decyzje ze spotkań → Audyt zobowiązań",
+      "goal": "Ograniczenie liczby ustaleń, które giną po spotkaniach.",
+      "benefit": "Kontrola realizacji ustaleń",
+      "prompts": [
+        {
+          "title": "Rejestr decyzji",
+          "schedule": "Codziennie, 16:30",
+          "prompt": "Przeanalizuj dostępne notatki, transkrypcje spotkań Teams i powiązane wiadomości z dzisiejszego dnia. Wyodrębnij podjęte decyzje, ustalone działania, osoby odpowiedzialne i terminy. Wskaż decyzje bez przypisanego właściciela oraz zadania bez terminu. Podaj źródła."
+        },
+        {
+          "title": "Audyt realizacji zobowiązań",
+          "schedule": "Następny dzień, 08:30",
+          "prompt": "Przeanalizuj działania i zobowiązania przypisane do mnie podczas spotkań oraz w wiadomościach e-mail i Teams z ostatnich 7 dni. Sprawdź dostępne informacje o postępach. Wskaż zadania przeterminowane, zbliżające się terminy i zobowiązania bez potwierdzenia realizacji."
+        }
+      ]
+    },
+    {
+      "title": "Wykrywanie problemów procesowych → Pomysły na usprawnienia",
+      "goal": "Systematyczne identyfikowanie możliwości automatyzacji i zastosowania AI.",
+      "benefit": "Odkrywanie możliwości automatyzacji",
+      "recommended": true,
+      "prompts": [
+        {
+          "title": "Detektor problemów operacyjnych",
+          "schedule": "Piątek, 12:00",
+          "prompt": "Przeanalizuj dostępne wiadomości e-mail i konwersacje Teams z bieżącego tygodnia. Zidentyfikuj powtarzające się prace ręczne, wielokrotne wprowadzanie tych samych danych, poprawianie błędów, brakujące informacje i wąskie gardła procesowe. Pogrupuj podobne problemy i wskaż konkretne przykłady ze źródłami."
+        },
+        {
+          "title": "Łowca usprawnień",
+          "schedule": "Piątek, 12:30",
+          "prompt": "Zidentyfikuj powtarzające się problemy operacyjne zgłaszane w dostępnych mi wiadomościach e-mail i Teams w bieżącym tygodniu. Zaproponuj 3 praktyczne usprawnienia wykorzystujące Microsoft 365, automatyzację lub AI. Oceń je według potencjalnej wartości, trudności wdrożenia i dostępności danych. Wyraźnie zaznacz przyjęte założenia."
+        }
+      ]
+    },
+    {
+      "title": "Monitor zmian → Briefing zarządczy",
+      "goal": "Bieżąca kontrola zmian w projektach i inicjatywach.",
+      "benefit": "Wsparcie zarządzania projektami",
+      "prompts": [
+        {
+          "title": "Co się zmieniło?",
+          "schedule": "Piątek, 14:00",
+          "prompt": "Przeanalizuj dostępną komunikację projektową, notatki ze spotkań i powiązane dokumenty z bieżącego tygodnia. Zidentyfikuj istotne zmiany zakresu, terminów, ryzyk, odpowiedzialności i decyzji. Skup się na kwestiach wymagających uwagi kierownictwa. Podaj źródła."
+        },
+        {
+          "title": "Briefing dla kierownictwa",
+          "schedule": "Piątek, 14:30",
+          "prompt": "Przygotuj jednostronicowy briefing zarządczy na podstawie dostępnej komunikacji projektowej i dokumentów z bieżącego tygodnia. Uwzględnij najważniejsze wydarzenia, nowe ryzyka, decyzje wymagające podjęcia oraz priorytety na kolejny tydzień. Oddziel potwierdzone fakty od założeń i wskaż źródła."
+        }
+      ]
+    }
+  ]
 }
